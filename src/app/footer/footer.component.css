@@ -1,0 +1,36 @@
+/*estilos dispositivos móviles*/
+@media  (max-width: 767px){
+
+    .footer{
+        height: 80px;
+        width: 100%;
+        background-color: #FB9850;
+
+    }
+}
+
+/*estilos para tablets*/
+@media(min-width: 768px) and (max-width: 1023px){
+
+    
+    .footer{
+        height: 80px;
+        width: 100%;
+        background-color: #FB9850;
+
+    }
+}
+
+
+/*estilos para pantallas grandes(computadores)*/
+@media(min-width: 1024px){
+
+    
+    .footer{
+        height: 80px;
+        width: 100%;
+        background-color: #FB9850;
+
+    }
+}
+
