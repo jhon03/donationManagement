@@ -1,0 +1,144 @@
+/*estilos dispositivos móviles*/
+@media  (max-width: 767px){
+
+    .card{ 
+
+        position: center; 
+        width: 100%; 
+       
+    }
+    .card{
+    
+        margin: 8%; 
+        height: 80%; 
+        width: 80%; 
+    
+     }
+
+    .info{ 
+
+        padding: 50px; 
+        
+        text-align: justify; 
+        
+        font-size: medium; 
+        
+        line-height: 2.0; 
+        
+        } 
+     
+
+.center{ 
+
+    width: 100%; 
+    
+    padding: 15px; 
+    
+    border-radius: 10px; 
+    
+    display: flex; 
+    
+    gap: 15PX; 
+    
+    } 
+}
+
+
+/*estilos para tablets*/
+@media(min-width: 768px) and (max-width: 1023px){
+
+    
+    .card{ 
+
+        position: center; 
+        width: 100%; 
+       
+    }
+
+    .card{
+    
+        margin: 8%; 
+        height: 80%; 
+        width: 80%; 
+    
+     }
+ 
+
+    .info{ 
+
+        padding: 50px; 
+        
+        text-align: justify; 
+        
+        font-size: medium; 
+        
+        line-height: 2.0; 
+        
+        } 
+     
+
+.center{ 
+
+    width: 100%; 
+    
+    padding: 15px; 
+    
+    border-radius: 10px; 
+    
+    display: flex; 
+    
+    gap: 15PX; 
+    
+    } 
+}
+
+
+
+/*estilos para pantallas grandes(computadores)*/
+@media(min-width: 1024px){
+
+    
+.card{ 
+
+        position: center; 
+        width: 100%; 
+        height: 100%; 
+       
+    }
+ .card{
+    
+    margin: 8%; 
+    height: 80%; 
+    width: 80%; 
+
+ }
+
+    .info{ 
+
+        padding: 50px; 
+        
+        text-align: justify; 
+        
+        font-size: medium; 
+        
+        line-height: 2.0; 
+        
+        } 
+     
+
+.center{ 
+
+    width: 100%; 
+    
+    padding: 15px; 
+    
+    border-radius: 10px; 
+    
+    display: flex; 
+    
+    gap: 15PX; 
+    
+    } 
+}
+ 
+ 

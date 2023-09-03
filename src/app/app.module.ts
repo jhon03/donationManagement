@@ -7,7 +7,7 @@ import { MaterialModule } from './material/material.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
-
+import { InicioModule } from './inicio/inicio.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     MaterialModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    InicioModule
     
   ],
   providers: [],
