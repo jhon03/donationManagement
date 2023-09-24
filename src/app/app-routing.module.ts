@@ -6,7 +6,22 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then(m =>m.InicioModule)
-  }
+  },
+  {
+    path: 'nosotros',
+    loadChildren:() => import('./nosotros/nosotros.module').then(m => m.NosotrosModule)
+  },
+
+  {
+    path: 'gestion-social',
+    loadChildren:() => import('./gestion-social/gestion-social.module').then(m => m.GestionSocialModule)
+  },
+  
+{
+  path: 'programasyproyectos',
+  loadChildren:() => import('./programasyproyectos/programasyproyectos.module').then(m => m.ProgramasyproyectosModule)
+}
+  
 ];
 
 @NgModule({

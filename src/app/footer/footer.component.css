@@ -1,36 +1,76 @@
-/*estilos dispositivos móviles*/
-@media  (max-width: 767px){
-
-    .footer{
-        height: 80px;
-        width: 100%;
-        background-color: #FB9850;
-
-    }
-}
-
-/*estilos para tablets*/
-@media(min-width: 768px) and (max-width: 1023px){
-
+.footer {
+  
     
-    .footer{
-        height: 80px;
-        width: 100%;
-        background-color: #FB9850;
+    height: 80px;
+    width:100%;
 
-    }
+    background-color: #FB9850;
+  }
+  /* Estilos para el footer */
+footer {
+  background-color: #FB9850;;
+  color: #193A6F;
+  padding: 20px 0;
+  text-align: center;
 }
 
-
-/*estilos para pantallas grandes(computadores)*/
-@media(min-width: 1024px){
-
-    
-    .footer{
-        height: 80px;
-        width: 100%;
-        background-color: #FB9850;
-
-    }
+/* Estilos para la lista de redes sociales */
+.social-media-list {
+  list-style: none;
+  padding: 0;
 }
 
+.social-media-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-media-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+/* Estilos para los enlaces de redes sociales al pasar el mouse */
+.social-media-list a:hover {
+  color: #FF5733; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para la información de contacto */
+.address, .contact-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces de información de contacto */
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Estilos para los enlaces de información de contacto al pasar el mouse */
+.contact-info a:hover {
+  color: #FF5733; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para la información de la universidad */
+.university-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos para los enlaces de la universidad */
+.university-info a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Estilos para los enlaces de la universidad al pasar el mouse */
+.university-info a:hover {
+  color: #FF5733; /* Cambia el color al pasar el mouse */
+}

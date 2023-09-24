@@ -1,0 +1,35 @@
+<p class="mi-parrafo-noticias" style="color: #193A6F">>> Noticias y Eventos de Opinión</p>
+
+<mat-paginator [length]="totalItems" [pageSize]="itemsPorPagina" [pageSizeOptions]= "[5, 10]" 
+(page)="onPageChange">
+</mat-paginator>
+
+
+
+<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16">
+
+    <mat-grid-tile *ngFor="let card of cards">
+
+<mat-card class="example-card">
+    <mat-card-header>
+          
+<mat-card-title style="font-size: 3px;" style="font-family:Verdana, Geneva, Tahoma, sans-serif;" style="color: #193A6F">{{card.fecha}}</mat-card-title>
+<mat-card-title style="font-size: 10px;" style="font-family:Verdana, Geneva, Tahoma, sans-serif;" style="font-weight: bold;">{{card.title}}</mat-card-title>
+
+     
+    </mat-card-header>
+
+    <img mat-card-image src = {{card.photo}} alt="Photo of a Shiba Inu">
+
+<mat-card-content>
+    {{card.content}}
+    
+  </mat-card-content>
+
+  </mat-card>
+
+</mat-grid-tile>
+</mat-grid-list>
+
+
+

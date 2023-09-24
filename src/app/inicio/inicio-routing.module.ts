@@ -4,10 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AcercadecdcComponent } from './acercadecdc/acercadecdc.component';
 
 const routes: Routes = [ 
-
- 
- 
-
 { 
 
 path: '', 
@@ -15,6 +11,8 @@ path: '',
 component: AcercadecdcComponent, 
 
 }, 
+
+
 
 ]; 
 

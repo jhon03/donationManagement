@@ -1,6 +1,6 @@
  
 
-<nav class="navbar"> 
+<nav class="navbar lg" > 
 
   <div class="container-fluid"> 
   
@@ -9,30 +9,21 @@
   
   <h4 class="text-center"><strong class="mt-4"><i style="color: #193A6F;">¡Aquí Crecemos Juntos!</i> </strong></h4> 
   
-  <button mat-button [routerLink]="['/inicio']" style="color: #193A6F;">Inicio</button> 
-  
-  <button mat-button [routerLink]="['/sesioncolaboradores']" style="color: #193A6F;">Nosotros</button> 
-  
-  <button mat-button [routerLink]="['/gestionsocial']" style="color: #193A6F;"> Gestión Social</button> 
-  
-  <button mat-button [routerLink]="['/lstprogramas']" style="color: #193A6F;"> Programas/Proyectos</button> 
+  <button mat-button [routerLink]="['/inicio']">Inicio</button> 
+  <button mat-button [routerLink]="['/nosotros']">Nosotros</button> 
+  <button mat-button [routerLink]="['/gestion-social']"> Gestión Social</button> 
+  <button mat-button [routerLink]="['/programascdc']"> Programas/Proyectos</button> 
   
    
-   <mat-form-field> 
-  
-  <input type="search" placeholder="buscar" style="color: #193A6F" style="border-radius: 50px">  
+  <input type="search" placeholder="buscar" style="border-radius: 50px">  
   
    
-   </mat-form-field> 
-  
-  
+
   </div> 
   
   
   </nav>  
   
-   
-   
   
   <router-outlet> </router-outlet> 
   <app-footer></app-footer>
