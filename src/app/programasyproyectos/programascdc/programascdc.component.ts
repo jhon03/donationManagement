@@ -29,11 +29,11 @@ ngOnInit(): void {
     
 }
 redirigir(opcion: string): void{
-  if(opcion === 'inicio'){
-    this.router.navigate(['/inicio']);
+  if(opcion === 'biblioteca'){
+    this.router.navigate(['/biblioteca']);
  
-   }else if (opcion === ''){
-    this.router.navigate([''])
+   }else if (opcion === 'JardinInfantil'){
+    this.router.navigate(['/JardinInfantil'])
    }
 
    
