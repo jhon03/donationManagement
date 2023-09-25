@@ -1,0 +1,98 @@
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+
+    .example-card {
+        max-width: 400px;
+      }
+      
+      .example-header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+      }
+    }
+    
+    /* Estilos para tabletas */
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      
+    .example-card {
+      max-width: 400px;
+    }
+    
+    .example-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    }
+    
+    
+    }
+    
+        /* Estilos para pantallas más grandes (computadoras) */
+        @media (min-width: 1024px) {
+          .example-card {
+            max-width: 400px;
+          }
+          
+          .example-header-image {
+            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+            background-size: cover;
+          }
+        }
+    
+    
+    
+    
+    
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 767px) {
+    
+      .example-card2 {
+          max-width: 400px;
+        }
+        
+        .example-header2-image {
+          background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+          background-size: cover;
+        }
+      }
+      
+      /* Estilos para tabletas */
+      
+      @media (min-width: 768px) and (max-width: 1023px) {
+        
+      .example-card2 {
+        max-width: 400px;
+      }
+      
+      .example-header2-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+      }
+      
+      
+      }
+      
+          /* Estilos para pantallas más grandes (computadoras) */
+          @media (min-width: 1024px) {
+            .example-card2 {
+              max-width: 400px;
+            }
+            
+            .example-header2-image {
+              background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+              background-size: cover;
+            }
+          }
+    
+          /* Estilo para los botones */
+    button.mat-button {
+      color: #FB9850; /* Color de texto normal */
+      transition: color 0.3s; /* Transición de color suave */
+    }
+    
+    /* Estilo para los botones cuando se pasa el mouse sobre ellos */
+    button.mat-button:hover {
+      color: #193A6F; /* Cambia el color de texto al pasar el mouse */
+    }
