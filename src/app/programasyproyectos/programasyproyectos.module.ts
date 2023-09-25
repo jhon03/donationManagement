@@ -8,10 +8,12 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
+import { ProyectoscdcComponent } from './proyectoscdc/proyectoscdc.component';
 
 @NgModule({
   declarations: [
-    ProgramascdcComponent
+    ProgramascdcComponent,
+    ProyectoscdcComponent
   ],
   imports: [
     CommonModule,
