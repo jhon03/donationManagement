@@ -6,32 +6,55 @@
   background-color: #FB9850;
 }
 
+
 @media (max-width: 767px){
 
   .navbar{
     height: 56px; /*altura de la barra de navegación en pantallas pequeñas*/
   }
+
 }
 
 @media (max-width: 599px){
   .navbar{
     height: 48px; /*altura de la barra de navegación en pantallas aún más pequeñas*/
   }
-}
-
+  
 .container-fluid{
   width: 100%;
   height: 120%;
 }
-
-/*estilo para los botones*/
-
-button.mat-button {
-  color: #e3e6eb; /*color de texto normal*/
-  transition: color 0.3s; /*transición de color suave*/
 }
 
-/*estilo para los botones cuando se pasa el mouse sobre ellos*/
+/* Estilo para los botones navegación */
+
+button[mat-button]{
+  background-color:#FB9850 ;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+button[mat-button]:hover{
+  background-color: #193A6F;
+}
+
+
+button.mat-button{
+  background-color:#FB9850 ;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+}
 button.mat-button:hover{
-  color: #193A6F;  /*cambia el color de texto al pasar el mouse*/
+ color:#193A6F;
+
 }
+
