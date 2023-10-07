@@ -20,7 +20,14 @@ const routes: Routes = [
 {
   path: 'programasyproyectos',
   loadChildren:() => import('./programasyproyectos/programasyproyectos.module').then(m => m.ProgramasyproyectosModule)
+},
+
+{
+  path: 'donaciones',
+  loadChildren: () => import('./donaciones/donaciones.module').then(m => m.DonacionesModule)
 }
+
+
   
 ];
 

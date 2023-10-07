@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -13,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ProgramasyproyectosModule } from './programasyproyectos/programasyproyectos.module';
-
+import { DonacionesModule } from './donaciones/donaciones.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +29,8 @@ import { ProgramasyproyectosModule } from './programasyproyectos/programasyproye
     MatIconModule,
     MatCardModule,
     MatPaginatorModule,
-    ProgramasyproyectosModule
-    
+    ProgramasyproyectosModule,
+    DonacionesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
