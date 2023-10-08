@@ -5,11 +5,12 @@ import { DonacionesRoutingModule } from './donaciones-routing.module';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ApadrinamientoComponent } from './apadrinamiento/apadrinamiento.component';
 
-
 @NgModule({
   declarations: [
     FormularioComponent,
     ApadrinamientoComponent
+    
+    
   ],
   imports: [
     CommonModule,
