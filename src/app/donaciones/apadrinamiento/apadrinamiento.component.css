@@ -1,0 +1,15 @@
+/*.banner {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .banner img {
+    max-width: 100%;
+    height: auto;
+  }*/
+  .contenido {
+    display: flex; /* Utiliza un contenedor flex para organizar los elementos */
+    justify-content: space-between; /* Distribuye el espacio horizontalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 20px; /* Agrega márgenes alrededor del contenido */
+  }
