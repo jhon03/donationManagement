@@ -1,8 +1,8 @@
 
 
-    <h1>Solicitud de Donaciones</h1>
+   
     <form action="procesar_formulario.php" method="POST">
-        <label for="nombre">Nombre del Benefactor:</label>
+        <label for="nombre">¿Cuál es tú nombre?</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
 
         <label for="tipo_identificacion">Tipo de Identificación:</label>
@@ -20,6 +20,13 @@
 
         <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono" required><br><br>
+-------------------------------------------------------------------------------------
+<label for="tipo_identificacion">¿Cómo deseas ayudar?</label>
+<select id="tipo_identificacion" name="tipo_identificacion" required>
+    <option value="cedula">Utiles escolares</option>
+    <option value="pasaporte">Unifore-Matricula Académica</option>
+    <option value="otro">Desayunos saludables</option>
+</select><br><br>
 
         <input type="submit" value="Enviar Solicitud">
     </form>

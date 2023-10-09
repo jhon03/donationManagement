@@ -31,7 +31,7 @@ import { DonacionesModule } from './donaciones/donaciones.module';
     MatCardModule,
     MatPaginatorModule,
     ProgramasyproyectosModule,
-    DonacionesModule
+    DonacionesModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

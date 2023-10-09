@@ -1,0 +1,93 @@
+
+<div class="card-container">
+<mat-card class="example-card">
+    
+    <mat-card-header>
+        <mat-card-title>Conoce la historia de Ethan
+            <span class="material-symbols-outlined">
+                ads_click
+                </span>
+        </mat-card-title>
+      </mat-card-header>
+
+      <div class="image-container">
+        <div class="image-wrapper">
+
+      <img src="assets/ethan.jpg"  (click)="toggleDescription(1)">
+      <div class="description" [class.show]="showDescription[1]">
+
+        <p>Ethan es un niño de tres años de edad, es muy alegre y conversador, desde que participa en la 
+            estrategia de desayunos saludables en nuestro programa Jardín Infantil, ha fortalecido la independencia
+            en el consumo de los mismos y también se permite degustar frutas que no han consumido antes, de esta manera ha logrado procesualmente
+            incorporar estas frutas en su dieta, durante su estadía en el Jardín y posteriormente comenta que le gustan en casa.
+
+            Por otro lado, muestra deseos por colaborar y compartir los utensilios y alimentos que usa para consumir
+            los alimentos. 
+        </p>
+      </div>
+        </div>
+
+      <div class="image-wrapper" >
+
+        <img src="assets/ethann.jpg"  (click)="toggleDescription(2)">
+        <div class="description" [class.show]="showDescription[2]">
+            <p>Ethan es un niño de tres años de edad, es muy alegre y conversador, desde que participa en la 
+                estrategia de desayunos saludables en nuestro programa Jardín Infantil, ha fortalecido la independencia
+                en el consumo de los mismos y también se permite degustar frutas que no han consumido antes, de esta manera ha logrado procesualmente
+                incorporar estas frutas en su dieta, durante su estadía en el Jardín y posteriormente comenta que le gustan en casa.
+    
+                Por otro lado, muestra deseos por colaborar y compartir los utensilios y alimentos que usa para consumir
+                los alimentos.</p>
+        </div>
+
+       
+      </div> 
+
+    </div>
+  </mat-card>
+
+
+  <mat-card class="example-card2">
+   
+    <mat-card-header>
+      <mat-card-title>¿Quieres ayudar a más niños como Ethan?
+        Te contamos como puedes hacerlo: 
+        </mat-card-title>
+        </mat-card-header>
+
+  <div class="avatar-container">
+    <div class="avatar">
+<img src="assets/utiles.jpg" alt="Avatar 1">
+<p> {{utiles}}</p>
+</div>
+
+<div class="avatar">
+
+<img src="assets/alimentación.jpeg" alt="Avatar 1">
+<p>En nuestro Jardín contamos con una estrategia de desayunos saludables, para llevar a cabo 
+  cada niño(a) debe realizar un aporte mensual durante el año lectivo. 
+El valor del aporte mensual es $12000
+</p>
+</div>
+
+<div class="avatar">
+
+<img src="assets/uniformes.png" alt="Avatar 1">
+<p>Cada niño(a) durante el año lectivo de contar con uniforme que consta de sudadeta y camibuso;
+  el cual se adquiere con nuestro proveedor de uniformes. El tiempo estimado de duración es cada 6 meses.
+  El valor de cada uniforme equiva a $00.00 </p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+<p>Realiza tu solicitud</p>
+</mat-card>
+
+
+</div>
+
+<app-formulario></app-formulario>
