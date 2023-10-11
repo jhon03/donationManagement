@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Proyecto } from 'src/Modelos/proyecto';
@@ -46,6 +47,8 @@ export class ProyectoService {
     return of(this.proyectos);
   };
 
+
+  
 /*  crearDonación (aporte: number){
 
     //objeto donacion, crear ese objeto

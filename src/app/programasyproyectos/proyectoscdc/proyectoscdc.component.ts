@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyecto } from 'src/Modelos/proyecto';
+import { ColaboradoresService } from 'src/app/colaboradores.service';
 import { ProyectoService } from 'src/app/proyecto.service';
 @Component({
   selector: 'app-proyectoscdc',
@@ -17,6 +18,7 @@ export class ProyectoscdcComponent {
 
   ngOnInit(): void{
     this.loadProyectos();
+    
   }
 
   loadProyectos(){
