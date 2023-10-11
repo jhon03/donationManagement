@@ -25,8 +25,16 @@ const routes: Routes = [
 {
   path: 'donaciones',
   loadChildren: () => import('./donaciones/donaciones.module').then(m => m.DonacionesModule)
-}
+},
 
+{
+  path: 'autenticacion',
+  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+},
+{
+  path: 'colaboradores',
+  loadChildren: () => import('./colaboradores/colaboradores.module').then(m => m.ColaboradoresModule)
+}
 
   
 ];

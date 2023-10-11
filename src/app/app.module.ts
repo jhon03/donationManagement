@@ -13,6 +13,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ProgramasyproyectosModule } from './programasyproyectos/programasyproyectos.module';
 import { DonacionesModule } from './donaciones/donaciones.module';
+import { AuthModule } from './auth/auth.module';
+import { ColaboradoresModule } from './colaboradores/colaboradores.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DonacionesModule } from './donaciones/donaciones.module';
     MatCardModule,
     MatPaginatorModule,
     ProgramasyproyectosModule,
-    DonacionesModule  
+    DonacionesModule,
+    AuthModule,
+    ColaboradoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]
