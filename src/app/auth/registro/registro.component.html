@@ -5,36 +5,68 @@
     <div class="login-box" >
     <h2>Registrate</h2>
       
-    <form >
+    <form (ngSubmit)="onSubmit()" class="mt-5" style="margin-top: 20px;" >
     
+      <label for="tipo_identificacion">Tipo de Identificación:</label>
+      <select [(ngModel)]="colaborador.tipoIdentificacion" name="tipoIdentificacion" required>
+          <option *ngFor="let i of colaborador.listTipoIdentificacion" [value]="i.value">{{i.key}}</option>
+      </select>
+
       <div class="user-box">
-        <input type="text"   required="" name="nombre">
+        <input type="number" [(ngModel)]="colaborador.numeroIdentificacion" required="" name="nombre">
+          <label for="numero_identificacion" class="col-form-label col-sm-3"> Número de Identificación </label>
+      </div>
+
+      <div class="user-box">
+        <input type="text" [(ngModel)]="colaborador.nombre"  required="" name="nombre">
           <label for="NOMBRE" class="col-form-label col-sm-3"> Nombre </label>
       </div>
-         
-      
-      <div class="user-box">
-    
-        <input type="text"  required=""  name="usuario">
-        <label for="usuario" class="col-form-label col-sm-3"> Usuario </label>
-      </div>
-       
-    <div class="user-box">
-      <input type="text"  required=""   name="contrasena">
 
+      <div class="user-box">
+        <input type="text" [(ngModel)]="colaborador.username"  required="" name="username">
+          <label for="USUARIO" class="col-form-label col-sm-3"> usuario </label>
+      </div>
+         
+    
+    <div class="user-box">
+      <input type="text"  required="" [(ngModel)]="colaborador.contrasena"  name="contrasena">
       <label for="contraseña"> cree una contraseña</label>
       <!--<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       -->
-     
-      
     </div>
+    <div class="user-box">
+    
+      <input type="text" [(ngModel)]="colaborador.correo" required=""  name="correo">
+      <label for="CORREO" class="col-form-label col-sm-3"> CORREO </label>
+    </div>
+
+    <div class="user-box">
+    
+      <input type="number" [(ngModel)]="colaborador.celular" required=""  name="celular">
+      <label for="CELULAR" class="col-form-label col-sm-3"> CELULAR </label>
+    </div>
+    
+    <div class="user-box">
+    
+      <input type="text"  required="" [(ngModel)]="colaborador.cargo" name="cargo">
+      <label for="cargo" class="col-form-label col-sm-3"> CARGO</label>
+    </div>
+
+    <label for="roles">rol</label>
+      <select [(ngModel)]="colaborador.rol" name="rol" required>
+          <option *ngFor="let i of colaborador.listRols" [value]="i.value">{{i.key}}</option>
+      </select>
+
     
         <!--<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
      
     <!--<a href="#" (click)='registrar()'*ngIf="!colaborador.idCol else elseBlock">-->
     
-    
-     <button> Registrar</button> 
+      <div class="container">
+
+        <button class="btn btn-primary"> Registrar</button> 
+        <button type="reset">limpiar</button>
+      </div>
       
   
     <ng-template #elseBlock>
