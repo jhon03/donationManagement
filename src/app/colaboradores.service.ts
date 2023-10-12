@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ColaboradorRequest, ColaboradorResponse, urlColaborador } from './helpers/colaboradoresHelpers';
 
 
 @Injectable({
@@ -8,11 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class ColaboradoresService {
 
-  private urlCol = 'http://localhost:3000/api/colaborador';
+  private urlCol = urlColaborador;
 
   constructor(private httpClient: HttpClient) { }
 
-  obtenerColaboradores(): Observable<any[]>{
-    return this.httpClient.get<any[]>(this.urlCol);
+  obtenerColaboradores(): Observable<ColaboradorResponse[]>{
+    return this.httpClient.get<ColaboradorResponse[]>(this.urlCol);
+  }
+
+  crearColaborador(colaborador: ColaboradorRequest): Observable<ColaboradorRequest>{
+    return this.httpClient.post<ColaboradorRequest>(this.urlCol, colaborador)
   }
 }

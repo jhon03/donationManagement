@@ -3,16 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ColaboradoresRoutingModule } from './colaboradores-routing.module';
 import { ListcolaboradoresComponent } from './listcolaboradores/listcolaboradores.component';
+import { GestiondonacionesComponent } from './gestiondonaciones/gestiondonaciones.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
   
-    ListcolaboradoresComponent
+    ListcolaboradoresComponent,
+       GestiondonacionesComponent
   ],
   imports: [
     CommonModule,
-    ColaboradoresRoutingModule
+    ColaboradoresRoutingModule,
+    MatTableModule
   ]
 })
 export class ColaboradoresModule { }
