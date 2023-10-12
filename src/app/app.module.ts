@@ -15,6 +15,8 @@ import { ProgramasyproyectosModule } from './programasyproyectos/programasyproye
 import { DonacionesModule } from './donaciones/donaciones.module';
 import { AuthModule } from './auth/auth.module';
 import { ColaboradoresModule } from './colaboradores/colaboradores.module';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ColaboradoresModule } from './colaboradores/colaboradores.module';
     ProgramasyproyectosModule,
     DonacionesModule,
     AuthModule,
-    ColaboradoresModule
+    ColaboradoresModule,
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
