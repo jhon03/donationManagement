@@ -1,1 +1,28 @@
-<p>login works!</p>
+
+<div class="container ppal">
+    
+    <div class="login-box">
+     <h2>Login</h2>
+ 
+     <form (ngSubmit)="onSubmit()" >
+         <div class="user-box">
+             <input [(ngModel)]="credenciales.correo" type="text" name="correo" required="">
+             <label> CORREO</label>
+         </div>
+ 
+         <div class="user-box">
+             <input [(ngModel)]="credenciales.contrasena" type="password" name="contrasena" required="">
+             <label> Contraseña</label>
+         </div>
+         <!--
+         <a [routerLink]="['/gestiondonaciones']">
+             
+      Ingresar
+         </a>
+        -->
+
+        <button class="btn btn-primary">ingresar</button>
+
+     </form>
+    </div>
+ </div>
