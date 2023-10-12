@@ -36,7 +36,6 @@ const routes: Routes = [
   loadChildren: () => import('./colaboradores/colaboradores.module').then(m => m.ColaboradoresModule)
 }
 
-  
 ];
 
 @NgModule({
