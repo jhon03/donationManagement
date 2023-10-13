@@ -12,7 +12,7 @@ export class ProgramascdcComponent implements OnInit {
 constructor(private router: Router){}
   cards: any[] = [
 
-    {titleCard: 'Jardin Infantil',  subtitle:'Programa', content: 'Jardín Infantil es una institución ampliamente reconocida, que favorece por año un promedio de 80 niños del barrio Siloé.', photo: '/assets/jardin.jpg', buttonAp: '¿Quiero apadrinar la Educación de un Niño/Niña', buttonVol: '¿Quiero Realizar Voluntariado?', avatar1:'/assets/logoJardin.png'},
+    {titleCard: 'Jardin Infantil',  subtitle:'Programa', content: 'Jardín Infantil es una institución ampliamente reconocida, que favorece por año un promedio de 80 niños del barrio Siloé.', photo: '/assets/jardin.jpg', buttonVol: '¿Quiero Realizar Voluntariado?', avatar1:'/assets/logoJardin.png'},
 
 
     {titleCard: 'Biblioteca',subtitle:'Programa', content: 'La Biblioteca Rafael Pombo promueve servicios y proyectos que fomenten la lectura, la escritura, la oralidad, apropiación y uso de las tic para la transformación social de la población infantil, juvenil, adultos, adultos mayores del barrio de Siloé y sus alrededores.', photo: '/assets/biblioteca2.jpg', title: 'Recrearte', href: "https://docs.wompi.co/docs/colombia/",  button3: 'CONTRIBUIR', avatar1:'/assets/biblioteca.jpg' 
