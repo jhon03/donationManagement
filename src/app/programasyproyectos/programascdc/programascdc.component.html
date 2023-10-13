@@ -18,23 +18,76 @@
             <mat-card-content>
               {{card.content}}
             </mat-card-content>
-            <mat-card-actions>
+
+            
+
+            <mat-card-actions class="button-container">
+
+              <a mat-button [routerLink]="['/apadrinamiento']">
+                <div class="favorite-container">  
+              <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
               
-              
-             <button mat-button  > {{card.button3}}</button>
-    
-              <button mat-button [routerLink]="['/apadrinamiento']">{{card.buttonAp}}</button>
-    
-              <button mat-button >{{card.buttonVol}}</button>
-             
-               
+              <label>Apadrinar</label>
+                </div>
+               </a> 
             </mat-card-actions>
+
+    
+          <!--aporte solidario-->
+          <!--
+          <mat-card-actions class="button-container">
+
+            <a mat-button [routerLink]="['/apadrinamiento']">
+              <div class="favorite-container">  
+            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
+            
+            <label>Apadrinar</label>
+              </div>
+             </a> 
+          </mat-card-actions>
+-->
+          <!--Voluntariado-->
+         <!-- <mat-card-actions class="button-container">
+
+            <a mat-button [routerLink]="['/apadrinamiento']">
+              <div class="favorite-container">  
+            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
+            
+            <label>Apadrinar</label>
+              </div>
+             </a> 
+          </mat-card-actions>
+          -->
+          <!--Facilitador-->
+          <!--<mat-card-actions class="button-container">
+
+            <a mat-button [routerLink]="['/apadrinamiento']">
+              <div class="favorite-container">  
+            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
+            
+            <label>Apadrinar</label>
+              </div>
+             </a> 
+          </mat-card-actions>
+        -->
+          <!--Pasantía/Practica Profesional-->
+          <!--
+          <mat-card-actions class="button-container">
+
+            <a mat-button [routerLink]="['/apadrinamiento']">
+              <div class="favorite-container">  
+            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
+            
+            <label>Apadrinar</label>
+              </div>
+             </a> 
+          </mat-card-actions>
+-->
+
+              <!--<button mat-button >{{card.buttonVol}}</button>-->
+          
           </mat-card>
-    
-           
-    
-    
-      </mat-grid-tile>
+     </mat-grid-tile>
     </mat-grid-list>
     
     <app-proyectoscdc></app-proyectoscdc>

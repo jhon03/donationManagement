@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Credenciales } from 'src/app/helpers/loginHelpers';
 import {Subscription} from 'rxjs';
 import { LoginService } from 'src/app/login.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   }
 
-  constructor(private loginService:LoginService){
+  constructor(private loginService:LoginService, private router: Router){
 
   }
 
@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy{
       {
         next:(data)=>{
           console.log(data);
+         this.router.navigate(['/gestiondonaciones'])
         },
         error:(error)=>{
           console.log(error);

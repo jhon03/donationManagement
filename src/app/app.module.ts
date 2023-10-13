@@ -17,6 +17,11 @@ import { AuthModule } from './auth/auth.module';
 import { ColaboradoresModule } from './colaboradores/colaboradores.module';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import { NosotrosModule } from './nosotros/nosotros.module';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import {MatTableModule} from '@angular/material/table';
     AuthModule,
     ColaboradoresModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    NosotrosModule,
+    MatTabsModule,
+    MatListModule,
+    MatBottomSheetModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

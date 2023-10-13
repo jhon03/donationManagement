@@ -5,6 +5,11 @@ import { ColaboradoresRoutingModule } from './colaboradores-routing.module';
 import { ListcolaboradoresComponent } from './listcolaboradores/listcolaboradores.component';
 import { GestiondonacionesComponent } from './gestiondonaciones/gestiondonaciones.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet'
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -16,7 +21,13 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     CommonModule,
     ColaboradoresRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule,
+    MatListModule,
+    MatButtonModule,
+    MatBottomSheetModule,
+    MatToolbarModule
+
   ]
 })
 export class ColaboradoresModule { }

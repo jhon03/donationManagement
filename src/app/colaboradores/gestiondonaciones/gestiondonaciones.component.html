@@ -1,59 +1,53 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="button-grid">
+  <div class="button-column">
+  <button id="crear-proyectos">Crear Proyectos</button>
+  <button id="ver-solicitudes">Ver Solicitudes de Donación</button>
+  <button id="crear-programas">Crear Programas</button>
+</div>
+<div class="button-column">
+  <button id="ver-benefactores">Ver Benefactores</button>
+  <button id="crear-colaboradores">Crear Colaboradores para Gestionar Donaciones</button>
+  <button id="ver-colaboradores">Ver Colaboradores</button>
+</div>
+</div>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> código </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> fecha solicitud </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> nombre del programa </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> nombre del proyecto </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> nombre del benefactor </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> correo </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> celular</th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> descripción </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
 
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Estado </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-      
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
-  
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Código Donación</th>
+      <th>Fecha de Creación</th>
+      <th>Estado</th>
+      <th>Descripción</th>
+      <th>Código Proyecto</th>
+      <th>Código Programa</th>
+      <th>Nombre Proyecto</th>
+      <th>Nombre Programa</th>
+      <th>Nombre del Benefactor</th>
+      <th>Correo del Benefactor</th>
+      <th>Celular del Benefactor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--<tr *ngFor="let donacion of donaciones">
+      <tr>
+      <td>{{ donacion.codigoDonacion }}</td>
+      <td>{{ donacion.fechaCreacion }}</td>
+      <td>{{ donacion.estado }}</td>
+      <td>{{ donacion.descripcion }}</td>
+      <td>{{ donacion.codigoProyecto }}</td>
+      <td>{{ donacion.codigoPrograma }}</td>
+      <td>{{ donacion.nombreProyecto }}</td>
+      <td>{{ donacion.nombrePrograma }}</td>
+      <td>{{ donacion.nombreBenefactor }}</td>
+      <td>{{ donacion.correoBenefactor }}</td>
+      <td>{{ donacion.celularBenefactor }}</td>
+    </tr>-->
+  </tbody>
+</table>

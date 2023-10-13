@@ -55,3 +55,22 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #FB9850;
 }
+.form-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+  .form-column {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 50px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }

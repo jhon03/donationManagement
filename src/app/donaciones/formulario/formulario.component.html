@@ -1,37 +1,44 @@
 
-
-   
-    <form action="/submit-benefactor" method="POST">
-
-        <label for="nombre">¿Cuál es tú nombre?</label>
+<div class="form-container">
+    <div class="form-column">
+      <form action="/submit-benefactor" method="POST">
+        <label for="nombre">¿Cuál es tu nombre?</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
-
+  
         <label for="tipo_identificacion">Tipo de Identificación:</label>
         <select id="tipo_identificacion" name="tipo_identificacion" required>
-            <option value="cedula">Cédula de Ciudadanía</option>
-            <option value="pasaporte">Pasaporte</option>
-            <option value="otro">Otro</option>
+          <option value="cedula">Cédula de Ciudadanía</option>
+          <option value="pasaporte">Pasaporte</option>
+          <option value="otro">Otro</option>
         </select><br><br>
-
+  
         <label for="numero_identificacion">Número de Identificación:</label>
         <input type="text" id="numero_identificacion" name="numero_identificacion" required><br><br>
-
+      </form>
+    </div>
+  
+    <div class="form-column">
+      <form action="/submit-ayuda" method="POST">
         <label for="correo">Correo Electrónico:</label>
         <input type="email" id="correo" name="correo" required><br><br>
-
+  
         <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono" required><br><br>
+      </form>
+  
+      <form>
+        <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+        <select id="tipo_ayuda" name="tipo_ayuda" required>
+          <option value="utiles-escolares">Útiles escolares</option>
+          <option value="matricula-academica">Uniforme y Matrícula Académica</option>
+          <option value="desayunos-saludables">Desayunos saludables</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  
+  <div class="button-container">
+  <input type="submit" value="Enviar Solicitud">
+  
+</div>
 
-        <input type="submit" value="Enviar Solicitud">
-
-
--------------------------------------------------------------------------------------
-<label for="tipo_identificacion">¿Cómo deseas ayudar?</label>
-<select id="tipo_identificacion" name="tipo_identificacion" required>
-    <option value="cedula">Utiles escolares</option>
-    <option value="pasaporte">Unifore-Matricula Académica</option>
-    <option value="otro">Desayunos saludables</option>
-</select><br><br>
-
-        <input type="submit" value="Enviar Solicitud">
-    </form>
