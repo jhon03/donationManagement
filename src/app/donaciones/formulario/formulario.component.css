@@ -1,17 +1,4 @@
 /* Estilo para el cuerpo de la página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilo para el encabezado */
-h1 {
-    text-align: center;
-    color: #333;
-}
-
 /* Estilo para el formulario */
 form {
     max-width: 400px;
@@ -65,12 +52,12 @@ input[type="submit"]:hover {
     flex: 1;
     padding: 10px;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 50px;
+  .form-section{
+   padding: 10px;
   }
-  
+
+
   .button-container {
     text-align: center;
+    margin-top: 20px;
   }
