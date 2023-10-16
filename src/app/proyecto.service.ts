@@ -2,11 +2,17 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Proyecto } from 'src/Modelos/proyecto';
+import { proyectoRequest, proyectoResponse, urlProyectos } from './helpers/proyectoHelpers';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
+
+  constructor(private httpClient: HttpClient){
+
+  }
 
   //donacion = new Donacion();
   private proyectos: Proyecto[] = [
@@ -48,6 +54,11 @@ export class ProyectoService {
   };
 
 
+  public crearProyectos(proyecto: proyectoRequest, programa:any): Observable<proyectoResponse>{
+    return this.httpClient.post<proyectoResponse>(`${urlProyectos}/${programa}/crear`,proyecto);
+  }
+
+
   
 /*  crearDonación (aporte: number){
 
@@ -60,7 +71,6 @@ export class ProyectoService {
     }*/
 
 
-    constructor() { }
   }
 
 
