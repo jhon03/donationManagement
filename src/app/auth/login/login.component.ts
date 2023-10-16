@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Credenciales } from 'src/app/helpers/loginHelpers';
-import {Subscription} from 'rxjs';
+import {BehaviorSubject, Subscription} from 'rxjs';
 import { LoginService } from 'src/app/login.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +13,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit, OnDestroy{
 
+  
+
   credenciales: Credenciales = new Credenciales();
   private suscripcion: Subscription;
 
+  
 
   ngOnInit(): void {
 
@@ -32,14 +38,22 @@ export class LoginComponent implements OnInit, OnDestroy{
   }
 
   login(){
+
     this.suscripcion = this.loginService.login(this.credenciales).subscribe(
       {
         next:(data)=>{
           console.log(data);
+     
+Swal.fire(`Sesión iniciada`, "Bienvenido")
          this.router.navigate(['/gestiondonaciones'])
         },
         error:(error)=>{
           console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'ha ocurrido un error',
+            text: 'usuario no válido'
+          })
         }      
       }
     )

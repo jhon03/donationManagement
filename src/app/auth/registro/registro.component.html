@@ -5,16 +5,19 @@
     <div class="login-box" >
     <h2>Registrate</h2>
       
-    <form (ngSubmit)="onSubmit()" class="mt-5" style="margin-top: 20px;" >
-    
-      <label for="tipo_identificacion">Tipo de Identificación:</label>
-      <select [(ngModel)]="colaborador.tipoIdentificacion" name="tipoIdentificacion" required>
-          <option *ngFor="let i of colaborador.listTipoIdentificacion" [value]="i.value">{{i.key}}</option>
-      </select>
+    <form (ngSubmit)="onSubmit()">
+
+   
 
       <div class="user-box">
+        <label for="tipo_identificacion">Tipo Identificación</label>
+  <select [(ngModel)]="colaborador.tipoIdentificacion" name="tipoIdentificacion" required>
+          <option *ngFor="let i of colaborador.listTipoIdentificacion" [value]="i.value">{{i.key}}</option>
+      </select>
+</div>
+      <div class="user-box">
         <input type="number" [(ngModel)]="colaborador.numeroIdentificacion" required="" name="nombre">
-          <label for="numero_identificacion" class="col-form-label col-sm-3"> Número de Identificación </label>
+          <label for="numero_identificacion" class="col-form-label col-sm-3"> Identificacion </label>
       </div>
 
       <div class="user-box">
@@ -51,12 +54,14 @@
       <input type="text"  required="" [(ngModel)]="colaborador.cargo" name="cargo">
       <label for="cargo" class="col-form-label col-sm-3"> CARGO</label>
     </div>
+    <div class="user-box">
 
-    <label for="roles">rol</label>
-      <select [(ngModel)]="colaborador.rol" name="rol" required>
+    <label for="roles">Rol</label>
+      <select [(ngModel)]="colaborador.rol" name="rol" id="roles" name="roles" required>
           <option *ngFor="let i of colaborador.listRols" [value]="i.value">{{i.key}}</option>
       </select>
-
+      </div>
+<br><br>
     
         <!--<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
      
@@ -65,7 +70,7 @@
       <div class="container">
 
         <button class="btn btn-primary"> Registrar</button> 
-        <button type="reset">limpiar</button>
+        <button class="limpiar" type="reset">Limpiar</button>
       </div>
       
   
