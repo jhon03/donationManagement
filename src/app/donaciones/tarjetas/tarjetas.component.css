@@ -7,6 +7,8 @@
     margin-right: 10px;
     margin: 120px;
     cursor: pointer;
+    display: flex;
+    flex: 1;
 
     text-align: justify; /*centrar contenido horizontalmente en el mat-card(se uso para las imagenes de descripción de tipos 
     de donación*/
@@ -69,6 +71,10 @@
   .example-card2 {
     max-width: 600px;
     margin-bottom: 8px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    text-align: justify;
   }
   
   /*colocar tarjetas horizontalmente*/
