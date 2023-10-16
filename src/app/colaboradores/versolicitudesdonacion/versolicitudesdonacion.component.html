@@ -1,0 +1,31 @@
+
+<table>
+    <thead>
+      <tr>
+      
+        <th>tipo identificacion Benefactor</th>
+        <th>Número identificacion Benefactor</th>
+        <th>Nombre del Benefactor</th>
+        <th>Correo Benefactor</th>
+        <th>celularBenefactor</th>
+        <th>Nombre Proyecto</th>
+        <th>Aporte</th>
+        <th>Estado</th>
+        <th>Fecha Creación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donacion of donaciones">
+        
+        <td>{{ donacion.tipoIdentificacion }}</td>
+        <td>{{ donacion.numeroIdentificacion }}</td>
+        <td>{{ donacion.nombreBenefactor }}</td>
+        <td>{{ donacion.correo }}</td>
+        <td>{{ donacion.celular }}</td>
+        <td>{{ donacion.proyecto}}</td>
+        <td>{{ donacion.aporte }}</td>
+        <td>{{ donacion.estado }}</td>
+        <td>{{ donacion.fechaCreacion | date:'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>

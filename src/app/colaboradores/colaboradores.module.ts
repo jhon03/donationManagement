@@ -10,13 +10,26 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet'
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { FormcreacionproyectosComponent } from './formcreacionproyectos/formcreacionproyectos.component';
+import { AuthModule } from '../auth/auth.module';
+import { CreacionprogramasComponent } from './creacionprogramas/creacionprogramas.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
+import { VersolicitudesdonacionComponent } from './versolicitudesdonacion/versolicitudesdonacion.component';
 
 @NgModule({
   declarations: [
   
     ListcolaboradoresComponent,
-       GestiondonacionesComponent
+       GestiondonacionesComponent,
+       FormcreacionproyectosComponent,
+       CreacionprogramasComponent,
+       VersolicitudesdonacionComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -26,7 +39,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatListModule,
     MatButtonModule,
     MatBottomSheetModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AuthModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatOptionModule,
+    MatCardModule
+
+
+
 
   ]
 })
