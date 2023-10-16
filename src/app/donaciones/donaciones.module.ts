@@ -6,6 +6,9 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ApadrinamientoComponent } from './apadrinamiento/apadrinamiento.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     CommonModule,
     DonacionesRoutingModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatDividerModule,
+    MatIconModule
   ]
 })
 export class DonacionesModule { }
