@@ -14,8 +14,7 @@ export class ColaboradorResponse{
 export class ColaboradorRequest{
     listTipoIdentificacion: any = [
         {value: "cedula", key: "cedula"},
-        {value:"pasaporte",key:"pasaporte"},
-        {value:"otro", key:"otro"}
+        {value:"pasaporte",key:"pasaporte"}
     ];
     tipoIdentificacion: string;
     numeroIdentificacion: number;
