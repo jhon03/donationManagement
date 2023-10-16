@@ -17,7 +17,7 @@ export class ColaboradoresService {
     return this.httpClient.get<ColaboradorResponse[]>(this.urlCol);
   }
 
-  crearColaborador(colaborador: ColaboradorRequest): Observable<ColaboradorRequest>{
-    return this.httpClient.post<ColaboradorRequest>(this.urlCol, colaborador)
+  crearColaborador(colaborador: ColaboradorRequest): Observable<ColaboradorResponse>{
+    return this.httpClient.post<ColaboradorResponse>(this.urlCol, colaborador)
   }
 }
