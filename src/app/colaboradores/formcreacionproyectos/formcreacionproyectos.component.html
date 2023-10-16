@@ -1,0 +1,67 @@
+<div class="form-container">
+<div class="form-column">
+    <form  (ngSubmit)="onSubmit()">
+        <div class="camposform">
+        <label for="nombre">Nombre del Proyecto:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre" required><br>
+    </div>
+    <div class="camposform">
+        <label for="descripcion">Descripción del Proyecto:</label>
+        <textarea id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required></textarea><br>
+    </div>
+
+    <div class="camposform">
+        <label for="imagen">Imagen del Proyecto:</label>
+        <input type="file" id="imagen" name="imagen" [(ngModel)]="proyecto.imagen"><br>
+    </div>
+        
+    <div class="camposform">
+        <label for="costo">Costo del Proyecto:</label>
+        <input type="number" id="costo" name="costo" [(ngModel)]="proyecto.costo" required><br>
+
+    </div>
+
+    <div class="camposform">
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fechaInicio" [(ngModel)]="proyecto.fechaInicio" required><br>
+</div>
+<div class="camposform">
+        <label for="fecha_finalizacion">Fecha de Finalización:</label>
+        <input type="date" id="fecha_finalizacion" name="fechaFinalizacion" [(ngModel)]="proyecto.fechaFinalizacion" required><br>
+</div>
+   <div class="camposform">
+        <label for="colaborador_creador">Colaborador Creador:</label>
+        <input type="text" id="colaborador_creador" name="colCreador" [(ngModel)]="proyecto.colCreador" required><br>
+    </div>
+    <div class="camposform">
+        <label for="colaborador_modificador">Colaborador Modificador:</label>
+        <input type="text" id="colaborador_modificador" name="colModificador" [(ngModel)]="proyecto.colModificador" required><br>
+    </div>
+    <div class="camposform">
+        <label for="tipo_proyecto">Tipo de Proyecto:</label>
+        <select id="tipo_proyecto" type="listaOpciones" name="tiposProyecto" [(ngModel)]="proyecto.tipoProyecto" required>
+        <option *ngFor="let i of proyecto.opcionesProyectos" [value]="i.value">{{i.key}}</option>
+
+        </select><br>
+</div>
+
+        <div class="camposform">
+            <label for="opcionesColaboracion">Opciones de Colaboración</label>
+            <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccionar Opciones</button>
+            <span *ngIf="showDropdown" class="dropdown-list">
+                <span *ngFor="let opcion of listaOpciones">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="opcion.isSelected" [name]="'opcion_' + opcion.text" required> {{opcion.text}}
+                    </label>
+                </span>
+            </span>
+        </div>
+    <br><br>
+        <div class="button-container">
+            <input type="submit" value="Crear Proyecto">
+        </div>
+
+    </form>
+</div>
+</div>
+<br><br><br>
