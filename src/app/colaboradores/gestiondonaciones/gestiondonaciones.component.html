@@ -1,53 +1,25 @@
+
+<br>
+<br>
 <div class="button-grid">
-  <div class="button-column">
-  <button id="crear-proyectos">Crear Proyectos</button>
-  <button id="ver-solicitudes">Ver Solicitudes de Donación</button>
-  <button id="crear-programas">Crear Programas</button>
-</div>
 <div class="button-column">
-  <button id="ver-benefactores">Ver Benefactores</button>
-  <button id="crear-colaboradores">Crear Colaboradores para Gestionar Donaciones</button>
-  <button id="ver-colaboradores">Ver Colaboradores</button>
+<button id="crear-proyectos"  [routerLink]="['/creacionproyectos']" >Crear Proyectos</button>
+
+<button id="ver-solicitudes"  [routerLink]="['/versolicitudesdedonacion']">Ver Solicitudes de Donación</button>
+<button id="crear-programas"  [routerLink]="['/creacionprogramas']">Crear Programas</button>
+</div>
+
+
+<br><br>
+<div class="button-column">
+<button id="ver-benefactores">Ver Benefactores</button>
+<button id="crear-colaboradores" [routerLink]="['/Registro']">Crear Colaboradores para Gestionar Donaciones</button>
+<button id="ver-colaboradores">Ver Colaboradores</button>
 </div>
 </div>
+<br><br>
+
+<mat-card class="card">
 
 
-
-
-
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Código Donación</th>
-      <th>Fecha de Creación</th>
-      <th>Estado</th>
-      <th>Descripción</th>
-      <th>Código Proyecto</th>
-      <th>Código Programa</th>
-      <th>Nombre Proyecto</th>
-      <th>Nombre Programa</th>
-      <th>Nombre del Benefactor</th>
-      <th>Correo del Benefactor</th>
-      <th>Celular del Benefactor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!--<tr *ngFor="let donacion of donaciones">
-      <tr>
-      <td>{{ donacion.codigoDonacion }}</td>
-      <td>{{ donacion.fechaCreacion }}</td>
-      <td>{{ donacion.estado }}</td>
-      <td>{{ donacion.descripcion }}</td>
-      <td>{{ donacion.codigoProyecto }}</td>
-      <td>{{ donacion.codigoPrograma }}</td>
-      <td>{{ donacion.nombreProyecto }}</td>
-      <td>{{ donacion.nombrePrograma }}</td>
-      <td>{{ donacion.nombreBenefactor }}</td>
-      <td>{{ donacion.correoBenefactor }}</td>
-      <td>{{ donacion.celularBenefactor }}</td>
-    </tr>-->
-  </tbody>
-</table>
+</mat-card>
