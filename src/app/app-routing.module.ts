@@ -34,7 +34,9 @@ const routes: Routes = [
 {
   path: 'colaboradores',
   loadChildren: () => import('./colaboradores/colaboradores.module').then(m => m.ColaboradoresModule)
-}
+},
+
+
 
 ];
 

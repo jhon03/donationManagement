@@ -22,6 +22,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptorProviders } from './security/interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
     MatButtonModule,
@@ -49,9 +53,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatTabsModule,
     MatListModule,
     MatBottomSheetModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDividerModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

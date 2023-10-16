@@ -22,8 +22,18 @@
    
   <input type="search" placeholder="buscar" style="border-radius: 50px">  
 
-  <button mat-button [routerLink]="['/login']"> Administrativos </button> 
   
+<div *ngIf="!usuarioLogeado" class="sesion">      <!--si el usuario no esta logeado muestra-->
+  <mat-icon class="person" routerLink="/login" routerLinkActive="active">person</mat-icon> 
+ 
+</div>
+         
+<div *ngIf="usuarioLogeado" class="sesion">
+  
+  <mat-icon class="person" (click)="logout()">logout</mat-icon> 
+ 
+</div>
+
    
 
   </div> 
@@ -31,6 +41,6 @@
   
   </nav>  
   
-  
   <router-outlet> </router-outlet> 
   <app-footer></app-footer>
+  
