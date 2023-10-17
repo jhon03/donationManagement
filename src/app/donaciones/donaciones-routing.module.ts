@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ApadrinamientoComponent } from './apadrinamiento/apadrinamiento.component';
+import { VoluntatiadoComponent } from './voluntariado/voluntatiado.component';
 
 const routes: Routes = [
 
@@ -13,6 +14,10 @@ const routes: Routes = [
 {
   path: 'apadrinamiento',
   component: ApadrinamientoComponent
+},
+{
+  path: 'voluntariado',
+  component: VoluntatiadoComponent
 }
 
 

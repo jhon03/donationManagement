@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import { donacionAResponse, donacionAno, proyectoId, urldonacionAno } from './helpers/donacionAnoHelpers';
+import { donacionAResponse, donacionAno, proyectoId, response, urldonacionAno } from './helpers/donacionAnoHelpers';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class DonacionAService {
   crearDonacion(donacionA:donacionAno): Observable<donacionAResponse>{
     return this.clienteHttp.post<donacionAResponse>(`${this.url}/${this.proyecto}/crear`,donacionA)
   }
-  verDonaciones(): Observable<donacionAResponse[]>{
-    return this.clienteHttp.get<donacionAResponse[]>(this.url)
+  verDonaciones(): Observable<response>{
+    return this.clienteHttp.get<response>(this.url)
   }
 }

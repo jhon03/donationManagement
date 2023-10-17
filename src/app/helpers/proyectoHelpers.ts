@@ -1,3 +1,4 @@
+import { programaResponse } from "./programaHelpers";
 
 export const urlProyectos = 'http://localhost:3000/api/proyecto'
 
@@ -28,6 +29,12 @@ export class proyectoRequest {
     
 
 }
+
+export class responseProyect{
+    total: number;
+    proyecto: proyectoResponse[]
+}
+
 export class proyectoResponse{
 
     nombre: any;
@@ -39,13 +46,14 @@ export class proyectoResponse{
     colCreador: string;
     colModificador: string;
     estado: string;
-    opcionesProyectos: string[];
+    tipoProyecto: string[];
+    programa: programaResponse;
     opcionesColaboracion: string[];
     uid: string;
     fechaCreacion: Date;
 
-
 }
+
 
 
 

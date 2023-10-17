@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { programaResponse } from 'src/app/helpers/programaHelpers';
+import { ProgramasService } from 'src/app/programas.service';
 
 
 @Component({
@@ -7,9 +10,14 @@ import { Router } from '@angular/router';
   templateUrl: './programascdc.component.html',
   styleUrls: ['./programascdc.component.css']
 })
-export class ProgramascdcComponent implements OnInit {
+export class ProgramascdcComponent implements OnInit, OnDestroy {
 
-constructor(private router: Router){}
+  private programaSuscripcion: Subscription;
+  programas: programaResponse[];
+
+constructor(private router: Router, private programaService: ProgramasService){}
+
+
   cards: any[] = [
 
     {titleCard: 'Jardin Infantil',  subtitle:'Programa', content: 'Jardín Infantil es una institución ampliamente reconocida, que favorece por año un promedio de 80 niños del barrio Siloé.', photo: '/assets/jardin.jpg', buttonVol: '¿Quiero Realizar Voluntariado?', avatar1:'/assets/logoJardin.png'},
@@ -25,9 +33,38 @@ constructor(private router: Router){}
 
 
   ];
+
+ngOnDestroy(): void {
+  this.programaSuscripcion?.unsubscribe();
+}
+
 ngOnInit(): void {
+  this.programasLista();
     
 }
+
+
+programasLista(){
+  this.programaSuscripcion = this.programaService.programaLista().subscribe(
+    {
+      next:(datos)=>{
+        console.log(datos.programas);
+        this.programas = datos.programas;
+      },
+      error: (error)=>{
+        console.log(error);
+      }
+    }
+  )
+}
+
+
+
+
+
+
+
+
 redirigir(opcion: string): void{
   if(opcion === 'biblioteca'){
     this.router.navigate(['/biblioteca']);

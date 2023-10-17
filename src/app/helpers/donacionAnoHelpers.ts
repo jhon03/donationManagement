@@ -1,6 +1,6 @@
 export const urldonacionAno = 'http://localhost:3000/api/donacionAnonima';
 
-export const proyectoId = '6529f593bc286ddc222b1858'; //cuando se cree el proyecto en el front esta variable sale
+export const proyectoId = '652d93de3f2b385343297cfd'; //cuando se cree el proyecto en el front esta variable sale
 
 export class donacionAno{
     listTipoIdentificacion: any = [
@@ -23,13 +23,23 @@ export class donacionAno{
 
 }
 
+export class response{
+    total: number;
+    donacion: donacionAResponse[];
+}
+
+export class proyectoResponse{
+    id: string;
+    nombre: string;
+}
+
 export class donacionAResponse{
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombreBenefactor: string;
     correo: string;
     celular: number;
-    proyecto: string;
+    proyecto: proyectoResponse;
     aporte: string;
     estado: string;
     fechaCreacion: Date;

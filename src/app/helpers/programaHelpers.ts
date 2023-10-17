@@ -1,3 +1,5 @@
+import { ColaboradorResponse } from "./colaboradoresHelpers";
+
 export const urlProgramas = 'http://localhost:3000/api/programa';
 
 export class programaRequest {
@@ -14,9 +16,14 @@ export class programaRequest {
         {value: 'Aporte Solidario', key: 'Aporte solidario'},
         {value: 'Voluntariado', key: 'Voluntariado'},
         {value: 'Facilitador', key: 'Facilitador'},
-        {value: 'Pasantia Comunitaria', key: 'Pasantia Comunitaria'}
+        {value: 'Pasantia Comunitaria/Practica Comunitaria', key: 'Pasantia Comunitaria/Practica Comunitaria'}
     ]
     opcionesColaboracion: string[];
+}
+
+export class responseProgram{
+    total: number;
+    programas: programaResponse[];
 }
 
 
@@ -30,7 +37,7 @@ export class programaResponse{
     usuModificador: string;
     opcionesColaboracion: string[];
     estado: boolean;
-    colaborador: string;
+    colaborador: ColaboradorResponse;
     fechaCreacion: Date;
     fechaModificacion: Date;
     uid: string;

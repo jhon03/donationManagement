@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Proyecto } from 'src/Modelos/proyecto';
-import { proyectoRequest, proyectoResponse, urlProyectos } from './helpers/proyectoHelpers';
+import { proyectoRequest, proyectoResponse, responseProyect, urlProyectos } from './helpers/proyectoHelpers';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -57,6 +57,12 @@ export class ProyectoService {
   public crearProyectos(proyecto: proyectoRequest, programa:any): Observable<proyectoResponse>{
     return this.httpClient.post<proyectoResponse>(`${urlProyectos}/${programa}/crear`,proyecto);
   }
+
+
+  public proyectoLista():Observable<responseProyect>{
+    return this.httpClient.get<responseProyect>(urlProyectos);
+  }
+
 
 
   

@@ -9,12 +9,15 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
+import { VoluntatiadoComponent } from './voluntariado/voluntatiado.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     FormularioComponent,
     ApadrinamientoComponent,
-    TarjetasComponent
+    TarjetasComponent,
+    VoluntatiadoComponent
     
     
   ],
@@ -24,7 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     FormsModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class DonacionesModule { }
