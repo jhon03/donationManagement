@@ -1,144 +1,34 @@
-/*estilos dispositivos móviles*/
-@media  (max-width: 767px){
+.text-center {
+    text-align: center;
+    color: #193A6F
+  }
 
-    .card{ 
-
-        position: center; 
-        width: 100%; 
-       
-    }
-    .card{
-    
-        margin: 8%; 
-        height: 80%; 
-        width: 80%; 
-    
-     }
-
-    .info{ 
-
-        padding: 50px; 
-        
-        text-align: justify; 
-        
-        font-size: medium; 
-        
-        line-height: 2.0; 
-        
-        } 
+  .IntroCDC, .Mision {
+    text-align: justify; /* Justificar el texto */
+    padding: 20px; /* Agregar espaciado dentro de la tarjeta */
+    line-height: 2.0; /* Espaciado entre líneas */
+    font-size: medium;
+    color: #193A6F
+}  
      
-
-.center{ 
-
-    width: 100%; 
-    
-    padding: 15px; 
-    
-    border-radius: 10px; 
-    
-    display: flex; 
-    
-    gap: 15PX; 
-    
-    } 
-}
-
-
-/*estilos para tablets*/
-@media(min-width: 768px) and (max-width: 1023px){
-
-    
-    .card{ 
-
-        position: center; 
-        width: 100%; 
-       
+.videoIntroCDC {
+    margin: 0 auto; /* Centrar horizontalmente */
+    width: 80%; /* Ajusta el ancho de la tarjeta según tus necesidades */
+   
+    margin-right: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .IntroCDC, .Mision {
+      padding: 10px; /* Reducir el espaciado en pantallas más pequeñas */
+      font-size: small; /* Reducir el tamaño de fuente en pantallas más pequeñas */
     }
-
-    .card{
-    
-        margin: 8%; 
-        height: 80%; 
-        width: 80%; 
-    
-     }
- 
-
-    .info{ 
-
-        padding: 50px; 
-        
-        text-align: justify; 
-        
-        font-size: medium; 
-        
-        line-height: 2.0; 
-        
-        } 
-     
-
-.center{ 
-
-    width: 100%; 
-    
-    padding: 15px; 
-    
-    border-radius: 10px; 
-    
-    display: flex; 
-    
-    gap: 15PX; 
-    
-    } 
-}
-
-
-
-/*estilos para pantallas grandes(computadores)*/
-@media(min-width: 1024px){
-
-    
-.card{ 
-
-        position: center; 
-        width: 100%; 
-        height: 100%; 
-       
+  
+    .videoIntroCDC {
+      width: 140%; /* Asegurarse de que el video se ajuste al ancho de la pantalla */
+      margin: 0; /* Eliminar el margen derecho en pantallas más pequeñas */
+      font-size: small;
     }
- .card{
-    
-    margin: 8%; 
-    height: 80%; 
-    width: 80%; 
+  }
 
- }
-
-    .info{ 
-
-        padding: 50px; 
-        
-        text-align: justify; 
-        
-        font-size: medium; 
-        
-        line-height: 2.0; 
-        
-        } 
-     
-
-.center{ 
-
-    width: 100%; 
-    
-    padding: 15px; 
-    
-    border-radius: 10px; 
-    
-    display: flex; 
-    
-    gap: 15PX; 
-    
-    } 
-}
- 
  
