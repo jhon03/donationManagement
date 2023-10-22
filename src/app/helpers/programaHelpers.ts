@@ -1,8 +1,10 @@
+import { ProgramasService } from "../programas.service";
 import { ColaboradorResponse } from "./colaboradoresHelpers";
 
 export const urlProgramas = 'http://localhost:3000/api/programa';
 
 export class programaRequest {
+
 
     nombre:any;
     eslogan:string;
@@ -14,11 +16,12 @@ export class programaRequest {
 
         {value: 'Apadrinar', key: 'Apadrinar'},
         {value: 'Aporte Solidario', key: 'Aporte solidario'},
-        {value: 'Voluntariado', key: 'Voluntariado'},
-        {value: 'Facilitador', key: 'Facilitador'},
-        {value: 'Pasantia Comunitaria/Practica Comunitaria', key: 'Pasantia Comunitaria/Practica Comunitaria'}
+        {value: 'Aporte en Tiempo', key: 'Aporte en Tiempo'},
+   
     ]
     opcionesColaboracion: string[];
+
+    
 }
 
 export class responseProgram{
@@ -41,4 +44,5 @@ export class programaResponse{
     fechaCreacion: Date;
     fechaModificacion: Date;
     uid: string;
+ 
 }

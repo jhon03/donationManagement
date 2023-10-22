@@ -9,15 +9,19 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
-import { VoluntatiadoComponent } from './voluntariado/voluntatiado.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { AporteSolidarioComponent } from './aporte-solidario/aporte-solidario.component';
+import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.component';
+
 
 @NgModule({
   declarations: [
     FormularioComponent,
     ApadrinamientoComponent,
     TarjetasComponent,
-    VoluntatiadoComponent
+    AporteSolidarioComponent,
+    AportedelTiempoComponent 
+    
     
     
   ],

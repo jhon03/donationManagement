@@ -80,3 +80,18 @@ input[type="submit"]:hover {
   .camposform{
     padding: 10px;
   }
+
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+
+  .camposform {
+    display: flex; /* Mostrar los radio buttons en una fila */
+    flex-wrap: wrap; /* Envolver en varias filas cuando sea necesario */
+    gap: 10px; /* Espacio entre los radio buttons */
+  }
+  
+  .mat-radio-button {
+    white-space: nowrap; /* Evitar el salto de línea si el texto es largo */
+    min-width: 100px; /* Ancho mínimo para cada botón de radio */
+  }

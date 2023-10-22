@@ -16,21 +16,23 @@
             <img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">
             
             
-            <mat-card-content>
+            <mat-card-content class="content">
               {{programa.descripcion}}
             </mat-card-content>
 
             
 
-            <mat-card-actions *ngFor="let o of programa.opcionesColaboracion; let i= index" class="button-container">
+            <mat-card-actions>
+              <div *ngFor="let o of programa.opcionesColaboracion; let i= index" class="button-container">
 
-              <a mat-button [routerLink]="['/apadrinamiento']">
-                <div class="favorite-container">  
-              <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
+             
+                <div class="favorite-container" (click)="redirigir(o)">  
+              <mat-icon class="favorite">favorite</mat-icon> 
               
-              <label>{{o}}</label>
+              
+              <label (click)="redirigir(o)" class="label-link">{{o}}</label>
                 </div>
-               </a> 
+               </div>
             </mat-card-actions>
 
     

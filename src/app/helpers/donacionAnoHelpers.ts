@@ -1,6 +1,6 @@
 export const urldonacionAno = 'http://localhost:3000/api/donacionAnonima';
 
-export const proyectoId = '652d93de3f2b385343297cfd'; //cuando se cree el proyecto en el front esta variable sale
+export const proyectoId = '65346f395616f0334acdc79a'; //cuando se cree el proyecto en el front esta variable sale
 
 export class donacionAno{
     listTipoIdentificacion: any = [
@@ -17,10 +17,16 @@ export class donacionAno{
     listaportes: any = [
         {value:"utiles-escolares", key:"utiles-escolares"},
         {value:"matricula-academica", key:"matricula-academica"},
-        {value:"desayunos-saludables", key:"desayunos-saludables"}
+        {value:"desayunos-saludables", key:"desayunos-saludables"}, 
+        {value: "Refrigerios", key: "Refrigerios"},
+        {value: "Papeleria", key: "Papeleria"},
+        {value: "Voluntariado", key: "Voluntariado"},
+        {value: "Pasantía comunitaria", key: "Pasantía comunitaria"},
+        {value: "Facilitador/Tallerista", key: "Facilitador/Tallerista"}
     ];
     aporte: string;
-
+    
+    
 }
 
 export class response{

@@ -21,12 +21,17 @@ export class proyectoRequest {
     listaOpciones: any = [
         {value: 'Apadrinar', key: 'Apadrinar'},
         {value: 'Aporte Solidario', key: 'Aporte solidario'},
-        {value: 'Voluntariado', key: 'Voluntariado'},
-        {value: 'Facilitador', key: 'Facilitador'},
-        {value: 'Pasantia Comunitaria', key: 'Pasantia Comunitaria'}
+        {value: 'Aporte en Tiempo', key: 'Aporte en Tiempo'},
     ]
     opcionesColaboracion: string[];
     
+    listaProgramas: any =[
+
+        {value: 'Programa1', key: 'Programa1'},
+        {value: 'Programa2', key: 'Programa2'},
+        {value: 'Programa3', key: 'Programa3'}
+    ]
+    opcionesProgramas: string[];
 
 }
 
@@ -51,6 +56,7 @@ export class proyectoResponse{
     opcionesColaboracion: string[];
     uid: string;
     fechaCreacion: Date;
+    opcionesProgramas: string[];
 
 }
 

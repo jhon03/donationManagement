@@ -2,24 +2,40 @@
 
 <mat-grid-list cols="2" rowHeight="2:2" gutterSize="16">
 
-    <mat-grid-tile *ngFor="let proyecto of proyectos">
+    <mat-grid-tile *ngFor="let proyecto of proyectosA">
     
           <mat-card class="example-card2">
             <mat-card-header>
-              <div mat-card-avatar class="example-header2" ></div>
-              <img mat-card-avatar class="example-header2" src={{proyecto.avatar}} alt="Photo of a Shiba Inu">
-    
-              <mat-card-title>{{proyecto.nombreProyecto}}</mat-card-title>
+              <div mat-card-avatar class="example-header2" >
+              <img mat-card-avatar src="assets/avatarbiblio.png" alt="Photo of a Shiba Inu">
+            </div>
+              <mat-card-title>{{proyecto.nombre}}</mat-card-title>
   
-              <mat-card-subtitle>{{proyecto.tipo}}</mat-card-subtitle>
+              <mat-card-subtitle *ngFor="let programa of programas">{{programa.nombre}}</mat-card-subtitle>
              
             </mat-card-header>
-            <img mat-card-image src={{proyecto.photo}} alt="Photo of a Shiba Inu">
+            <img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">
             
             
             <mat-card-content>
               {{proyecto.descripcion}}
             </mat-card-content>
+
+
+            <mat-card-actions>
+              <div *ngFor="let o of proyecto.opcionesColaboracion; let i= index" class="button-container">
+
+             
+                <div class="favorite-container" (click)="redirigir(o)">  
+              <mat-icon class="favorite">favorite</mat-icon> 
+              
+              
+              <label (click)="redirigir(o)" class="label-link">{{o}}</label>
+                </div>
+               </div>
+            </mat-card-actions>
+
+
           </mat-card>
   
   

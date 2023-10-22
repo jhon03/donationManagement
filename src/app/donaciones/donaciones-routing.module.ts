@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ApadrinamientoComponent } from './apadrinamiento/apadrinamiento.component';
-import { VoluntatiadoComponent } from './voluntariado/voluntatiado.component';
+import { AporteSolidarioComponent } from './aporte-solidario/aporte-solidario.component';
+import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.component';
 
 const routes: Routes = [
 
@@ -16,9 +17,16 @@ const routes: Routes = [
   component: ApadrinamientoComponent
 },
 {
-  path: 'voluntariado',
-  component: VoluntatiadoComponent
+  path: 'aportesolidario',
+  component: AporteSolidarioComponent
+},
+{
+  path: 'aportedeltiempo',
+  component: AportedelTiempoComponent
 }
+
+
+
 
 
 ];

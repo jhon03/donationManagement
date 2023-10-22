@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Proyecto } from 'src/Modelos/proyecto';
-import { proyectoResponse } from 'src/app/helpers/proyectoHelpers';
+
+import { proyectoResponse, proyectoRequest } from 'src/app/helpers/proyectoHelpers';
 import { ProyectoService } from 'src/app/proyecto.service';
+import { programaRequest, programaResponse } from 'src/app/helpers/programaHelpers';
 @Component({
   selector: 'app-proyectoscdc',
   templateUrl: './proyectoscdc.component.html',
@@ -11,13 +12,11 @@ import { ProyectoService } from 'src/app/proyecto.service';
 })
 export class ProyectoscdcComponent  implements OnInit, OnDestroy{
 
-
-  proyectos: Proyecto[] = [];
-
-  proyectosA: proyectoResponse[];
+ 
   private proyectoSuscripcion: Subscription;
+  proyectosA: proyectoResponse[];
 
-
+  programas: programaResponse[];
   constructor(private router: Router, private proyectoService: ProyectoService) { }
   
   ngOnDestroy(): void {
@@ -44,18 +43,16 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   }
 
 
-  loadProyectos(){
-    this.proyectoService.getProyectos().subscribe(proyectos =>{
-      this.proyectos = proyectos;
-    })
-  }
 
-  redirigir(opcion: string): void{
-    if(opcion === 'biblioteca'){
-      this.router.navigate(['/biblioteca']);
+  redirigir(opcionesColaboracion: string): void{
+    if(opcionesColaboracion === 'Apadrinar'){
+      this.router.navigate(['/apadrinamiento']);
    
-     }else if (opcion === 'JardinInfantil'){
-      this.router.navigate(['/JardinInfantil'])
+     }else if (opcionesColaboracion === 'Aporte Solidario'){
+      this.router.navigate(['/aportesolidario'])
+     
+    }else if (opcionesColaboracion === 'Aporte en Tiempo'){
+      this.router.navigate(['/aportedeltiempo'])
      }
 
 

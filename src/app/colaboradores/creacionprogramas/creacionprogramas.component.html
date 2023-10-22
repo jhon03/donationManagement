@@ -23,19 +23,12 @@
         <input type="file" id="imagen" name="imagen" [(ngModel)]="programa.imagen"><br>
 
 </div>
-<div class="camposform">
-        <label for="colaborador_creador">Colaborador Creador:</label>
-        <input type="text" id="colaborador_creador" name="usuarioCreador" [(ngModel)]="programa.usuCreador" required>
-</div>
- <div class="camposform">
-        <label for="colaborador_modificador">Colaborador Modificador:</label>
-        <input type="text" id="colaborador_modificador" name="usuModificador" [(ngModel)]="programa.usuModificador" required>
-    </div>
+<br><br>
     
 
         <div class="camposform">
-            <label for="opcionesColaboracion">Opciones de colaboración</label>
-            <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccionar Opciones</button>
+            
+            <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccione opciones para Colaboración</button>
             <span *ngIf="showDropdown" class="dropdown-list">
                 <span *ngFor="let opcion of listaOpciones">
                     <label>
@@ -44,7 +37,16 @@
                 </span>
             </span>
         </div>
+        <div class="camposform">
+            <label for="usuCreador">Usuario Creador</label>
+            <input type="text" id="usuCreadorname" name="usuCreador" [(ngModel)]="programa.usuCreador" required>
+        </div>
 
+        <div class="camposform">
+        <label for="usuModificadoruario Modificador"></label>
+        <input type="text" id="usuModificador" name="usuModificador" [(ngModel)]="programa.usuModificador" required>
+    </div>
+        
 
         <div class="button-container">
             <input type="submit" value="Crear Programa">

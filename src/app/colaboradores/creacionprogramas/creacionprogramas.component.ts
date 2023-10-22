@@ -17,11 +17,12 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
   listaOpciones = [       //aqui se agregan las opciones de donacion o aporte
   { text: 'Apadrinar', isSelected: false },
   { text: 'Aporte Solidario', isSelected: false },
-  { text: 'Voluntariado', isSelected: false },
-  { text: "Facilitador", isSelected: false},
-  { text: "Pasantia Comunitaria", isSelected: false},
+  { text: 'Aporte en Tiempo', isSelected: false },
+ 
   ];
+  
   showDropdown = false;
+
 
 
   
@@ -55,8 +56,8 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
           console.log(error);
           Swal.fire({
             icon: 'error',
-            title: 'el programa ya existe',
-            text: 'error en la creación'
+            title: 'Ocurrio un error',
+            text: 'No se ha creado el programa'
           })
         }
       }
@@ -67,6 +68,6 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
     this.showDropdown = !this.showDropdown;
   }
   
-  
+
 
 }

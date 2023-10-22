@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { VersolicitudesdonacionComponent } from './versolicitudesdonacion/versolicitudesdonacion.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { VersolicitudesdonacionComponent } from './versolicitudesdonacion/versol
     MatSelectModule,
     MatInputModule,
     MatOptionModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
 
 
 
