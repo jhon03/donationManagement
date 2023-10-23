@@ -1,109 +1,29 @@
-
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 767px) {
-
-    .example-card {
-        max-width: 400px;
-      }
-      
-      .example-header-image {
-        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-        background-size: cover;
-      }
-    }
-    
-    /* Estilos para tabletas */
-    
+  /* Estilos para tabletas */ 
     @media (min-width: 768px) and (max-width: 1023px) {
       
     .example-card {
       max-width: 400px;
     }
-    
+    /*estilos para el avatar*/
     .example-header {
      width: 100px;
      height: 100px;
      border-radius: 50%;
      overflow: hidden;
     }
-    .example-header img{
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
+  
+  
     }
-    
-    
+  
+    /* Estilos para pantallas más grandes (computadoras) */
+    @media (min-width: 1024px) {
+    .example-card {
+     max-width: 400px;
     }
-    
-        /* Estilos para pantallas más grandes (computadoras) */
-        @media (min-width: 1024px) {
-          .example-card {
-            max-width: 400px;
-          }
           
-          .example-header-image {
-            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-            background-size: cover;
-          }
-        }
-    
-    
-    
-    
-    
-    /* Estilos para dispositivos móviles */
-    @media (max-width: 767px) {
-    
-      .example-card2 {
-          max-width: 400px;
-        }
-        
-        .example-header2-image {
-          background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-          background-size: cover;
-        }
-      }
-      
-      /* Estilos para tabletas */
-      
-      @media (min-width: 768px) and (max-width: 1023px) {
-        
-      .example-card2 {
-        max-width: 400px;
-      }
-      
-      .example-header2-image {
-        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-        background-size: cover;
-      }
-      
-      
-      }
-      
-          /* Estilos para pantallas más grandes (computadoras) */
-          @media (min-width: 1024px) {
-            .example-card2 {
-              max-width: 400px;
-            }
-            
-            .example-header2-image {
-              background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-              background-size: cover;
-            }
-          }
-    
- 
-
-
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: relative;
-      margin-top: 20px; 
-    }
-
-   
+          
+  }
+  
     .favorite-label {
 
       margin-left: 8px;
@@ -137,6 +57,11 @@
       display: flex;
       align-items: justify;
       flex: 1;
+    }
+    .d-block w-100 img{
+
+      width: 4000px;
+
     }
    
     

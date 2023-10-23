@@ -29,13 +29,17 @@ export class responseProgram{
     programas: programaResponse[];
 }
 
+export class responseIdprogram{
+    programa: programaResponse;
+}
+
 
 export class programaResponse{
     
     nombre: string;
     eslogan: string;
     descripcion: string;
-    imagen: string;
+    imagenes: descImg[];
     usuCreador: string;
     usuModificador: string;
     opcionesColaboracion: string[];
@@ -45,4 +49,10 @@ export class programaResponse{
     fechaModificacion: Date;
     uid: string;
  
+}
+
+
+
+export class descImg {
+    url: string;
 }

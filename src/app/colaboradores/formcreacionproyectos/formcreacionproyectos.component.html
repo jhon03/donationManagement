@@ -10,10 +10,39 @@
         <textarea id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required></textarea><br>
     </div>
 
-    <div class="camposform">
-        <label for="imagen">Imagen del Proyecto:</label>
-        <input type="file" id="imagen" name="imagen" [(ngModel)]="proyecto.imagen"><br>
+
+
+    <div class="container my-3">
+        <div class="mb-3">
+            <label for="image" class="form-label">Agrega una o varias Imágenes al producto</label>
+            <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
+            <ng-container *ngFor="let image of selectedImages; let i = index" >
+                <div class="col" >
+                    <div class="card h-100">
+                        <img [src]="image.url" class="card-img-top rounded-1 img-fluid" alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
+                        <div class="card-footer text-center">
+                            <button class="btn btn-danger text-center" (click)="removeImage(i)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+           </ng-container>                           
+        </div>
+        
+        <button *ngIf="selectedImages.length > 0" class="btn btn-danger" (click)="removeAllImages()">Eliminar todas las imágenes</button>
     </div>
+
+
+
+
+
+
+
+
+
+
         
     <div class="camposform">
         <label for="costo">Costo del Proyecto:</label>
@@ -61,6 +90,20 @@
         <mat-radio-button>programa.nombre</mat-radio-button>
       </mat-radio-group>
 </div>-->
+
+
+
+<div class="camposform">
+    <label for="tipo_proyecto">Programas:</label>
+    <select id="tipo_proyecto" name="idPrograma" [(ngModel)]="idPrograma" required>
+        <option value="" disabled selected>Selecciona un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.uid">{{programa.nombre}}</option>
+    </select>
+</div>
+
+
+
+
 <br><br>
 
         <div class="button-container">

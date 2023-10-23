@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { programaRequest } from 'src/app/helpers/programaHelpers';
+import { programaRequest, programaResponse } from 'src/app/helpers/programaHelpers';
+import { ImageService } from 'src/app/image.service';
 import { ProgramasService } from 'src/app/programas.service';
 import Swal from 'sweetalert2'
 
@@ -13,6 +14,13 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
   
   programa: programaRequest = new programaRequest();
   private programaSuscripcion: Subscription;
+  private imageSuscription: Subscription;
+
+  selectedImages: any[] = [];
+  archivo: any[] = [];
+  id:number = 0;
+
+
 
   listaOpciones = [       //aqui se agregan las opciones de donacion o aporte
   { text: 'Apadrinar', isSelected: false },
@@ -32,7 +40,7 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
 
   }
 
-  constructor(private programaService: ProgramasService){
+  constructor(private programaService: ProgramasService, private imagenService: ImageService ){
 
   }
 
@@ -50,7 +58,8 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
       {
         next:(datos)=>{
           console.log(datos);
-          Swal.fire("programa Creado con éxito", "succes")
+          Swal.fire("programa Creado con éxito", "succes");
+          this.uploadImg(datos);
         },
         error:(error)=>{
           console.log(error);
@@ -66,6 +75,69 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
+  }
+
+
+
+
+  private uploadImg(programa: programaResponse){
+    const totalImgs = this.selectedImages.length;
+    let imgUp = 0;
+    const uuid = programa.uid;
+
+    
+
+    this.archivo.forEach( (imagen) => {
+      const formData = new FormData();
+      formData.append('archivo',imagen);
+
+        
+      this.imageSuscription = this.imagenService.uploadFile(formData,'programas', uuid).subscribe(
+        {
+          next:(img)=>{   
+            imgUp++;
+            if(imgUp === totalImgs){
+              Swal.fire("Producto Creado Correctamente","success");
+              //this.router.navigateByUrl('/admin');
+            }
+          },
+          error: (error:any) => {
+            console.log(error);
+          if(imgUp === totalImgs){
+              Swal.fire('Error al subir imágenes', 'error');
+            //this.router.navigateByUrl('/agregar-producto');
+            }
+          }
+        }
+      )
+    })
+
+
+  }
+
+
+  upload(event: any) {
+    const files = event.target.files;
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      this.archivo.push(file);
+
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        this.selectedImages.push({ name: file.name, url: e.target.result });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  removeImage(index: number) {
+    this.selectedImages.splice(index, 1);
+  }
+
+  removeAllImages() {
+    this.selectedImages = [];
   }
   
 

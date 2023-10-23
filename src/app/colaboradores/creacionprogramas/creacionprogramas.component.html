@@ -18,12 +18,43 @@
         <textarea id="descripcion" name="descripcion" [(ngModel)]="programa.descripcion" required></textarea>
 </div>
 
-<div class="camposform">
-        <label for="imagen">Imagen del Programa:</label>
-        <input type="file" id="imagen" name="imagen" [(ngModel)]="programa.imagen"><br>
 
+
+
+
+<div class="container my-3">
+    <div class="mb-3">
+        <label for="image" class="form-label">Agrega una o varias Imágenes al producto</label>
+        <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
+        <ng-container *ngFor="let image of selectedImages; let i = index" >
+            <div class="col" >
+                <div class="card h-100">
+                    <img [src]="image.url" class="card-img-top rounded-1 img-fluid" alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
+                    <div class="card-footer text-center">
+                        <button class="btn btn-danger text-center" (click)="removeImage(i)">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+       </ng-container>                           
+    </div>
+    
+    <button *ngIf="selectedImages.length > 0" class="btn btn-danger" (click)="removeAllImages()">Eliminar todas las imágenes</button>
 </div>
-<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
     
 
         <div class="camposform">

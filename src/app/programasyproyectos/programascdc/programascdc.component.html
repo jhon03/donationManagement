@@ -1,97 +1,56 @@
 
-
 <mat-grid-list cols="2" rowHeight="2:2" gutterSize="16" class="mx-5 my-5">
+  <mat-grid-tile *ngFor="let programa of programas; let i= index">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header">
+          <img mat-card-avatar src="assets/avatarbiblio.png" alt="Photo of a Shiba Inu">
+        </div>
+        <mat-card-title>{{programa.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{programa.eslogan}}</mat-card-subtitle>
+      </mat-card-header>
 
-    <mat-grid-tile *ngFor="let programa of programas">
+     <!-- <img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">-->
+     <div id="carouselExample{{ i }}" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let imagen of programa.imagenes; let j = index" [ngClass]="{'active': j === 0}">
+          <img [src]="imagen.url" class="d-block w-100" alt="Imagen del producto">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExample'+i" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExample' + i" data-bs-slide="next">
+        <span class="carousel-control-next-icon" ariahidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
     
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header" >
-
-              <img mat-card-avatar src=" assets/avatarbiblio.png" alt="Photo of a Shiba Inu">
-            </div>
-              <mat-card-title>{{programa.nombre}}</mat-card-title>
-              <mat-card-subtitle>{{programa.eslogan}}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">
-            
-            
-            <mat-card-content class="content">
-              {{programa.descripcion}}
-            </mat-card-content>
-
-            
-
-            <mat-card-actions>
-              <div *ngFor="let o of programa.opcionesColaboracion; let i= index" class="button-container">
-
-             
-                <div class="favorite-container" (click)="redirigir(o)">  
-              <mat-icon class="favorite">favorite</mat-icon> 
-              
-              
-              <label (click)="redirigir(o)" class="label-link">{{o}}</label>
-                </div>
-               </div>
-            </mat-card-actions>
-
     
-          <!--aporte solidario-->
-          <!--
-          <mat-card-actions class="button-container">
-
-            <a mat-button [routerLink]="['/apadrinamiento']">
-              <div class="favorite-container">  
-            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
-            
-            <label>Apadrinar</label>
-              </div>
-             </a> 
-          </mat-card-actions>
--->
-          <!--Voluntariado-->
-         <!-- <mat-card-actions class="button-container">
-
-            <a mat-button [routerLink]="['/apadrinamiento']">
-              <div class="favorite-container">  
-            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
-            
-            <label>Apadrinar</label>
-              </div>
-             </a> 
-          </mat-card-actions>
-          -->
-          <!--Facilitador-->
-          <!--<mat-card-actions class="button-container">
-
-            <a mat-button [routerLink]="['/apadrinamiento']">
-              <div class="favorite-container">  
-            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
-            
-            <label>Apadrinar</label>
-              </div>
-             </a> 
-          </mat-card-actions>
-        -->
-          <!--Pasantía/Practica Profesional-->
-          <!--
-          <mat-card-actions class="button-container">
-
-            <a mat-button [routerLink]="['/apadrinamiento']">
-              <div class="favorite-container">  
-            <mat-icon class="favorite" aria-label="Apadrinar">favorite</mat-icon> 
-            
-            <label>Apadrinar</label>
-              </div>
-             </a> 
-          </mat-card-actions>
--->
-
-              <!--<button mat-button >{{card.buttonVol}}</button>-->
-          
-          </mat-card>
-     </mat-grid-tile>
-    </mat-grid-list>
     
+      <mat-card-content class="content">
+        {{programa.descripcion}}
+      </mat-card-content>
+      <mat-card-actions>
+        <div *ngFor="let o of programa.opcionesColaboracion" class="button-container" (click)="redirigir(o)">
+          <div class="favorite-container">
+            <mat-icon class="favorite">favorite</mat-icon>
+            <label (click)="redirigir(o)" class="label-link">{{o}}</label>
+          </div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<div class="container">
+  <h1>PROYECTOS</h1>
+  <div class="grid-container">
     <app-proyectoscdc></app-proyectoscdc>
+  </div>
+</div>
+
+
    

@@ -44,7 +44,7 @@ export class proyectoResponse{
 
     nombre: any;
     descripcion: string;
-    imagen: string;
+    imagenes: imagenDesc[];
     costo: Float32Array;
     fechaInicio: Date;
     fechaFinalizacion: Date;
@@ -52,12 +52,20 @@ export class proyectoResponse{
     colModificador: string;
     estado: string;
     tipoProyecto: string[];
-    programa: programaResponse;
+    programa: programasdesc;
     opcionesColaboracion: string[];
     uid: string;
     fechaCreacion: Date;
     opcionesProgramas: string[];
 
+}
+
+export class imagenDesc {
+    url: string;
+}
+
+export class programasdesc {
+    nombre:string;
 }
 
 

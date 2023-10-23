@@ -14,9 +14,8 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
 
  
   private proyectoSuscripcion: Subscription;
-  proyectosA: proyectoResponse[];
+  proyectos: proyectoResponse[];
 
-  programas: programaResponse[];
   constructor(private router: Router, private proyectoService: ProyectoService) { }
   
   ngOnDestroy(): void {
@@ -32,8 +31,8 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
     this.proyectoSuscripcion = this.proyectoService.proyectoLista().subscribe(
       {
         next:(datos)=>{
-          console.log(datos.proyecto);
-          this.proyectosA = datos.proyecto
+          console.log(datos);
+          this.proyectos = datos.proyecto
         },
         error:(error)=>{
           console.log(error);
