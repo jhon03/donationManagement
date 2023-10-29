@@ -8,7 +8,7 @@
         <th>Nombre del Benefactor</th>
         <th>Correo Benefactor</th>
         <th>celularBenefactor</th>
-        <th>Nombre Proyecto</th>
+        <th>Nombre</th>
         <th>Aporte</th>
         <th>Estado</th>
         <th>Fecha Creación</th>
@@ -22,7 +22,8 @@
         <td>{{ donacion.nombreBenefactor }}</td>
         <td>{{ donacion.correo }}</td>
         <td>{{ donacion.celular }}</td>
-        <td>{{ donacion.proyecto.nombre}}</td>
+        <td *ngIf="donacion.proyecto">{{donacion.proyecto.nombre}}</td>
+        <td *ngIf="donacion.programa">{{donacion.programa.nombre}}</td>
         <td>{{ donacion.aporte }}</td>
         <td>{{ donacion.estado }}</td>
         <td>{{ donacion.fechaCreacion | date:'dd/MM/yyyy' }}</td>

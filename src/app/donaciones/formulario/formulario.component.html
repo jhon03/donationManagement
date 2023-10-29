@@ -1,3 +1,11 @@
+<div class="container">
+  <div class="container text-center text-uppercase my-5 mx-5">
+    <h1 class="fw-bold">usted escogio</h1>
+    <h2>{{relacion}}</h2>
+  </div>
+  
+</div>
+
 
 <div class="form-container">
     <div class="form-column">
@@ -32,12 +40,31 @@
         <label for="celular">Celular:</label>
         <input type="number" id="celular" name="celular"  [(ngModel)]="donacionA.celular" required="" ><br><br>
 </div>
-<div class="form-section">
+
+    <div class="form-section" *ngIf="opcion === 'Aporte Solidario'">
         <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
         <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacionA.aporte" required>
-          <option *ngFor="let i of donacionA.listaportes" [value]="i.value">{{i.key}}</option>
+          <option *ngFor="let i of listaOpciones.listAportesSolidario" [value]="i.value">{{i.key}}</option>
         </select>
     </div>
+
+    <div class="form-section" *ngIf="opcion === 'Apadrinamiento'">
+      <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+      <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacionA.aporte" required>
+        <option *ngFor="let i of listaOpciones.listAportesApadrinamiento" [value]="i.value">{{i.key}}</option>
+      </select>
+    </div>
+
+    <div class="form-section" *ngIf="opcion === 'Aporte en Tiempo'" >
+      <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+      <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacionA.aporte" required>
+        <option *ngFor="let i of listaOpciones.listTiempo" [value]="i.value">{{i.key}}</option>
+      </select>
+    </div>
+
+
+
+
     
         <div class="button-container">
           <input type="submit" value="Enviar Solicitud">

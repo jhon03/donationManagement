@@ -23,7 +23,7 @@ export class proyectoRequest {
         {value: 'Aporte Solidario', key: 'Aporte solidario'},
         {value: 'Aporte en Tiempo', key: 'Aporte en Tiempo'},
     ]
-    opcionesColaboracion: string[];
+    opcionesDonacion: string[];
     
     listaProgramas: any =[
 
@@ -53,7 +53,7 @@ export class proyectoResponse{
     estado: string;
     tipoProyecto: string[];
     programa: programasdesc;
-    opcionesColaboracion: string[];
+    opcionesDonacion: string[];
     uid: string;
     fechaCreacion: Date;
     opcionesProgramas: string[];

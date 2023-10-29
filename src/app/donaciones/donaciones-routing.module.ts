@@ -23,7 +23,9 @@ const routes: Routes = [
 {
   path: 'aportedeltiempo',
   component: AportedelTiempoComponent
-}
+},
+//rutas nuevas, con los parametros por url
+{path: ':nombre/:id/formulario/:opcion', component: FormularioComponent, pathMatch:"full"},
 
 
 

@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptorProviders } from './security/interceptor/auth.interceptor';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatToolbarModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatGridListModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

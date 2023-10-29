@@ -63,7 +63,8 @@ export class FormcreacionproyectosComponent implements OnInit, OnDestroy{
 
 
   onSubmit(){
-    this.proyecto.opcionesColaboracion = this.listaOpciones
+    console.log(this.listaOpciones);
+    this.proyecto.opcionesDonacion = this.listaOpciones
     .filter((opcion) => opcion.isSelected)
     .map((opcion) => opcion.text);
 
@@ -95,10 +96,13 @@ export class FormcreacionproyectosComponent implements OnInit, OnDestroy{
         this.programa = datos.programa;
         this.proyecto.colCreador = datos.programa.usuCreador;
         this.proyecto.colModificador = datos.programa.usuModificador;
+        console.log(this.proyecto);
 
         this.proyectoSuscripcion = this.proyectoService.crearProyectos(this.proyecto, this.idPrograma).subscribe(
           {
             next: (data)=>{
+              console.log('respuesta proyecto');
+              console.log(data);
               this.uploadImg(data);
              
             },

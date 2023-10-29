@@ -32,7 +32,7 @@ import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.co
     FormsModule,
     MatDividerModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ]
 })
 export class DonacionesModule { }

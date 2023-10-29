@@ -1,2 +1,57 @@
-
+<!--            con esta linea solo llama el html del componenete formulario
 <app-formulario></app-formulario>
+-->
+<div class="container">
+    <div class="container mx-5 my-5">
+        <div class="form-container">
+            <div class="form-column">
+              <form  (ngSubmit)="onSubmit()">
+              
+        
+                <div class="form-section">
+          
+                <label for="tipo_identificacion">Tipo de Identificación:</label>
+                
+                <select [(ngModel)]="donacion.tipoIdentificacion" id="tipo_identificacion" name="tipo_identificacion" required>
+                  <option *ngFor="let i of donacion.listTipoIdentificacion" [value]="i.value" >{{i.key}}</option>
+                </select>
+                </div>
+        
+              <div class="form-section">
+        
+                <label for="numero_identificacion">Número de Identificación:</label>
+                <input type="number" id="numero_identificacion"[(ngModel)]="donacion.numeroIdentificacion" id="numero_identificacion" name="numeroIdentificacion" required matInput ><br><br>
+               </div>
+                
+               <div class="form-section">
+                <label for="nombre">¿Cuál es tu nombre?</label>
+                <input type="text" id="nombre" [(ngModel)]="donacion.nombreBenefactor"  required="" name="nombreBenefactor"><br><br>, 
+               </div>
+               <div class="form-section">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" [(ngModel)]="donacion.correo" name="correo" required><br><br>
+              </div>
+        
+              <div class="form-section">
+                <label for="celular">Celular:</label>
+                <input type="number" id="celular" name="celular"  [(ngModel)]="donacion.celular" required="" ><br><br>
+        </div>
+        <div class="form-section">
+                <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+                <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacion.aporte" required>
+                  <option *ngFor="let i of listAportes" [value]="i.value">{{i.key}}</option>
+                </select>
+            </div>
+            
+                <div class="button-container">
+                  <input type="submit" value="Enviar Solicitud">
+                </div>
+        
+        
+              </form>
+        
+        
+            </div>  
+        </div>
+    </div>
+</div>

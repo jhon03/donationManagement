@@ -11,27 +11,45 @@ import { donacionAResponse } from 'src/app/helpers/donacionAnoHelpers';
 export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
 
   donaciones: donacionAResponse[];
-  private donacionesSuscripcion: Subscription
+  private donacionesSuscripcion: Subscription;
+
 
   constructor(private donacionService: DonacionAService){}
 
 
   ngOnDestroy(): void {
     this.donacionesSuscripcion?.unsubscribe();
+
   }
 
   ngOnInit(): void {
-    this.obtenerDonaciones();
+    this.obtenerDonacionesProgramas();
   }
 
-  obtenerDonaciones(){
- this.donacionesSuscripcion = this.donacionService.verDonaciones().subscribe({ next: (data)=>{
-  this.donaciones = data.donacion;
-  console.log(this.donaciones);
-},
-error: (error)=>{
-  console.log(error);
-}
-});
-}
+  obtenerDonacionesProgramas(){
+      this.donacionesSuscripcion = this.donacionService.verDonacionesProgramas().subscribe({ next: (data)=>{
+        this.donaciones = data.donacion;
+        this.obtenerDonacionesProyectos();
+      },
+      error: (error)=>{
+        console.log(error);
+      }
+      });
+  }
+
+  obtenerDonacionesProyectos(){
+    this.donacionService.verDonacionesProyectos().subscribe(
+      {
+        next: (data) =>{
+          this.donaciones = this.donaciones.concat(data.donacion);
+          console.log('total donaciones');
+          console.log(this.donaciones);
+        },
+        error: (error) =>{
+          console.log(error);
+        }
+      }
+    )
+  }
+
 }
