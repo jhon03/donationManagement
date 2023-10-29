@@ -96,3 +96,52 @@
     button.mat-button:hover {
       color: #193A6F; /* Cambia el color de texto al pasar el mouse */
     }
+    .d-block w-100 img{
+
+      width: 4000px;
+
+    }
+    .content{
+      text-align: justify;
+      display: flex;
+      align-items: justify;
+      flex: 1;
+    }
+
+    
+/* Estilo base para el botón y el ícono */
+.custom-button {
+  color: #193A6F; /* Color de texto predeterminado */
+  background-color: transparent; /* Fondo transparente para el botón */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s; /* Transición de color de fondo */
+
+  /* Estilo de enlace sin subrayado */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo del ícono */
+.custom-icon {
+  color: #193A6F; /* Color del ícono */
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Efecto hover: Cambiar el color de fondo al pasar el mouse */
+.custom-button:hover {
+  background-color: #FB9850; /* Color de fondo al pasar el mouse */
+  color: #193A6F; /* Restaurar el color del texto */
+}
+/* Estilo del contenedor de opciones */
+.custom-options-container {
+  display: flex; /* Establece un diseño de flexbox */
+  gap: 10px; /* Espacio entre las opciones */
+  flex-wrap: wrap; /* Permite que las opciones se envuelvan a la siguiente línea si no caben en una sola línea */
+}
+/* Estilo de cada opción */
+.custom-option {
+  flex: 1; /* Cada opción se expande para ocupar el espacio disponible */
+}
+
+
+    

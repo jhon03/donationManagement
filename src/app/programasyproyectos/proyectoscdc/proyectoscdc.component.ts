@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { proyectoResponse, proyectoRequest } from 'src/app/helpers/proyectoHelpers';
 import { ProyectoService } from 'src/app/proyecto.service';
 import { programaRequest, programaResponse } from 'src/app/helpers/programaHelpers';
+import { ProgramasService } from 'src/app/programas.service';
 @Component({
   selector: 'app-proyectoscdc',
   templateUrl: './proyectoscdc.component.html',
@@ -16,7 +17,9 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   private proyectoSuscripcion: Subscription;
   proyectos: proyectoResponse[];
 
-  constructor(private router: Router, private proyectoService: ProyectoService) { }
+  programas: programaResponse[];
+
+  constructor(private router: Router, private proyectoService: ProyectoService, private programaService: ProgramasService) { }
   
   ngOnDestroy(): void {
     this.proyectoSuscripcion?.unsubscribe();
@@ -44,12 +47,10 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
 
 
   redirigir(opcionesColaboracion: string): void{
-    if(opcionesColaboracion === 'Apadrinar'){
-      this.router.navigate(['/apadrinamiento']);
+    if(opcionesColaboracion === 'Aporte Solidario'){
+      this.router.navigate(['/aportesolidario']);
    
-     }else if (opcionesColaboracion === 'Aporte Solidario'){
-      this.router.navigate(['/aportesolidario'])
-     
+
     }else if (opcionesColaboracion === 'Aporte en Tiempo'){
       this.router.navigate(['/aportedeltiempo'])
      }

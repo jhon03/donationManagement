@@ -1,5 +1,4 @@
-  /* Estilos para tabletas */ 
-    @media (min-width: 768px) and (max-width: 1023px) {
+
       
     .example-card {
       max-width: 400px;
@@ -12,46 +11,7 @@
      overflow: hidden;
     }
   
-  
-    }
-  
-    /* Estilos para pantallas más grandes (computadoras) */
-    @media (min-width: 1024px) {
-    .example-card {
-     max-width: 400px;
-    }
-          
-          
-  }
-  
-    .favorite-label {
 
-      margin-left: 8px;
-    }
-
-    .favorite-container {
-      display: flex;
-      align-items: center;
-    }
-    
-    .favorite {
-      font-size: 24px;
-      color: #193A6F;
-      margin-right: 8px; /* Espacio entre el icono y el label */
-    }
-    
-    .favorite-label {
-      font-size: 16px; /* Tamaño de fuente del label */
-    }
-    .label-link{
-      color: #193A6F;
-      cursor: pointer;
-    }
-    .label-link:hover{
-      color: #FB9850;
-      text-decoration: underline;
-    
-    }
     .content{
       text-align: justify;
       display: flex;
@@ -61,7 +21,53 @@
     .d-block w-100 img{
 
       width: 4000px;
-
     }
-   
+   /* Estilo base para el botón y el ícono */
+.custom-button {
+  color: #193A6F; /* Color de texto predeterminado */
+  background-color: transparent; /* Fondo transparente para el botón */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s; /* Transición de color de fondo */
+
+  /* Estilo de enlace sin subrayado */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo del ícono */
+.custom-icon {
+  color: #193A6F; /* Color del ícono */
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Efecto hover: Cambiar el color de fondo al pasar el mouse */
+.custom-button:hover {
+  background-color: #FB9850; /* Color de fondo al pasar el mouse */
+  color: #193A6F; /* Restaurar el color del texto */
+}
+/* Estilo del contenedor de opciones */
+.custom-options-container {
+  display: flex; /* Establece un diseño de flexbox */
+  gap: 10px; /* Espacio entre las opciones */
+  flex-wrap: wrap; /* Permite que las opciones se envuelvan a la siguiente línea si no caben en una sola línea */
+}
+/* Estilo de cada opción */
+.custom-option {
+  flex: 1; /* Cada opción se expande para ocupar el espacio disponible */
+}
+/* Estilo para el mat-divider */
+mat-divider {
+  background: linear-gradient(to right, transparent, #193A6F, transparent); /* Fondo con gradiente transparente */
+  height: 2px; /* Altura del divider */
+  margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo para el texto */
+.text-center strong {
+  color: #193A6F; /* Color del texto */
+  text-shadow: 2px 2px #FB9850; /* Sombra del texto con color */
+}
+
+
+    
     

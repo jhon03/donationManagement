@@ -59,4 +59,13 @@ redirigir(opcionesColaboracion: string): void{
    
   }
 
+  removeSpaces(option: string): string {
+    console.log(option.replace(/\s+/g, ''));
+    return option.replace(/\s+/g, '');
+  }
+
 }
+
+
+
+

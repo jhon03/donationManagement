@@ -1,3 +1,7 @@
+<br><br>
+
+<h1 class="text-center"><strong class="mt-4">PROGRAMAS</strong></h1> 
+<mat-divider></mat-divider>
 
 <mat-grid-list cols="2" rowHeight="2:2" gutterSize="16" class="mx-5 my-5">
   <mat-grid-tile *ngFor="let programa of programas; let i= index">
@@ -32,6 +36,8 @@
       <mat-card-content class="content">
         {{programa.descripcion}}
       </mat-card-content>
+
+      <!--
       <mat-card-actions>
         <div *ngFor="let o of programa.opcionesColaboracion" class="button-container" (click)="redirigir(o)">
           <div class="favorite-container">
@@ -40,13 +46,28 @@
           </div>
         </div>
       </mat-card-actions>
+      -->
+
+ 
+      <div class="custom-options-container">
+      <div *ngFor="let opcion of programa.opcionesColaboracion" class="custom-option">
+        <button mat-stroked-button [routerLink]="['/', 'programa', programa.uid, 'formulario', opcion]" class="custom-button">
+          <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
+        </button>
+      </div>
+      </div>
+       
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
 
 <div class="container">
-  <h1>PROYECTOS</h1>
+  <mat-divider></mat-divider>
+
+  <h1 class="text-center"><strong class="mt-4">PROYECTOS</strong></h1> 
+<mat-divider></mat-divider>
+
   <div class="grid-container">
     <app-proyectoscdc></app-proyectoscdc>
   </div>
