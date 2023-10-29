@@ -23,12 +23,14 @@
       padding: 10px; /* Reducir el espaciado en pantallas más pequeñas */
       font-size: small; /* Reducir el tamaño de fuente en pantallas más pequeñas */
     }
+
   
     .videoIntroCDC {
       width: 140%; /* Asegurarse de que el video se ajuste al ancho de la pantalla */
       margin: 0; /* Eliminar el margen derecho en pantallas más pequeñas */
       font-size: small;
     }
+    
   }
 
  

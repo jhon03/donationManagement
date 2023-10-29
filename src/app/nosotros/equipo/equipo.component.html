@@ -1,0 +1,22 @@
+<header>
+    <h1>Nuestro Equipo</h1>
+</header>
+<div class="container">
+
+
+    <div class="equipo" *ngFor=" let perfil of perfiles">
+
+        <img mat-card-img class="example-header" src={{perfil.avatar}}>
+
+        <div class="contenido">
+        <mat-card-title>
+            {{perfil.nombre}}
+        </mat-card-title>
+        <mat-card-content>
+            {{perfil.descripcion}}
+        </mat-card-content>
+
+    </div>
+</div>
+    <!-- Agrega más perfiles aquí -->
+</div>

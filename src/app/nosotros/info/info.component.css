@@ -1,0 +1,19 @@
+/* Estilos para el mat-card */
+.custom-card {
+    
+    padding: 16px; /* Margen interno de 16 píxeles */
+    text-align: justify; /* Texto justificado */
+    font-size: 18px; /* Tamaño de fuente de 18 píxeles */
+    margin: 10px; /* Margen exterior alrededor de las tarjetas */
+  
+    /* Puedes ajustar los estilos según tus preferencias */
+  }
+  
+  /* Estilos para el párrafo de texto en el primer mat-card */
+  .custom-text {
+    line-height: 1.5; /* Espaciado de línea de 1.5 */
+  }
+  /* Estilos para los elementos de lista en el segundo mat-card */
+.custom-list-header {
+  font-weight: bold; /* Texto en negrita para encabezados de lista */
+}

@@ -1,0 +1,40 @@
+.miembro img {
+    max-width: 100%;
+    border-radius: 50%; /* Esto hace que la imagen tenga forma de círculo */
+}
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+.container {
+    max-width: 800px;
+    margin: 10 px auto;
+    padding: 20px;
+    display: flex; /* Utilizamos un contenedor flex para alinear los perfiles horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Distribuir en tres columnas igualmente */
+    gap: 20px; /* Espacio entre elementos */
+}
+.equipo {
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido en la parte inferior */
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+.equipo img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+.contenido {
+    flex: 1; /* Expande el contenido para ocupar todo el espacio disponible */
+    margin-left: 10px; /* Ajusta el espacio entre la imagen y el contenido */
+}
+
+
+
+
