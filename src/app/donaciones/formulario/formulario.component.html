@@ -1,11 +1,16 @@
-<div class="container">
+<div class="container" >
   <div class="container text-center text-uppercase my-5 mx-5">
     <h1 class="fw-bold">usted escogio</h1>
-    <h2>{{relacion}}</h2>
+    <h2>{{relacion}}</h2> 
+    
+   
   </div>
   
 </div>
 
+<app-aporte-solidario *ngIf="opcion === 'Aporte Solidario'"></app-aporte-solidario>
+<app-aportedel-tiempo *ngIf="opcion === 'Aporte en Tiempo'"></app-aportedel-tiempo>
+<app-apadrinamiento *ngIf="opcion === 'Apadrinar'"></app-apadrinamiento>
 
 <div class="form-container">
     <div class="form-column">
@@ -48,7 +53,7 @@
         </select>
     </div>
 
-    <div class="form-section" *ngIf="opcion === 'Apadrinamiento'">
+    <div class="form-section" *ngIf="opcion === 'Apadrinar'">
       <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
       <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacionA.aporte" required>
         <option *ngFor="let i of listaOpciones.listAportesApadrinamiento" [value]="i.value">{{i.key}}</option>

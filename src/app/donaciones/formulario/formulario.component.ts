@@ -31,6 +31,7 @@ export class FormularioComponent implements OnInit, OnDestroy {
   relacion: string;
   opcion: string;
 
+
   ngOnDestroy(): void {
     this.idSuscripcion?.unsubscribe();
     this.nombreSuscripcion?.unsubscribe();
@@ -41,6 +42,7 @@ export class FormularioComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obtenerId();
     this.obtenerNombre();
+    this.opcion = this.activatedRoute.snapshot.params['opcion'];
   }
 
 
@@ -59,6 +61,7 @@ onSubmit(){
   } 
   if(this.relacion === 'programa') {
     this.crearDonacionPrograma();
+  
   }
   
 }
