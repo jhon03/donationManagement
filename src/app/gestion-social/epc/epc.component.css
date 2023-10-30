@@ -1,0 +1,49 @@
+.cabecera{
+    background-color: #193A6F;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
+    gap: 20px; /* Agrega espacio entre las columnas */
+  }
+
+  .columna-imagen {
+    padding: 20px;
+  }
+  
+  .columna-imagen img {
+    width: 468px;
+    height: 376px;
+  }
+
+  span {
+    color: #193A6F; /* Cambia el color de texto según tus preferencias */
+    font-weight: bold;
+    text-align: center;
+    font-size: 34px;
+  }
+  
+  .columna-contenido {
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.7;
+    color: #193A6F;
+  }
+  
+  .columna-contenido label {
+    font-weight: bold;
+    color: #193A6F;
+    font-size: 24px;
+  }
+  .columna-contenido p{
+
+    font-size: 18px;
+    color: #193A6F;
+    padding: 10px;
+  }
+  

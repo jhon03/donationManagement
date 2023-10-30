@@ -7,13 +7,17 @@
     margin: 10px; /* Margen exterior alrededor de las tarjetas */
   
     /* Puedes ajustar los estilos según tus preferencias */
+    color:#193A6F;
   }
   
   /* Estilos para el párrafo de texto en el primer mat-card */
   .custom-text {
     line-height: 1.5; /* Espaciado de línea de 1.5 */
+color:#193A6F;
+  
   }
   /* Estilos para los elementos de lista en el segundo mat-card */
 .custom-list-header {
   font-weight: bold; /* Texto en negrita para encabezados de lista */
+  color:#193A6F;
 }

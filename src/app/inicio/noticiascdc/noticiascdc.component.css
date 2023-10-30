@@ -1,6 +1,7 @@
 .example-card {
     max-width: 400px;
     text-align: justify;
+    color:#193A6F;
     
   }
   .custom-image{
@@ -8,15 +9,12 @@
     width: 100px;
     height: 100px;
   }
-  .button-inscripcion{
-    margin: 8px;
-    margin-left: 80%;
-  }
+ 
   .mi-parrafo-noticias{
 
     font-size: 40px ;
     font-weight: bold ;
-    border-color: #193A6F;
     margin: 10px;
     padding: 5px;
+    color:#193A6F;
   }

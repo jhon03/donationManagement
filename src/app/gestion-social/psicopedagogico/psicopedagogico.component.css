@@ -1,0 +1,70 @@
+.cabecera{
+    background-color: #193A6F;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.descripcion {
+
+    padding: 30px;
+    margin: 20px;
+    height: 100%;
+    height: 100%;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #193A6F;
+    text-align: justify;
+
+}
+
+.descripcion p {
+    color: #193A6F;
+    font-size: 18px;
+    line-height: 1.4; /* Espaciado entre líneas */
+    margin-top: 10px; /* Espacio entre el título y el párrafo */
+}
+
+.columna-imagen {
+    padding: 20px;
+  }
+  
+  .columna-imagen img {
+    width: 468px;
+    height: 376px;
+  }
+  .Jardin-Infantil-info label{
+    color: #193A6F; /* Cambia el color de texto según tus preferencias */
+    font-weight: bold;
+    text-align: relative;
+    font-size: 18px;
+    margin: 20px;
+
+  }
+  .Psicología-info label{
+    color: #193A6F; /* Cambia el color de texto según tus preferencias */
+    font-weight: bold;
+    text-align: relative;
+    font-size: 18px;
+    margin: 20px;
+
+  }
+  .contenido{
+    width: 468px;
+    height: 406px;
+    text-align: justify;
+    margin: 20px;
+    color:#193A6F
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
+    gap: 90px; /* Agrega espacio entre las columnas */
+
+
+  }
+  
