@@ -1,26 +1,22 @@
+
+<div class="navbar" >
+  
+   <div class="container">
  
 
-<div>
-
-</div>
-<nav class="navbar lg" > 
-
-  <div class="container-fluid"> 
-  
-   
   <img src="assets/logonav.png" alt="" width="160" height="140" > 
   
   <h4 class="text-center"><strong class="mt-4"><i style="color: #193A6F;">¡Aquí Crecemos Juntos!</i> </strong></h4> 
   
   
-
+<div class="nav-links">
   <button mat-button [routerLink]="['/inicio']">Inicio</button> 
   <button mat-button [routerLink]="['/info']">Nosotros</button> 
   <button mat-button [routerLink]="['/gestion-social']"> Gestión Social</button> 
   <button mat-button [routerLink]="['/programascdc']"> Programas/Proyectos</button> 
-  
+</div>
    
-  <input type="search" placeholder="buscar" style="border-radius: 50px">  
+ <!-- <input type="search" placeholder="buscar" style="border-radius: 50px">  -->
 
   
 <div *ngIf="!usuarioLogeado" class="sesion">      <!--si el usuario no esta logeado muestra-->
@@ -41,8 +37,12 @@
   </div> 
   
   
-  </nav>  
+</div>  
   
+
   <router-outlet> </router-outlet> 
+
+  
+  <app-floating-button></app-floating-button>
   <app-footer></app-footer>
   

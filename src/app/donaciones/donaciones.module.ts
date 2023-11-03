@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AporteSolidarioComponent } from './aporte-solidario/aporte-solidario.component';
 import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.component';
-
+import { PracticascdcComponent } from './practicascdc/practicascdc.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.co
     ApadrinamientoComponent,
     TarjetasComponent,
     AporteSolidarioComponent,
-    AportedelTiempoComponent 
+    AportedelTiempoComponent,
+    PracticascdcComponent 
     
     
     
@@ -32,7 +33,7 @@ import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.co
     FormsModule,
     MatDividerModule,
     MatIconModule,
-    MatCheckboxModule,
+    MatCheckboxModule
   ]
 })
 export class DonacionesModule { }

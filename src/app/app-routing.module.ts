@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FloatingButtonComponent } from './floating-button/floating-button.component';
+import { ProgramascdcComponent } from './programasyproyectos/programascdc/programascdc.component';
 
 const routes: Routes = [
 
@@ -36,7 +38,14 @@ const routes: Routes = [
   loadChildren: () => import('./colaboradores/colaboradores.module').then(m => m.ColaboradoresModule)
 },
 
-
+{
+  path: 'botonfloating',
+  component: FloatingButtonComponent
+},
+{
+path: 'programascdc',
+component: ProgramascdcComponent
+}
 
 ];
 

@@ -1,0 +1,40 @@
+
+<table>
+    <thead>
+      <tr>
+      
+        <th>Nombre del Programa</th>
+        <th>Eslogan</th>
+        <th>Descripción</th>
+        <th>usuario Creador</th>
+        <th>usuario Modificador</th>
+        <th>opciones de colaboracion</th>
+       
+        <th>Eliminar</th>
+        <th>Actualizar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let programa of programas">
+        
+        <td>{{ programa.nombre }}</td>
+        <td>{{ programa.eslogan }}</td>
+        <td>{{ programa.descripcion }}</td>
+        <td>{{ programa.usuCreador }}</td>
+        <td>{{ programa.usuModificador }}</td>
+         
+        <td>{{ programa.opcionesColaboracion }}</td>
+        <td> 
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarPrograma(programa.uid)">
+                <mat-icon>delete</mat-icon>
+              </button></td>
+
+         <td>
+            <button mat-flat-button class="btn btn-danger" [routerLink]="['/editar','programa', programa.uid]"  >editar</button></td>     
+      </tr>
+     
+    </tbody>
+ 
+  </table>
+
+ 

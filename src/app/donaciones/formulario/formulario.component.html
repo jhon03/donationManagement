@@ -1,6 +1,6 @@
 <div class="container" >
   <div class="container text-center text-uppercase my-5 mx-5">
-    <h1 class="fw-bold">usted escogio</h1>
+    <h1 class="fw-bold">Usted Escogio</h1>
     <h2>{{relacion}}</h2> 
     
    
@@ -24,6 +24,7 @@
         <select [(ngModel)]="donacionA.tipoIdentificacion" id="tipo_identificacion" name="tipo_identificacion" required>
           <option *ngFor="let i of donacionA.listTipoIdentificacion" [value]="i.value" >{{i.key}}</option>
         </select>
+        
         </div>
 
       <div class="form-section">

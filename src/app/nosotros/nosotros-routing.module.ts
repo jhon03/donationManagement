@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PruebaloginComponent } from './pruebalogin/pruebalogin.component';
 import { InfoComponent } from './info/info.component';
 import { EquipoComponent } from './equipo/equipo.component';
+import { ProgramascdcComponent } from '../programasyproyectos/programascdc/programascdc.component';
 
 const routes: Routes = [
 

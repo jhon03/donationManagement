@@ -1,19 +1,24 @@
 
 .example-card {
-    max-width: 600px;
-    border-radius: 10px;
-    border-color: aqua;
-    justify-content: center;
-    margin-right: 10px;
-    margin: 120px;
-    cursor: pointer;
-    display: flex;
+    
     flex: 1;
 
     text-align: justify; /*centrar contenido horizontalmente en el mat-card(se uso para las imagenes de descripción de tipos 
     de donación*/
+    margin: 10px;
   }
-  
+
+  .titulo-foto{
+    position: relative;
+   
+  }
+  .titulo-foto label{
+    color:#193A6F;
+    font-weight: bold;
+    font-size: 24px;
+    
+  text-shadow: 3px 3px 7px rgba(184, 128, 10, 0.5);
+  }
   .description { 
   
     display: none;
@@ -70,11 +75,19 @@
   }
   .example-card2 {
     max-width: 600px;
-    margin-bottom: 8px;
-    display: flex;
-    flex: 1;
+    margin-bottom: 35px;
+    margin: 10px;
+    flex: 3;
     justify-content: space-around;
     text-align: justify;
+  }
+  .example-card2 label{
+    color:#193A6F;
+    font-weight: bold;
+     font-size: 18px;
+     
+  text-shadow: 3px 3px 7px rgba(184, 128, 10, 0.5);
+
   }
   
   /*colocar tarjetas horizontalmente*/
@@ -109,8 +122,29 @@
   .avatar p{
     font-size: 14px; /* Tamaño del texto descriptivo */
     margin: 0; /* Elimina el margen predeterminado del párrafo */
+    text-align: justify;
+    color: #193A6F;
 
   }
+  .titulo-donacion {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Asegura que el contenedor tenga una altura (puede ser un valor específico o relativo a su contenido) */
+  }
 
-  
+  .titulo-donacion label{
+    
+  font-weight: bold;
+  color: #193A6F;
+  font-size: 24px;
+ 
+  }
+
+  .subrayado{
+    
+    font-weight: bold;
+    text-decoration-thickness: 3px;
+    color:#193A6F
+}
   

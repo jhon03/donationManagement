@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Proyecto } from 'src/Modelos/proyecto';
-import { proyectoRequest, proyectoResponse, responseProyect, urlProyectos } from './helpers/proyectoHelpers';
+import { proyectoIdRes, proyectoRequest, proyectoResponse, responseProyect, urlProyectos } from './helpers/proyectoHelpers';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -61,6 +61,18 @@ export class ProyectoService {
 
   public proyectoLista():Observable<responseProyect>{
     return this.httpClient.get<responseProyect>(urlProyectos);
+  }
+
+  public actualizarProyecto(id: string, proyecto: proyectoRequest):Observable<proyectoIdRes>{
+    return this.httpClient.put<proyectoIdRes>(`${urlProyectos}/${id}`, proyecto );
+  }
+
+  public obtenerProyectoId(id: string): Observable<proyectoIdRes>{
+    return this.httpClient.get<proyectoIdRes>(`${urlProyectos}/${id}`);
+  }
+
+  public eliminarProyecto(id: string): Observable<proyectoIdRes>{
+    return this.httpClient.delete<proyectoIdRes>(`${urlProyectos}/${id}`);
   }
 
 

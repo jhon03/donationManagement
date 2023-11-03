@@ -21,6 +21,16 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { VersolicitudesdonacionComponent } from './versolicitudesdonacion/versolicitudesdonacion.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { VerProgramasComponent } from './ver-programas/ver-programas.component';
+import { VerProyectosComponent } from './ver-proyectos/ver-proyectos.component';
+import { VerBenefactoresComponent } from './ver-benefactores/ver-benefactores.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ActualizarProgramasComponent } from './actualizar/programas/actualizar-programas/actualizar-programas.component';
+import { ActualizarProyectoComponent } from './actualizar/proyectos/actualizar-proyecto/actualizar-proyecto.component';
+import { RouterModule } from '@angular/router';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import {MatDatepickerModule} from '@angular/material/datepicker'
 
 @NgModule({
   declarations: [
@@ -30,15 +40,22 @@ import {MatRadioModule} from '@angular/material/radio';
        FormcreacionproyectosComponent,
        CreacionprogramasComponent,
        VersolicitudesdonacionComponent,
+       VerProgramasComponent,
+       VerProyectosComponent,
+       VerBenefactoresComponent,
+       ActualizarProgramasComponent,
+       ActualizarProyectoComponent,
    
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ColaboradoresRoutingModule,
     MatTableModule,
     MatTabsModule,
     MatListModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatBottomSheetModule,
     MatToolbarModule,
     AuthModule,
@@ -48,7 +65,11 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatOptionModule,
     MatCardModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule,
+    MatToolbarModule,
+    HttpClientModule,
+    MatDatepickerModule,
 
 
 

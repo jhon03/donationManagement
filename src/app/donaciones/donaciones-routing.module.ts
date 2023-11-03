@@ -4,6 +4,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ApadrinamientoComponent } from './apadrinamiento/apadrinamiento.component';
 import { AporteSolidarioComponent } from './aporte-solidario/aporte-solidario.component';
 import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.component';
+import { PracticascdcComponent } from './practicascdc/practicascdc.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,11 @@ const routes: Routes = [
 {
   path: 'aportedeltiempo',
   component: AportedelTiempoComponent
+},
+
+{
+  path: 'practicascdc',
+  component: PracticascdcComponent
 },
 //rutas nuevas, con los parametros por url
 {path: ':nombre/:id/formulario/:opcion', component: FormularioComponent, pathMatch:"full"},

@@ -5,19 +5,27 @@
     text-align: justify; /* Texto justificado */
     font-size: 18px; /* Tamaño de fuente de 18 píxeles */
     margin: 10px; /* Margen exterior alrededor de las tarjetas */
-  
+    width: 100%;
+
     /* Puedes ajustar los estilos según tus preferencias */
     color:#193A6F;
   }
+
   
-  /* Estilos para el párrafo de texto en el primer mat-card */
-  .custom-text {
-    line-height: 1.5; /* Espaciado de línea de 1.5 */
-color:#193A6F;
-  
-  }
-  /* Estilos para los elementos de lista en el segundo mat-card */
 .custom-list-header {
-  font-weight: bold; /* Texto en negrita para encabezados de lista */
-  color:#193A6F;
+  font-size: 24px;
+  color: #193A6F;
 }
+
+.custom-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+  color:#193A6F
+}
+ 
+  
+
+
+
+ 

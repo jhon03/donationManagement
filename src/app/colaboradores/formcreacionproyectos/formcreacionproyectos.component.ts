@@ -96,6 +96,7 @@ export class FormcreacionproyectosComponent implements OnInit, OnDestroy{
         this.programa = datos.programa;
         this.proyecto.colCreador = datos.programa.usuCreador;
         this.proyecto.colModificador = datos.programa.usuModificador;
+        this.proyecto.imagenes = [];
         console.log(this.proyecto);
 
         this.proyectoSuscripcion = this.proyectoService.crearProyectos(this.proyecto, this.idPrograma).subscribe(

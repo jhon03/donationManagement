@@ -14,6 +14,13 @@ import { LoginService } from 'src/app/login.service';
 })
 export class GestiondonacionesComponent implements OnInit, OnDestroy{
 
+  showSolicitudesDonacion: boolean = false;
+  showCrearProyectos: boolean = false;
+  showCrearProgramas: boolean = false;
+  showVerProgramas: boolean = false;
+  showVerProyectos: boolean = false;
+  showVerColaboradores: boolean = false;
+  showVerBenefactores: boolean = false;
 
   ngOnInit(): void {
 

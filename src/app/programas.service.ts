@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { programaRequest, programaResponse, responseIdprogram, responseProgram, urlProgramas } from './helpers/programaHelpers';
+import { programaRequest, programaResponse,responseP, responseProgram, urlProgramas } from './helpers/programaHelpers';
 import { Observable } from 'rxjs';
 import { ColaboradorResponse } from './helpers/colaboradoresHelpers';
 
@@ -19,7 +19,16 @@ export class ProgramasService {
     return this.httpClient.get<responseProgram>(urlProgramas);
   }
 
-  public programaId(uuid: string ):Observable<responseIdprogram>{
-    return this.httpClient.get<responseIdprogram>(`${urlProgramas}/${uuid}`)
+  public programaId(uuid: string ):Observable<responseP>{
+    return this.httpClient.get<responseP>(`${urlProgramas}/${uuid}`)
+  }
+
+
+  public actualizarPrograma(idprograma: string, programa: programaRequest): Observable<programaResponse>{
+    return this.httpClient.put<programaResponse>(`${urlProgramas}/actualizar/${idprograma}`, programa);
+  }
+
+  public deletePrograma(idPrograma: string): Observable<responseP>{
+    return this.httpClient.delete<responseP>(`${urlProgramas}/eliminar/${idPrograma}`);
   }
 }

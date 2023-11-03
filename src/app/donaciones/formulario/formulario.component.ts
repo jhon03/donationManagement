@@ -105,7 +105,7 @@ crearDonacionProyecto(){
       next: (data) =>{
         console.log('donacion creada');
         console.log(data);
-        Swal.fire('donacion creada correctamente', 'succes')
+        Swal.fire('donacion creada correctamente, ¡Pronto te Contactaremos!', 'succes')
       },
       error: (error)=>{
         const errores = error.error.errors;

@@ -1,20 +1,46 @@
 .example-card {
     max-width: 400px;
+    max-height: 600px; /* Ajusta la altura máxima según tus necesidades */
     text-align: justify;
     color:#193A6F;
     
   }
-  .custom-image{
+  
+  /* Estilo base para dispositivos de escritorio */
+.mat-card-header,
+.mat-card-content {
+  padding: 16px;
+}
 
-    width: 100px;
-    height: 100px;
-  }
+.mat-card-image {
+  max-width: 100%; /* Ajustar la imagen al ancho del contenedor */
+}
+
+
+  /* Estilo para dispositivos móviles (ancho máximo de 600px) */
+@media screen and (max-width: 600px) {
  
-  .mi-parrafo-noticias{
-
-    font-size: 40px ;
-    font-weight: bold ;
-    margin: 10px;
-    padding: 5px;
-    color:#193A6F;
+  .mat-card-header {
+    padding: 5px; /* Reducir el espaciado superior e inferior del encabezado */
   }
+  
+  .example-card {
+    margin: 10px;
+  }
+
+  .mat-card-title {
+    font-size: 14px; /* Reducir el tamaño de fuente del título */
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+  }
+  .mat-card-content {
+    padding: 8px; /* Reducir el espaciado superior e inferior del contenido */
+    font-size: 15px; /* Reducir el tamaño de fuente del contenido */
+  }
+
+  .mat-card-image {
+    max-width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+  }
+}

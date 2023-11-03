@@ -54,6 +54,7 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
   }
 
   crearPrograma(){
+    this.programa.imagenes = [];
     this.programaSuscripcion = this.programaService.crearPrograma(this.programa).subscribe(
       {
         next:(datos)=>{
@@ -97,7 +98,7 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
           next:(img)=>{   
             imgUp++;
             if(imgUp === totalImgs){
-              Swal.fire("Producto Creado Correctamente","success");
+              //Swal.fire("Producto Creado Correctamente","success");
               //this.router.navigateByUrl('/admin');
             }
           },

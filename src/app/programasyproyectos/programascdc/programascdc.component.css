@@ -1,26 +1,35 @@
 
       
     .example-card {
-      max-width: 400px;
+      max-width:400px;
+      max-height: 600px; /* Ajusta la altura máxima según tus necesidades */
     }
+
     /*estilos para el avatar*/
     .example-header {
      width: 100px;
      height: 100px;
      border-radius: 50%;
-     overflow: hidden;
+    
     }
-  
+    .custom-options-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .custom-option {
+      margin-bottom: 10px; /* Ajusta el espaciado vertical entre las opciones */
+    }
 
     .content{
       text-align: justify;
       display: flex;
-      align-items: justify;
-      flex: 1;
+      flex-direction: column;
+      font-size: 13px;
     }
     .d-block w-100 img{
-
-      width: 4000px;
+      max-width: 100%; /* Ajustar al ancho máximo de la tarjeta */
+      height: auto; /* Altura automática para mantener la proporción */
     }
    /* Estilo base para el botón y el ícono */
 .custom-button {
@@ -34,12 +43,6 @@
   cursor: pointer;
 }
 
-/* Estilo del ícono */
-.custom-icon {
-  color: #193A6F; /* Color del ícono */
-  margin-right: 8px; /* Espacio entre el ícono y el texto */
-}
-
 /* Efecto hover: Cambiar el color de fondo al pasar el mouse */
 .custom-button:hover {
   background-color: #FB9850; /* Color de fondo al pasar el mouse */
@@ -50,6 +53,8 @@
   display: flex; /* Establece un diseño de flexbox */
   gap: 10px; /* Espacio entre las opciones */
   flex-wrap: wrap; /* Permite que las opciones se envuelvan a la siguiente línea si no caben en una sola línea */
+  max-width: 100%;
+
 }
 /* Estilo de cada opción */
 .custom-option {

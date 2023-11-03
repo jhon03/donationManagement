@@ -1,63 +1,26 @@
-<!--            con esta linea solo llama el html del componenete formulario
-<app-formulario></app-formulario>
--->
+<div class="imagen">
+<img src="assets/aporte solidarioimg.png" class="d-block w-100" alt="...">
 
-<mat-card>
+<div class="texto-superpuesto">
 
-  <h1>Aquí va la descripción del aporte solidario</h1>
-</mat-card>
+  <label>Apoyo Solidario: <span class="subrayado">*Sumemos juntos al cambio comunitario* </span></label>
+  <p>
+    Únete a nuestra iniciativa de Apoyo Solidario y contribuye a hacer realidad proyectos sociales y comunitarios. Tu generosidad puede marcar la diferencia en la vida de quienes más lo necesitan. Haz una donación de <span class="subrayado">papelería o refrigerios</span> y sé parte activa del cambio positivo en nuestra comunidad. <span class="subrayado">¡Tu ayuda cuenta!</span>
+  </p>
 
-<div class="container">
-    <div class="container mx-5 my-5">
-        <div class="form-container">
-            <div class="form-column">
-              <form  (ngSubmit)="onSubmit()">
-              
-        
-                <div class="form-section">
-          
-                <label for="tipo_identificacion">Tipo de Identificación:</label>
-                
-                <select [(ngModel)]="donacion.tipoIdentificacion" id="tipo_identificacion" name="tipo_identificacion" required>
-                  <option *ngFor="let i of donacion.listTipoIdentificacion" [value]="i.value" >{{i.key}}</option>
-                </select>
-                </div>
-        
-              <div class="form-section">
-        
-                <label for="numero_identificacion">Número de Identificación:</label>
-                <input type="number" id="numero_identificacion"[(ngModel)]="donacion.numeroIdentificacion" id="numero_identificacion" name="numeroIdentificacion" required matInput ><br><br>
-               </div>
-                
-               <div class="form-section">
-                <label for="nombre">¿Cuál es tu nombre?</label>
-                <input type="text" id="nombre" [(ngModel)]="donacion.nombreBenefactor"  required="" name="nombreBenefactor"><br><br>, 
-               </div>
-               <div class="form-section">
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" [(ngModel)]="donacion.correo" name="correo" required><br><br>
-              </div>
-        
-              <div class="form-section">
-                <label for="celular">Celular:</label>
-                <input type="number" id="celular" name="celular"  [(ngModel)]="donacion.celular" required="" ><br><br>
-        </div>
-        <div class="form-section">
-                <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
-                <select id="tipo_ayuda" name="aporte" [(ngModel)]="donacion.aporte" required>
-                  <option *ngFor="let i of listAportes" [value]="i.value">{{i.key}}</option>
-                </select>
-            </div>
-            
-                <div class="button-container">
-                  <input type="submit" value="Enviar Solicitud">
-                </div>
-        
-        
-              </form>
-        
-        
-            </div>  
-        </div>
-    </div>
+  <div class="boton-container">
+  <button id="boton1" (click)="mostrarCasoExito1()" class="boton-caso-exito">Caso de Éxito 1</button>
+
+  <button id="boton2" (click)="mostrarCasoExito2()" class="boton-caso-exito">Caso de Éxito 2</button>
+
+  
+  <button id="boton3" (click)="mostrarCasoExito3()"class="boton-caso-exito">Caso de Éxito 3</button>
+  <label>¡Conoce algunos casos de éxito!</label>
+</div>
+</div>
+
+</div>
+
+<div class="titulo-form">
+<label>¡Haz tu solicitud de donación!</label>
 </div>

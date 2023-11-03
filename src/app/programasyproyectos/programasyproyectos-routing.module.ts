@@ -20,16 +20,12 @@ const routes: Routes = [
   component: ProgramascdcComponent
 },
 
-{ path: 'programa/:programaId/formulario/:opcion', 
-component: FormularioComponent
-},
-
 {
   path: 'aporte-solidario',
   component: AporteSolidarioComponent
 },
 
-{ path: 'programa/:programaId/formulario/:opcion', 
+{ path: 'programa/id/formulario/:opcion', 
 component: FormularioComponent
 },
 
@@ -38,9 +34,7 @@ component: FormularioComponent
   component: ApadrinamientoComponent
 },
 
-{ path: 'programa/:programaId/formulario/:opcion', 
-component: FormularioComponent
-},
+
 
 {
   path: 'aportedeltiempo',

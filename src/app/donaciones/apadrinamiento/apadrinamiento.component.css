@@ -1,15 +1,37 @@
-/*.banner {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .banner img {
-    max-width: 100%;
-    height: auto;
-  }*/
+.imagen {
+
+  position: relative;
+  width: 100%; /* Establecer el ancho al 100% */
+  height: auto; /* Altura automática para mantener la proporción */
+  overflow: hidden; /* Evita que el contenido se desborde */
+  opacity: 0.4;
+}
   .contenido {
     display: flex; /* Utiliza un contenedor flex para organizar los elementos */
     justify-content: space-between; /* Distribuye el espacio horizontalmente */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     margin: 20px; /* Agrega márgenes alrededor del contenido */
   }
+  .texto-superpuesto{
+ 
+    justify-content: flex-start;
+  
+    position:absolute; 
+    margin: 70px;
+    top: 50%; 
+    left: 25%;
+    transform: translate(-30%, -50%); 
+    padding: 10px; 
+    text-align: left;  
+    color: black;
+    font-size: 28px;
+    border: 10px;
+    font-weight: bold;
+    max-width: 60%;
+    overflow: hidden; 
+    
+text-decoration: solid;
+text-shadow: 3px 3px 7px rgba(211, 150, 20, 0.5);
+  
+}
+

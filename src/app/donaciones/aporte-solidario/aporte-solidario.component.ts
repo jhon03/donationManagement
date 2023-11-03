@@ -8,9 +8,16 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-aporte-solidario',
   templateUrl: './aporte-solidario.component.html',
-  styleUrls: ['./aporte-solidario.component.css']
+  styleUrls: ['./aporte-solidario.component.css'],
+  
 })
 export class AporteSolidarioComponent implements OnInit, OnDestroy {
+
+
+  casoExito2 = "Nuestra Escuela para Cuidadores ha demostrado ser un recurso invaluable en nuestra comunidad al proporcionar orientación y acompañamiento psicológico a un amplio espectro de edades, desde niños y niñas hasta adultos y personas mayores. Nuestro enfoque no solo se centra en el apoyo emocional, sino que también desarrolla estrategias sólidas para la prevención y promoción de la salud mental de las personas y la comunidad en su conjunto.";
+
+  casoExito3 = "Al centrar nuestras acciones en la creación de espacios de escucha y reconocimiento para las personas mayores, hemos logrado un impacto positivo en sus vidas, fortaleciendo sus habilidades socioemocionales y sus vínculos afectivos con sus familias y la comunidad en general Cada mes, entre 20 y 30 personas mayores participan en nuestro programa, donde reciben apoyo pedagógico y psicosocial a través de una amplia gama de talleres y actividades.";
+
 
   private idSuscripcion: Subscription;
   private nombreSuscripcion: Subscription;
@@ -42,6 +49,9 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obtenerId();
     this.obtenerNombre();
+    this.mostrarCasoExito1();
+    this.mostrarCasoExito2();
+    this.mostrarCasoExito3();
   }
   
 
@@ -59,6 +69,8 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
     }
     
   }
+
+ 
   
 
   obtenerId(){
@@ -159,4 +171,28 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
 
   }
 
-}
+  mostrarCasoExito1(){
+
+    const casoExito1 = "En nuestra propuesta de aprendizaje colaborativo, hemos logrado un impacto significativo en la vida de niños, niñas y adolescentes de edades comprendidas entre 7 y 15 años";
+
+    
+    const intervenciones = "A través de intervenciones lúdicas, artísticas, actividades de lectura, escritura, expresión oral y el uso de la tecnología, hemos creado un espacio de integración y convivencia que promueve la cultura y el crecimiento personal.";
+
+      const mensajeCompleto = casoExito1 + " " + intervenciones;
+
+    Swal.fire(mensajeCompleto);
+  }
+
+  mostrarCasoExito2(){
+    Swal.fire(this.casoExito2);
+  }
+
+  mostrarCasoExito3(){
+    Swal.fire(this.casoExito3);
+  }
+
+
+  }
+
+
+

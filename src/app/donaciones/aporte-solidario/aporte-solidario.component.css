@@ -1,0 +1,65 @@
+.imagen {
+
+    position: relative;
+    width: 100%; /* Establecer el ancho al 100% */
+    height: auto; /* Altura automática para mantener la proporción */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    opacity: 0.4;
+}
+
+.texto-superpuesto{
+ 
+    justify-content: flex-start;
+  
+    position:absolute; 
+    margin: 40px;
+    top: 60%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 10px; 
+    text-align: left;  
+    color: black;
+    font-size: 20px;
+    border: 10px;
+    
+font-weight: bold;
+}
+
+.texto-superpuesto label{
+
+color:black;
+text-decoration: solid;
+font-size: 35px;
+font-weight: bold;
+border: 20px;
+padding: 20px;
+white-space: nowrap;
+
+}
+.subrayado{
+
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+.boton-caso-exito {
+    background-color: #193A6F;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  }
+  .boton-container{
+    margin-top: auto;
+  }
+  .boton-container label{
+    font-size: 25px;
+  }
+  .titulo-form label{
+    font-size: 30px;
+    margin: 50px;
+    font-weight: bold;
+    color: #193A6F;
+  }

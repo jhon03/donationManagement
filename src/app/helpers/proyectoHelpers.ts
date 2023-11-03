@@ -6,12 +6,12 @@ export class proyectoRequest {
 
     nombre: string;
     descripcion: string;
-    imagen: string;
+    imagenes: imagenDesc[];
     colCreador: string;
     colModificador: string;
     costo: number;
-    fechaInicio: Date;
-    fechaFinalizacion: Date;  
+    fechaInicio: Date| string;
+    fechaFinalizacion: Date| string;  
     opcionesProyectos: any = [
         {value: 'Social', key: 'Social'},
         {value: 'Comunitario', key: 'Comunitario'}
@@ -40,12 +40,16 @@ export class responseProyect{
     proyecto: proyectoResponse[]
 }
 
+export class proyectoIdRes{
+    proyecto: proyectoResponse;
+}
+
 export class proyectoResponse{
 
     nombre: any;
     descripcion: string;
     imagenes: imagenDesc[];
-    costo: Float32Array;
+    costo: number;
     fechaInicio: Date;
     fechaFinalizacion: Date;
     colCreador: string;

@@ -3,27 +3,32 @@
 
     <mat-card-header>
         
-        <mat-card-subtitle>
-            <p>¡Bienvenido al módulo de gestión de donaciones del Centro de Desarrollo Comunitario San Francisco de Asís! Aquí, tienes el poder de crear un impacto real en nuestras comunidades al gestionar proyectos, programas, solicitudes de donación y colaboradores. Tu contribución es fundamental para llevar adelante nuestra misión de apoyar a quienes más lo necesitan. A través de esta plataforma, podrás coordinar y supervisar cada paso de tu labor benéfica. Juntos, construiremos un futuro más brillante y solidario. ¡Gracias por ser parte de este cambio positivo! </p>
+        <mat-card-subtitle class="Bienvenido">
+            <p>¡Bienvenido al <span class="subrayado">módulo de gestión de donaciones</span> del Centro de Desarrollo Comunitario San Francisco de Asís! Aquí, tienes el poder de crear un impacto real en nuestras comunidades al gestionar proyectos, programas, solicitudes de donación y colaboradores. Tu contribución es fundamental para llevar adelante nuestra misión de apoyar a quienes más lo necesitan. A través de esta plataforma, podrás coordinar y supervisar cada paso de tu labor benéfica. Juntos, construiremos un futuro más brillante y solidario. ¡Gracias por ser parte de este cambio positivo! </p>
         </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-actions class="actions">
         <div class="button-grid">
             <div class="button-column">
-        <button mat-stroked-button id="crear-proyectos"  [routerLink]="['/creacionproyectos']" >Crear Proyectos</button>
-        <button  mat-stroked-button id="ver-solicitudes"  [routerLink]="['/versolicitudesdedonacion']">Ver Solicitudes de Donación</button>
+        <button mat-stroked-button id="crear-proyectos"  [routerLink]="['/creacionproyectos'] ">Crear Proyectos</button>
+        <button  mat-stroked-button id="ver-solicitudes"  (click)="showSolicitudesDonacion = true">Ver Solicitudes de Donación</button>
         <button mat-stroked-button id="crear-programas"  [routerLink]="['/creacionprogramas']">Crear Programas</button>
         </div>
          <br><br>
         <div class="button-column">
-        <button mat-stroked-button id="ver-benefactores">Ver Benefactores</button>
-        <button mat-stroked-button  id="crear-colaboradores" [routerLink]="['/Registro']">Crear Colaboradores </button>
-        <button mat-stroked-button id="ver-colaboradores">Ver Colaboradores</button>
+        <button mat-stroked-button  id="ver-programas" [routerLink]="['/VerProgramas']">Ver Programas </button>
+        <button mat-stroked-button  id="ver-proyectos" [routerLink]="['/VerProyectos']">Ver Proyectos </button>
+        <button mat-stroked-button id="ver-colaboradores"  [routerLink]="['/listcolaboradores']">Ver Colaboradores</button>
+
+        <button mat-stroked-button id="ver-benefactores"  [routerLink]="['/verBenefactores']">Ver Benefactores</button>
         </div>
         </div>
       </mat-card-actions>
 </mat-card>
+<app-versolicitudesdonacion *ngIf="showSolicitudesDonacion"></app-versolicitudesdonacion>
+
+<app-versolicitudesdonacion *ngIf="showCrearProyectos"></app-versolicitudesdonacion>
 
 
 

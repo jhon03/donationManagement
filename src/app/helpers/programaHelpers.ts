@@ -11,7 +11,7 @@ export class programaRequest {
     descripcion:string;
     usuCreador: string;
     usuModificador:string;
-    imagen: string;
+    imagenes: descImg[];
     listaOpciones: any = [
 
         {value: 'Apadrinar', key: 'Apadrinar'},
@@ -29,9 +29,13 @@ export class responseProgram{
     programas: programaResponse[];
 }
 
-export class responseIdprogram{
+
+
+export class responseP{
+    msg: string;
     programa: programaResponse;
 }
+
 
 
 export class programaResponse{
@@ -54,5 +58,6 @@ export class programaResponse{
 
 
 export class descImg {
+    _id: string;
     url: string;
 }

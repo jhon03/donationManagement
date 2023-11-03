@@ -1,7 +1,7 @@
 /* Estilo para el cuerpo de la página */
 /* Estilo para el formulario */
 form {
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -9,6 +9,9 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+input:required {
+    border: 2px solid red;
+}
 /* Estilo para etiquetas de campo */
 label {
     display: block;
@@ -20,7 +23,16 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+
 select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type= "number"] {
+
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;

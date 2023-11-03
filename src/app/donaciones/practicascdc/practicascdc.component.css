@@ -1,0 +1,74 @@
+.cabecera{
+
+    color: #193A6F;
+    text-align: center;
+    border-color: #193A6F;
+
+}
+.cabecera label{
+  font-size: 20px;
+  font-weight: bold;
+  color:#193A6F;
+
+}
+.descripcion {
+    padding: 30px;
+    margin: 10px;
+    height: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #193A6F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    gap: 16px; /* Espacio entre las columnas */
+  }
+  
+  .columna {
+    width: 100%; /* Ocupa todo el ancho de la columna */
+  }
+.columna label{
+  color:#193A6F;
+  font-weight: bold;
+
+}
+  .subrayado{
+    
+    font-weight: bold;
+    text-decoration-thickness: 3px;
+    color:#193A6F
+}
+
+.texto{
+    text-align: justify;
+    color: #193A6F;
+}
+
+.boton-con-estilo {
+    background-color:#193A6F; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    padding: 10px 20px; /* Ajusta el espaciado interno según tus preferencias */
+    border: none;
+    border-radius: 5px; /* Ajusta la curvatura de los bordes según tus preferencias */
+    cursor: pointer;
+    width: 90%;
+
+    
+  }
+
+  .boton-con-estilo:hover {
+    background-color:#FB9850; /* Cambia el color de fondo en el estado de "hover" (al pasar el mouse) */
+  }
+
+.frase{
+  
+  font-weight: bold;
+  font-style: italic;
+  color:#193A6F; 
+  
+  text-shadow: 3px 3px 7px rgba(184, 128, 10, 0.5);
+  
+}

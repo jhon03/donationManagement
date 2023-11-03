@@ -7,7 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { InicioModule } from './inicio/inicio.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -28,11 +28,20 @@ import { AuthInterceptorProviders } from './security/interceptor/auth.intercepto
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FloatingButtonComponent } from './floating-button/floating-button.component'; // Importa MatNativeDateModule
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    FloatingButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDividerModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatGridListModule
+    MatGridListModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatDatepickerModule, // Agrega MatDatepickerModule
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

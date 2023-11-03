@@ -40,3 +40,17 @@
   flex-wrap: wrap;
   margin:  20px auto;
  }
+
+ .subrayado{
+
+  font-weight: bold;
+  text-decoration-thickness: 3px;
+  color:#193A6F;
+}
+.Bienvenido{
+  flex: 1;
+}
+.Bienvenido p{
+  color:#193A6F;
+  padding: 10px;
+}
