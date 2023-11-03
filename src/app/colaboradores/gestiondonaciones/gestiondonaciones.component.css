@@ -1,4 +1,16 @@
 
+.boton-guia {
+
+  background-color:#193A6F;
+   color: #fff; 
+   padding: 10px 20px; 
+   text-decoration: none; 
+   border-radius: 5px;
+}
+
+.boton-guia:hover {
+  background-color:#7a7874;
+}
   button-grid {
     display: flex;
     justify-content: justify;
