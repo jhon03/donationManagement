@@ -10,6 +10,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
     gap: 20px; /* Agrega espacio entre las columnas */
+ 
+    font-family: 'Montserrat';
+ 
   }
 
   .columna-imagen {
@@ -26,6 +29,8 @@
     font-weight: bold;
     text-align: center;
     font-size: 34px;
+    
+    font-family: 'Montserrat';
   }
   
   .columna-contenido {
@@ -45,5 +50,17 @@
     font-size: 18px;
     color: #193A6F;
     padding: 10px;
+  }
+
+  @media screen and (max-width:767px){
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+    }
+  
+    .card-container {
+      margin: 10px;
+    }
   }
   

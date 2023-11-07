@@ -6,11 +6,12 @@
 -->
 
 
-<mat-grid-list cols="2" [cols]="isMobile ? 1 : 2" rowHeight="2:2" gutterSize="16">
+<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16" class="mat-grid-list">
 
     <mat-grid-tile *ngFor="let card of cards">
 
 <mat-card class="example-card">
+
     <mat-card-header class="mat-card-header">
           
 <mat-card-title class="mat-card-title">{{card.fecha}}</mat-card-title>

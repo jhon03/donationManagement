@@ -18,50 +18,19 @@
     margin-right: 20px;
   }
   
-  /* Estilo base para dispositivos de escritorio */
-.mat-card-header,
-.mat-card-content {
-  padding: 16px;
-}
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 767px) {
     .IntroCDC, .Mision {
-      padding: 10px; /* Reducir el espaciado en pantallas más pequeñas */
-      font-size: small; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.4;
     }
 
   
-    .videoIntroCDC {
-      width: 140%; /* Asegurarse de que el video se ajuste al ancho de la pantalla */
-      margin: 0; /* Eliminar el margen derecho en pantallas más pequeñas */
-      font-size: small;
+    .videoIntroCDC iframe {
+      width: 100%;
+    
+     margin: O auto;
     }
     
-    @media screen and (max-width: 600px){
-
-     .infoCDC {
-      padding: 10PX;
-     }
-
-     .mat-card{
-      margin: 10px;
-     }
-    }
-
-    /* Estilo para dispositivos móviles (ancho máximo de 600px) */
-@media screen and (max-width: 600px) {
-  .mat-card-header {
-    padding: 8px; /* Reducir el espaciado superior e inferior del encabezado */
   }
-  
-  .mat-card-title {
-    font-size: 14px; /* Reducir el tamaño de fuente del título */
-  }
-
-  .mat-card-content {
-    padding: 8px; /* Reducir el espaciado superior e inferior del contenido */
-    font-size: 12px; /* Reducir el tamaño de fuente del contenido */
-  }
-}
-  }
-
- 

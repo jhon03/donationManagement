@@ -1,70 +1,149 @@
+
 .navbar{
 
   background-color: #FB9850;
   display: flex;
   justify-content: space-between;
+
+  padding: 10px 20px;
+  color: #fff;
+  height: 100px;
+  
+}
+
+
+.logo {
+  display: flex;
   align-items: center;
-  padding: 10px 20px;
-  color: #fff;
 }
-button[mat-button]:hover{
-  background-color: #193A6F;
+.logo img {
+
+  width: 130px;
+  height: 100px; /* Ajustamos la altura de la imagen */
 }
 
-
-
-/* media query móviles*/ 
-@media (max-width: 767px){
-
-  .navbar {
-    display: block; /* Cambia a un diseño de bloque */
-    padding: 10px; /* Ajusta el relleno según sea necesario */
-    text-align: center; /* Alinea el contenido al centro */
-    background-color: #FB9850; /* Cambia el color de fondo */
-  }
-
-
-  .nav-links {
-    display: block; /* Muestra los botones de navegación en dispositivos móviles */
-    text-align: center; /* Alinea los botones al centro */
-    background-color: #FB9850; /* Cambia el color de fondo de la lista de navegación */
-  }
-  .nav-links button[mat-button] {
-    padding: 10px 20px;
-  }
+.logo h4 {
+  color: #193A6F;
+  font-style: italic;
+  font-style: bold;
+  font-family: 'Montserrat';
+  padding: 10px;
 
 }
 
-/* Estilo para los botones navegación */
+.nav-links {
 
-
-button.mat-button{
-  background-color:#FB9850 ;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: color 0.3s;
-
-}
-button.mat-button:hover{
- color:#193A6F;
-
+  display: flex;
 }
 
-.person {
- background-color:  white;
- color: #193A6F;
+.nav-links label{
  
+  margin: 8px; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links label:hover{
+
+  color: #193A6F;
+}
+
+.auth {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
   
 }
-.registro{
+
+.auth mat-icon{
   
-   
-    color: #193A6F;
+  color: #193A6F;
+  margin-right: 10px; 
+  border-radius: 8px;
+  
+  
+}
+.auth mat-card {
+
+  display: flex;
+  align-items: center;
+  margin: 0 10px; /* Ajustamos el margen para separar los elementos */
+  
+}
+
+.autenticacion {
+  font-family: 'Montserrat', sans-serif;
+  color:#193A6F;
+  
+}
+/*pantallas grandes*/
+@media screen and (min-width: 1024px){
+
+
+  .navbar{
+    height: 100px;
+    align-items: center;
     
+  }
+  .logo img {
+
+    width: 130px;
+    height: 100px; /* Ajustamos la altura de la imagen */
+  }
+  .nav-links label{
+ 
+    margin: 10px; 
+  }
 }
-.show-nav {
-  display: block;
-}
+/* dispositivos móviles*/
+  @media screen and (max-width: 767px){
+
+    .navbar{
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+    }
+    .logo {
+      order: 1;
+      margin: 6px;
+      align-self: flex-start;
+    }
+   .logo h4 {
+    margin: 20px;
+   }
+    .auth mat-icon {
+      
+   margin-top: 25px;
+      
+    }
+    .autenticacion {
+      
+     margin-left: 0px; 
+    }
+    .nav-links {
+      order: 2;
+    }
+    .nav-links label{
+ 
+      margin: 30px; 
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+    .auth {
+      display: flex;
+      margin: 5px;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+ 
+   
+  }
+/*tabletas*/
+  @media screen and (min-width: 768px) and (max-width: 1024px){
+    .navbar{
+      height: 300px;
+    }
+  }
+
+
+

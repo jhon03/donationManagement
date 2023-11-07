@@ -10,6 +10,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
     gap: 20px; /* Agrega espacio entre las columnas */
+    font-family: 'Montserrat';
+
+  
   }
   
   .columna-imagen {
@@ -46,12 +49,7 @@
     color: #193A6F;
   }
   
-  .horario {
-    font-weight: bold;
-    text-align: center;
-    color: #193A6F;
-    font-size: 18px;
-  }
+ 
 
   .boton-con-estilo {
     background-color:#193A6F; /* Cambia el color de fondo según tus preferencias */
@@ -72,4 +70,25 @@
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     
+  }
+
+  @media screen and (max-width: 767px){
+
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .columna-imagen {
+
+      text-align: center;
+    }
+    .columna-imagen img{
+
+      text-align: center;
+    }
+
+    .columna-contenido {
+      padding: 10px;
+    }
   }

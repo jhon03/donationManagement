@@ -1,48 +1,46 @@
 
 <div class="navbar" >
   
-   <div class="container">
- 
+<div class="logo">
+  <img src="assets/logonav.png" alt=""> 
+  <h4>¡Aquí Crecemos Juntos!</h4> 
+</div>
+  
 
-  <img src="assets/logonav.png" alt="" width="160" height="140" > 
-  
-  <h4 class="text-center"><strong class="mt-4"><i style="color: #193A6F;">¡Aquí Crecemos Juntos!</i> </strong></h4> 
-  
-  
+
+
 <div class="nav-links">
-  <button mat-button [routerLink]="['/inicio']">Inicio</button> 
-  <button mat-button [routerLink]="['/info']">Nosotros</button> 
-  <button mat-button [routerLink]="['/gestion-social']"> Gestión Social</button> 
-  <button mat-button [routerLink]="['/programascdc']"> Programas/Proyectos</button> 
+  <label  [routerLink]="['/inicio']">Inicio</label>
+  <label  [routerLink]="['/info']">Nosotros</label> 
+  <label  [routerLink]="['/gestion-social']"> Gestión Social</label> 
+  <label  [routerLink]="['/programascdc']"> Programas/Proyectos</label>
 </div>
    
  <!-- <input type="search" placeholder="buscar" style="border-radius: 50px">  -->
 
-  
-<div *ngIf="!usuarioLogeado" class="sesion">      <!--si el usuario no esta logeado muestra-->
-  <mat-icon class="person" routerLink="/login" routerLinkActive="active">person</mat-icon> 
- 
-</div>
+<div class="auth">
+
+<mat-card *ngIf="!usuarioLogeado">      <!--si el usuario no esta logeado muestra-->
+  <mat-icon  routerLink="/login" routerLinkActive="active">person </mat-icon> 
+  <span class="autenticacion">Login</span>
+</mat-card>
          
-<div *ngIf="usuarioLogeado" class="sesion">
+<div *ngIf="usuarioLogeado">
   
-  <mat-icon class="person" (click)="logout()">logout</mat-icon> 
+  <mat-icon (click)="logout()">logout</mat-icon> 
  
 </div>
 
-   <div>
-    <mat-icon class="registro" routerLink="/Registro"> person_add</mat-icon>
-   </div>
+<mat-card>
+  <mat-icon class="registro" routerLink="/Registro"> person_add</mat-icon>
+  <span class="autenticacion">Admin</span>
+</mat-card>
 
-  </div> 
-  
-  
+</div>
 </div>  
   
+ <router-outlet> </router-outlet> 
 
-  <router-outlet> </router-outlet> 
-
-  
   <app-floating-button></app-floating-button>
   <app-footer></app-footer>
   

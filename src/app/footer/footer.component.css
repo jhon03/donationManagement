@@ -84,5 +84,15 @@ footer {
   color:#193A6F; /* Cambia el color al pasar el mouse */
 }
 
+/*dispositivos móviles*/
+@media screen and (max-width: 767px){
 
+footer {
+  
+  background-color: hsl(25, 96%, 65%);
+  color: #193A6F;
+  padding: 10px 0;
+}
+
+}
 

@@ -103,9 +103,9 @@ crearDonacionProyecto(){
   this.donacionProyectoSuscripcion = this.donacionService.crearDonacionProyecto(this.id ,this.donacionA).subscribe(
     {
       next: (data) =>{
-        console.log('donacion creada');
+        Swal.fire('Nuestro equipo revisará tu solicitud detenidamente y te contactará lo antes posible para brindarte más detalles sobre el proceso de donación' , 'Att: CDC San Francisco de Asís');
+        
         console.log(data);
-        Swal.fire('donacion creada correctamente, ¡Pronto te Contactaremos!', 'succes')
       },
       error: (error)=>{
         const errores = error.error.errors;
@@ -137,9 +137,9 @@ crearDonacionPrograma(){
   this.donacionProgramaSuscripcion = this.donacionService.crearDonacionPrograma(this.id ,this.donacionA).subscribe(
     {
       next: (data) =>{
-        console.log('donacion creada');
+       
+        Swal.fire('Nuestro equipo revisará tu solicitud detenidamente y te contactará lo antes posible para brindarte más detalles sobre el proceso de donación', 'Att: CDC San Francisco de Asís');
         console.log(data);
-        Swal.fire('donacion creada correctamente', 'succes')
       },
       error: (error)=>{
         const errores = error.error.errors;

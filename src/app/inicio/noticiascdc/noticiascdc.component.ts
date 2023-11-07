@@ -9,7 +9,6 @@ import { PageEvent } from '@angular/material/paginator';
 export class NoticiascdcComponent implements OnInit {
 
 
-  isMobile: boolean;
   cards: any[] = [
 
     { id:1, fecha: 'Martes, 06 de Junio de 2023', title: 'Cine Foro', content: 'Cine foro al barrio es una iniciativa creada por los integrantes del proyecto Recrearte que busca fortalecer habilidades sociales a través de la lectura y oralidad; tratando diferentes problemáticas identificadas en el sector', photo: '/assets/cine.jpeg'},
@@ -59,9 +58,6 @@ export class NoticiascdcComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.isMobile = window.innerWidth <= 600; // 600px es el ancho máximo para dispositivos móviles
-    window.addEventListener('resize', () => {
-      this.isMobile = window.innerWidth <= 600;
-    });
+
   }
 }

@@ -44,6 +44,9 @@ white-space: nowrap;
     margin: 20px;
     height: 100%;
     height: 100%;
+    text-align: justify;
+    font-family: 'Montserrat';
+
 }
 
 .titulo {
@@ -56,6 +59,8 @@ white-space: nowrap;
 
 .titulo label{
     text-align: center;
+    font-family: 'Montserrat';
+
 }
 
 .descripcion p {
@@ -63,5 +68,15 @@ white-space: nowrap;
     font-size: 18px;
     line-height: 1.4; /* Espaciado entre líneas */
     margin-top: 10px; /* Espacio entre el título y el párrafo */
+    font-family: 'Montserrat';
+
 }
 
+@media screen and (max-width: 767px){
+    .texto-superpuesto{
+
+        margin: 3px;
+        font-size: 14px;
+        font-family: 'Montserrat';
+    }
+}

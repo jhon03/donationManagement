@@ -14,19 +14,14 @@
     height: 100%;
 }
 
-.titulo {
-    font-weight: bold;
-    font-size: 24px;
-    color: #193A6F;
-    text-align: justify;
-
-}
-
 .descripcion p {
     color: #193A6F;
     font-size: 18px;
     line-height: 1.4; /* Espaciado entre líneas */
-    margin-top: 10px; /* Espacio entre el título y el párrafo */
+    margin-top: 8px; /* Espacio entre el título y el párrafo */
+    text-align: justify;
+    font-family: 'Montserrat';
+    
 }
 
 .columna-imagen {
@@ -42,7 +37,9 @@
     font-weight: bold;
     text-align: relative;
     font-size: 18px;
-    margin: 20px;
+    margin: 5px;
+    text-align: center;
+        font-family: 'Montserrat';
 
   }
   .Psicología-info label{
@@ -50,7 +47,9 @@
     font-weight: bold;
     text-align: relative;
     font-size: 18px;
-    margin: 20px;
+    margin: 5px;
+    text-align: center;
+    font-family: 'Montserrat';
 
   }
   .contenido{
@@ -58,13 +57,33 @@
     height: 406px;
     text-align: justify;
     margin: 20px;
-    color:#193A6F
+    color:#193A6F;
+    font-family: 'Montserrat';
   }
+
+  /*contenedor para los elementos de jardin infantil y consultorio psicologico*/
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
     gap: 90px; /* Agrega espacio entre las columnas */
+    justify-content: center; /* Centra horizontalmente el contenido */
+
+
+
 
 
   }
+
+  @media screen and (max-width: 767px){
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+      
+    }
+    .card-container {
+      margin: 10px;
+    }
+  }
+  
   

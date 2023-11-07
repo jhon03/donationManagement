@@ -1,31 +1,81 @@
-/* Estilos para el mat-card */
-.custom-card {
-    
-    padding: 16px; /* Margen interno de 16 píxeles */
-    text-align: justify; /* Texto justificado */
-    font-size: 18px; /* Tamaño de fuente de 18 píxeles */
-    margin: 10px; /* Margen exterior alrededor de las tarjetas */
-    width: 100%;
 
-    /* Puedes ajustar los estilos según tus preferencias */
-    color:#193A6F;
-  }
+/*estilos genrales*/
+.container{
 
-  
-.custom-list-header {
-  font-size: 24px;
-  color: #193A6F;
+height: 600px;
+
+}
+.custom-card{
+
+position: relative;
+ top: -40px;
+ width: auto;
+ height: auto;
+
 }
 
-.custom-text {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-top: 10px;
+.custom-card .custom-text {
+
+  position: relative;
+  top: -20px;
+  color:#193A6F;
+  text-align: justify;
+}
+
+.custom-card .custom-list-header{
+
+  padding: 50px;
+  font-style: bold;
+  font-family: 'Montserrat';
   color:#193A6F
 }
- 
+.custom-card2 {
+
+ position: relative;
+ top: 28px;
+ width: auto;
+ height: auto;
+ color: #193A6F;
+}
+.custom-card2 .custom-list-header2{
   
+  padding: -5px;
+  font-weight:  bold;
+  font-family: 'Montserrat';
+  color:#193A6F;
+  font-size: 16px;
+}
+.custom-card2 .custom-list-header3{
 
+  font-weight:  bold;
+  font-family: 'Montserrat';
+  color:#193A6F;
+  font-size: 16px;
 
+}
 
- 
+ /*dispositivos móviles*/
+@media screen and (max-width: 767px){
+
+  .container{
+    height: 600px;
+  }
+
+  .custom-card {
+    
+   position: relative;
+   top: 30px;
+   max-width: auto;
+   max-height: auto;
+   
+  }
+
+  .custom-card .custom-text{
+
+    position: relative;
+    top: 120px;
+    color: #193A6F;
+    text-align: justify;
+  }
+  
+}

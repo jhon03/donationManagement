@@ -46,11 +46,15 @@
     font-size: 18px;
     color: #193A6F;
     padding: 10px;
+    
+    font-family: 'Montserrat';
   }
   .subrayado{
 
     text-decoration: underline;
     font-size: 18px;
+    
+    font-family: 'Montserrat';
 }
 
 .boton-con-estilo {
@@ -64,4 +68,24 @@
   
   .boton-con-estilo:hover {
     background-color:#FB9850; /* Cambia el color de fondo en el estado de "hover" (al pasar el mouse) */
+  }
+
+  @media screen and (max-width: 767px){
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+      gap: 10px; /* Espacio entre columnas */
+   
+      font-family: 'Montserrat';
+   
+    }
+  
+    .columna-imagen {
+      grid-row: 1; /* Coloca las imágenes en la primera fila */
+    }
+
+    .columna-contenido {
+      grid-row: 2; /* Coloca el contenido en la segunda fila */
+    }
   }

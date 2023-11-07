@@ -1,7 +1,4 @@
-.miembro img {
-    max-width: 100%;
-    border-radius: 50%; /* Esto hace que la imagen tenga forma de círculo */
-}
+
 header {
     
     background-color: #193A6F;
@@ -17,7 +14,19 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Distribuir en tres columnas igualmente */
     gap: 20px; /* Espacio entre elementos */
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.perfil {
+    /*flex: 0 1 calc(33.3333% - 15px); /* Esto hará que cada perfil ocupe un tercio del contenedor con un espacio de 20px entre ellos */
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+    text-align: center;
+}
+
 .equipo {
     display: flex;
     align-items: flex-end; /* Alinea el contenido en la parte inferior */
@@ -34,6 +43,36 @@ header {
 .contenido {
     flex: 1; /* Expande el contenido para ocupar todo el espacio disponible */
     margin-left: 10px; /* Ajusta el espacio entre la imagen y el contenido */
+    text-align: justify;
+    color: #193A6F;
+}
+.contenido mat-card-title {
+
+   color:#193A6F;
+   font-weight:  bold;
+   font-family: 'Montserrat';
+   white-space: nowrap;
+   text-align: left;
+   margin: 20px;
+}
+.contenido mat-card-content {
+    
+   font-family: 'Montserrat';
+   white-space: nowrap;
+   text-align: left;
+
+}
+
+@media screen and (max-width: 767px){
+
+    .perfil {
+     flex: 0 1 calc(50% - 20px); /* En pantallas más pequeñas, ocuparán la mitad del ancho */
+
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* En pantallas móviles, muestra 2 columnas */
+      }
 }
 
 
