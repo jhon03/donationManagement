@@ -44,12 +44,24 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
           this.donaciones = this.donaciones.concat(data.donacion);
           console.log('total donaciones');
           console.log(this.donaciones);
+          this.ordenarLista(this.donaciones)
         },
         error: (error) =>{
           console.log(error);
         }
       }
     )
+  }
+
+  private ordenarLista(donaciones: donacionAResponse[]){
+    console.log(donaciones);
+    const orderedDonaciones = donaciones.sort( (a,b)=> {
+      let fechaa = new Date(a.fechaCreacion);
+      let fechab = new Date(b.fechaCreacion);
+      return fechab.getTime() - fechaa.getTime() 
+    });
+    console.log(orderedDonaciones);
+    this.donaciones = orderedDonaciones;
   }
 
 }

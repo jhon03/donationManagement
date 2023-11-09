@@ -30,6 +30,7 @@ export class FormularioComponent implements OnInit, OnDestroy {
   id: string;
   relacion: string;
   opcion: string;
+  nombrePro: string;
 
 
   ngOnDestroy(): void {
@@ -40,9 +41,11 @@ export class FormularioComponent implements OnInit, OnDestroy {
     
   }
   ngOnInit(): void {
-    this.obtenerId();
-    this.obtenerNombre();
     this.opcion = this.activatedRoute.snapshot.params['opcion'];
+    this.relacion = this.activatedRoute.snapshot.params['nombre'];
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.nombrePro = this.activatedRoute.snapshot.params['npro'];
+    console.log(`${this.id}  ${this.opcion}  ${this.relacion}  ${this.nombrePro}`)
   }
 
 
@@ -67,36 +70,8 @@ onSubmit(){
 }
 
 
-obtenerId(){
-  this.idSuscripcion = this.activatedRoute.params.subscribe(
-    {
-      next: ({id, opcion}) =>{
-        this.id = id;
-        this.opcion = opcion;
-        console.log(opcion);
-      },
-      error: (error) =>{
-        console.log(error);
-      }
-    }
-  )
-}
 
-obtenerNombre(){
-  this.nombreSuscripcion = this.activatedRoute.url.subscribe(
-    {
-      next: (segmentos) =>{
-        const segmentosArray = segmentos.map(parte => parte.path);
-        if(segmentosArray.length > 1){
-          const nombre = segmentosArray[0];
-          this.relacion = nombre;
-          console.log(nombre);
-        }
-      },
-      error: (error) => console.log(error)
-    }
-  )
-}
+
 
 crearDonacionProyecto(){
 

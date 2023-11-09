@@ -102,7 +102,7 @@ export class FormcreacionproyectosComponent implements OnInit, OnDestroy{
         this.proyectoSuscripcion = this.proyectoService.crearProyectos(this.proyecto, this.idPrograma).subscribe(
           {
             next: (data)=>{
-              console.log('respuesta proyecto');
+              console.log('Proyecto Creado con Éxito', 'Ahora estara visible publicamente desde la pestaña programas/proyectos');
               console.log(data);
               this.uploadImg(data);
              

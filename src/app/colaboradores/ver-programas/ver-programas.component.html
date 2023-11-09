@@ -9,7 +9,7 @@
         <th>usuario Creador</th>
         <th>usuario Modificador</th>
         <th>opciones de colaboracion</th>
-       
+      
         <th>Eliminar</th>
         <th>Actualizar</th>
       </tr>
@@ -25,7 +25,7 @@
          
         <td>{{ programa.opcionesColaboracion }}</td>
         <td> 
-            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarPrograma(programa.uid)">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarPrograma(programa.uid, programa.imagenes)">
                 <mat-icon>delete</mat-icon>
               </button></td>
 

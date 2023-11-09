@@ -94,7 +94,7 @@ export class ActualizarProgramasComponent {
     const totalImgs = this.archivo.length;
     console.log(totalImgs);
     if(totalImgs <= 0){
-      this.router.navigateByUrl('/programascdc');
+      this.router.navigateByUrl('/VerProgramas');
       return;
     }
     let imgUp = 0;
@@ -109,7 +109,7 @@ export class ActualizarProgramasComponent {
             imgUp++;
             if (imgUp === totalImgs) {
               Swal.fire("Producto Creado Correctamente", "success");
-              this.router.navigateByUrl('/programascdc');
+              this.router.navigateByUrl('/VerProgramas');
             }
             
           },

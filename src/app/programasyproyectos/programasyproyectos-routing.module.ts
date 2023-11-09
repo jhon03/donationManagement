@@ -34,13 +34,15 @@ component: FormularioComponent
   component: ApadrinamientoComponent
 },
 
-
-
 {
   path: 'aportedeltiempo',
   component: AportedelTiempoComponent
-}
+},
   
+{
+  path: 'proyecto/:id/formulario/:opcion',
+  component: FormularioComponent
+}
 
 ];
 

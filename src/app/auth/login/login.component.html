@@ -11,8 +11,13 @@
          </div>
  
          <div class="user-box">
-             <input [(ngModel)]="credenciales.contrasena" type="password" name="contrasena" required="">
-             <label> Contraseña</label>
+            
+            
+             <input [(ngModel)]="credenciales.contrasena" name="contrasena" required="" [type]=" hide ? 'password' : 'text'" class="password-input">
+             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Alternar visibilidad de contraseña'" [attr.aria-pressed]="hide" class="password-toggle">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+               </button> 
+            <label for="contrasena"> Contraseña</label>
          </div>
          <!--
          <a [routerLink]="['/gestiondonaciones']">
@@ -21,7 +26,7 @@
          </a>
         -->
     <br>
-        <button class="btn btn-primary">INGRESAR</button>
+        <button class="btn btn-primary">Iniciar Sesión </button>
 
      </form>
     </div>

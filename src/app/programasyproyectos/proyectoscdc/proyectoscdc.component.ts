@@ -17,7 +17,7 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   private proyectoSuscripcion: Subscription;
   proyectos: proyectoResponse[];
 
-  programas: programaResponse[];
+  //programas: programaResponse[];
 
   constructor(private router: Router, private proyectoService: ProyectoService, private programaService: ProgramasService) { }
   

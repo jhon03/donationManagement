@@ -23,7 +23,7 @@
 
   .user-box {
     position: relative;
-    margin: 20px 0;
+    margin: 10px 0;
     width: 100%;
     text-align: center;
 
@@ -41,6 +41,37 @@
     border-radius: 10px;
     font-size: 16px;
   }
+
+  
+.password-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-right: 40px; /* Ajusta el espacio para el botón de visibilidad de contraseña */
+}
+
+
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
 
   .user-box label {
     position: absolute;

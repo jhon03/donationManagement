@@ -1,6 +1,6 @@
 import { programaResponse } from "./programaHelpers";
 
-export const urlProyectos = 'http://localhost:3000/api/proyecto'
+export const urlProyectos = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/proyecto'
 
 export class proyectoRequest {
 

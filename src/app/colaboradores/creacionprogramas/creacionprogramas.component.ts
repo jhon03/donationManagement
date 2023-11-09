@@ -59,7 +59,7 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
       {
         next:(datos)=>{
           console.log(datos);
-          Swal.fire("programa Creado con éxito", "succes");
+          Swal.fire("programa Creado con éxito", "Ahora estara visible publicamente desde la pestaña programas/proyectos");
           this.uploadImg(datos);
         },
         error:(error)=>{
@@ -84,6 +84,7 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
   private uploadImg(programa: programaResponse){
     const totalImgs = this.selectedImages.length;
     let imgUp = 0;
+    let imgdown: number = 0;
     const uuid = programa.uid;
 
     
@@ -95,16 +96,19 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
         
       this.imageSuscription = this.imagenService.uploadFile(formData,'programas', uuid).subscribe(
         {
-          next:(img)=>{   
+          next:(data)=>{   
             imgUp++;
             if(imgUp === totalImgs){
+              console.log(data);
               //Swal.fire("Producto Creado Correctamente","success");
               //this.router.navigateByUrl('/admin');
             }
           },
           error: (error:any) => {
+            imgdown++;
             console.log(error);
-          if(imgUp === totalImgs){
+            console.log(`Error al subir la imagen ${imagen}`)
+            if(imgdown === totalImgs){
               Swal.fire('Error al subir imágenes', 'error');
             //this.router.navigateByUrl('/agregar-producto');
             }

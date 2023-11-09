@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit, OnDestroy{
   credenciales: Credenciales = new Credenciales();
   private suscripcion: Subscription;
 
+  hide = true;
+
   
 
   ngOnInit(): void {

@@ -1,15 +1,47 @@
  
+ .contenedor-ppal {
+
+  height: 1000px;
+ }
+.text-center {
+  padding: 50px;
+}
+ /* Estilo para el texto */
+.text-center strong {
+  color: #193A6F; /* Color del texto */
+  text-shadow: 2px 2px #FB9850; /* Sombra del texto con color */
+}
     .example-card {
       max-width:400px;
-      max-height: 600px; /* Ajusta la altura máxima según tus necesidades */
+      max-height: 800px; /* Ajusta la altura máxima según tus necesidades */
+    }
+
+    .mat-grid-list {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en dispositivos de escritorio */
     }
 
     /*estilos para el avatar*/
     .example-header {
-     width: 100px;
-     height: 100px;
+     width: 50px;
+     height: 50px;
      border-radius: 50%;
     
+    }
+
+    .example-header img{
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .example-card mat-card-title {
+      font-style: italic;
+      font-style: bold;
+      font-family: 'Montserrat';
+    }
+
+    .example-card mat-card-subtitle{
+      font-family: 'Montserrat';
     }
     .custom-options-container {
       display: flex;
@@ -26,6 +58,7 @@
       flex-direction: column;
       font-size: 13px;
       color: #193A6F;
+      margin: 0px;
 
     }
     .d-block w-100 img{
@@ -69,43 +102,54 @@ mat-divider {
   margin: 20px 0; /* Espaciado superior e inferior */
 }
 
-/* Estilo para el texto */
-.text-center strong {
-  color: #193A6F; /* Color del texto */
-  text-shadow: 2px 2px #FB9850; /* Sombra del texto con color */
-}
+
 
 @media screen and (max-width: 767px){
 
   .mat-grid-list {
-    grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
-    
+    grid-template-columns: repeat(1, 1fr); /* Una sola columna en dispositivos móviles */
   }
 
-  
   .example-card {
-    padding: 8px; /* Ajusta el espaciado dentro de la tarjeta */
+    max-width: 100%; /* Aprovecha el ancho completo en dispositivos móviles */
+    max-height: auto; 
+    padding: 40px;
+    
+    top:100px;
+
   }
 
+  .content{
+    text-align: justify;
+    color: #193A6F;
+    padding: 10px; /* Ajusta el relleno interior de .content */
+    margin: 10px 0; /* Agrega espaciado superior e inferior para separar el contenido de la tarjeta */
   
+
+  }
+
   .example-header {
+    width: 30px; /* Ajusta el tamaño del avatar para dispositivos móviles */
+    height: 30px;
+  }
+
+  .example-header img {
+    width: 100%; /* Asegura que la imagen del avatar se ajuste al contenedor */
+    height: 100%;
+  }
+  .example-card mat-card-title,
+  .example-card mat-card-subtitle {
     text-align: center; /* Centra el título y el subtítulo */
   }
 
-  .carousel-inner img {
-    width: 100%; /* Ajusta el ancho de las imágenes del carrusel */
+  .custom-option {
+    margin-bottom: 5px; /* Reduzca el espaciado vertical entre las opciones */
   }
 
-
-  .custom-options-container {
-    text-align: center; /* Centra las opciones de colaboración */
-    
+  mat-divider {
+    margin: 10px 0; /* Reduce el espaciado superior e inferior del mat-divider */
   }
 
-  
-  .custom-button {
-    width: 100%; /* Ajusta el ancho de los botones de colaboración */
-  }
 
 
 }

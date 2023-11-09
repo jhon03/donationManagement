@@ -31,7 +31,7 @@ const routes: Routes = [
   component: PracticascdcComponent
 },
 //rutas nuevas, con los parametros por url
-{path: ':nombre/:id/formulario/:opcion', component: FormularioComponent, pathMatch:"full"},
+{path: ':npro/:nombre/:id/formulario/:opcion', component: FormularioComponent, pathMatch:"full"},
 
 
 

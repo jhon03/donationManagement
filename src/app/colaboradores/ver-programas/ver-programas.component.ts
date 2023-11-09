@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { programaResponse } from 'src/app/helpers/programaHelpers';
+import { descImg, programaResponse } from 'src/app/helpers/programaHelpers';
 import { ImageService } from 'src/app/image.service';
 import { ProgramasService } from 'src/app/programas.service';
 import Swal from 'sweetalert2';
@@ -42,16 +42,25 @@ export class VerProgramasComponent  implements OnInit, OnDestroy{
   }
 
 
-  public eliminarPrograma(idPrograma: string){
-    this.imagenSuscripcion = this.imagenService.eliminarImagenes('programas', idPrograma).subscribe(
-      {
-        next:(data)=>{
-          console.log(data);
-          this.deleteImgs(idPrograma);
-        },
-        error:(error)=>console.log(error),
-      }
-    )
+  public eliminarPrograma(idPrograma: string, imagenes: descImg[]){
+    console.log(imagenes);
+    if(imagenes.length > 0){
+      console.log(idPrograma);
+      this.imagenSuscripcion = this.imagenService.eliminarImagenes('programas', idPrograma).subscribe(
+        {
+          next:(data)=>{
+            console.log(`imagenes eliminadas correctamente\n${data}`);
+            this.deleteImgs(idPrograma);
+          },
+          error:(error)=>console.log(error),
+        }
+      )
+    } else {
+
+      console.log("el programa no tiene imagenes");
+      this.deleteImgs(idPrograma);
+    }
+    
   }
 
   private deleteImgs(idPrograma: string){

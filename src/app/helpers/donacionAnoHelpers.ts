@@ -1,7 +1,7 @@
 import { programaResponse } from "./programaHelpers";
 
-export const urldonacionAno = 'http://localhost:3000/api/donacionAnonima';
-export const urlDonacionPrograma = 'http://localhost:3000/api/donacionPrograma';
+export const urldonacionAno = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
+export const urlDonacionPrograma = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionPrograma';
 
 export const proyectoId = '65346f395616f0334acdc79a'; //cuando se cree el proyecto en el front esta variable sale
 

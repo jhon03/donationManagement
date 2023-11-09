@@ -1,14 +1,13 @@
-<br><br>
 
+<div class="contenedor-ppal">
 <h1 class="text-center"><strong class="mt-4">PROGRAMAS</strong></h1> 
-<mat-divider></mat-divider>
 
-<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16" class="mx-5 my-5">
+<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16">
   <mat-grid-tile *ngFor="let programa of programas; let i= index">
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header">
-          <img mat-card-avatar src="assets/avatarbiblio.png" alt="Photo of a Shiba Inu">
+          <img mat-card-avatar src="assets/logo-horizontal.png" alt="Photo of a Shiba Inu">
         </div>
         <mat-card-title>{{programa.nombre}}</mat-card-title>
         <mat-card-subtitle>{{programa.eslogan}}</mat-card-subtitle>
@@ -51,7 +50,7 @@
  <!--seleccionar opción y redirigir al formulario-->
     <div class="custom-options-container">
       <div *ngFor="let opcion of programa.opcionesColaboracion" class="custom-option">
-        <button mat-stroked-button [routerLink]="['/', 'programa', programa.uid, 'formulario', opcion]" class="custom-button">
+        <button mat-stroked-button [routerLink]="['/', programa.nombre,'programa', programa.uid, 'formulario', opcion]" class="custom-button">
           <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
         </button>
       </div>
@@ -61,12 +60,11 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-
+</div>
 <div class="container">
-  <mat-divider></mat-divider>
 
   <h1 class="text-center"><strong class="mt-4">PROYECTOS</strong></h1> 
-<mat-divider></mat-divider>
+
 
   <div class="grid-container">
     <app-proyectoscdc></app-proyectoscdc>
