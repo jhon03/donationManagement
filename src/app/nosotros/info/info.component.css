@@ -45,15 +45,21 @@ position: relative;
   color:#193A6F;
   font-size: 16px;
 }
-.custom-card2 .custom-list-header3{
+.custom-list-header3{
 
   font-weight:  bold;
   font-family: 'Montserrat';
   color:#193A6F;
   font-size: 16px;
+  padding: -20px;
+  margin-bottom: -30px;
+  
 
 }
-
+.custom-list-header3 label{
+margin-bottom: 40px;
+padding: 60px;
+}
  /*dispositivos móviles*/
 @media screen and (max-width: 767px){
 

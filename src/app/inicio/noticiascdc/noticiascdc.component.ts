@@ -9,13 +9,7 @@ import { PageEvent } from '@angular/material/paginator';
 export class NoticiascdcComponent implements OnInit {
 
 
-  cards: any[] = [
-
-    { id:1, fecha: 'Martes, 06 de Junio de 2023', title: 'Cine Foro', content: 'Cine foro al barrio es una iniciativa creada por los integrantes del proyecto Recrearte que busca fortalecer habilidades sociales a través de la lectura y oralidad; tratando diferentes problemáticas identificadas en el sector', photo: '/assets/cine.jpeg'},
-
-    { id:2, fecha: 'Miercoles, 03 de Agosto de 2023', title: 'Rumbo Joven', content: 'Rumbo Joven es un programa de empleabilidad que busca reducir el desempleo de jóvenes de población vulnerable de Cali, este programa orienta, forma y acompaña a los y las jóvenes en su proyecto de vida para la correcta inserción laboral.', photo: '/assets/rumbo joven.jpg'},
-
-  ];
+  cards: any[] = [];
 
   totalItems = 10;
   itemsPorPagina = 1;
@@ -38,9 +32,9 @@ export class NoticiascdcComponent implements OnInit {
   getData(): any[] {
 
     return [
-      {id: 1, fecha: 'Martes, 06 de Junio de 2023', title: 'Cine Foro', content: 'Cine foro al barrio es una iniciativa creada por los integrantes del proyecto Recrearte que busca fortalecer habilidades sociales a través de la lectura y oralidad; tratando diferentes problemáticas identificadas en el sector', photo: '/assets/cine.jpeg' },
+      {id: 1, fecha: 'Martes, 06 de Junio de 2023', title: 'Cine Foro', content: 'Cine foro al barrio es una iniciativa creada por los integrantes del proyecto Recrearte que busca fortalecer habilidades sociales a través de la lectura y oralidad; tratando diferentes problemáticas identificadas en el sector', photo: '/assets/noticias/cine.jpeg' },
 
-      {id: 2, fecha: 'Miercoles, 03 de Agosto de 2023', title: 'Rumbo Joven', content: 'Rumbo Joven es un programa de empleabilidad que busca reducir el desempleo de jóvenes de población vulnerable de Cali, este programa orienta, forma y acompaña a los y las jóvenes en su proyecto de vida para la correcta inserción laboral.', photo: '/assets/rumbo joven.jpg'}
+      {id: 2, fecha: 'Miercoles, 03 de Agosto de 2023', title: 'Rumbo Joven: Esencialmente Humano', content: 'Rumbo Joven es un programa de empleabilidad que busca reducir el desempleo de jóvenes de población vulnerable de Cali, este programa orienta, forma y acompaña a los y las jóvenes en su proyecto de vida para la correcta inserción laboral.', photo: '/assets/noticias/rumbojoven2.jpg'}
     ];
 
     const data = [];

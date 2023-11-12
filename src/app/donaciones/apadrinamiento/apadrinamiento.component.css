@@ -12,26 +12,5 @@
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     margin: 20px; /* Agrega márgenes alrededor del contenido */
   }
-  .texto-superpuesto{
- 
-    justify-content: flex-start;
-  
-    position:absolute; 
-    margin: 70px;
-    top: 50%; 
-    left: 25%;
-    transform: translate(-30%, -50%); 
-    padding: 10px; 
-    text-align: left;  
-    color: black;
-    font-size: 28px;
-    border: 10px;
-    font-weight: bold;
-    max-width: 60%;
-    overflow: hidden; 
-    
-text-decoration: solid;
-text-shadow: 3px 3px 7px rgba(211, 150, 20, 0.5);
-  
-}
+
 
