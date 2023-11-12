@@ -18,7 +18,6 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
 
   casoExito3 = "Al centrar nuestras acciones en la creación de espacios de escucha y reconocimiento para las personas mayores, hemos logrado un impacto positivo en sus vidas, fortaleciendo sus habilidades socioemocionales y sus vínculos afectivos con sus familias y la comunidad en general Cada mes, entre 20 y 30 personas mayores participan en nuestro programa, donde reciben apoyo pedagógico y psicosocial a través de una amplia gama de talleres y actividades.";
 
-
   private idSuscripcion: Subscription;
   private nombreSuscripcion: Subscription;
   private donacionProgramaSuscripcion: Subscription;
@@ -49,9 +48,9 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obtenerId();
     this.obtenerNombre();
-    this.mostrarCasoExito1();
-    this.mostrarCasoExito2();
-    this.mostrarCasoExito3();
+   // this.mostrarCasoExito1();
+   // this.mostrarCasoExito2();
+    //this.mostrarCasoExito3();
   }
   
 
@@ -190,7 +189,6 @@ export class AporteSolidarioComponent implements OnInit, OnDestroy {
   mostrarCasoExito3(){
     Swal.fire(this.casoExito3);
   }
-
 
   }
 

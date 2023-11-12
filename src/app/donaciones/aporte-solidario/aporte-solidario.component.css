@@ -45,14 +45,20 @@ white-space: nowrap;
     background-color: #193A6F;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 10px;
+    margin: 25px;
     cursor: pointer;
     border-radius: 5px;
     
   }
+
+.boton-caso-exito:hover{
+  color: #FB9850;
+}
   .boton-container{
-    margin-top: auto;
+    margin-top: 40px;
+    text-align: center;
+
   }
   .boton-container label{
     font-size: 25px;
@@ -63,3 +69,6 @@ white-space: nowrap;
     font-weight: bold;
     color: #193A6F;
   }
+
+
+ 

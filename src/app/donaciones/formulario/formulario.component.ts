@@ -78,9 +78,13 @@ crearDonacionProyecto(){
   this.donacionProyectoSuscripcion = this.donacionService.crearDonacionProyecto(this.id ,this.donacionA).subscribe(
     {
       next: (data) =>{
-        Swal.fire('Nuestro equipo revisará tu solicitud detenidamente y te contactará lo antes posible para brindarte más detalles sobre el proceso de donación' , 'Att: CDC San Francisco de Asís');
+        Swal.fire({
+          title: 'Gracias por hacer parte del cambio positivo en nuestra comunidad',
+          text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de entrega.\n\nAtt: Equipo CDC San Francisco de Asís',
+         } );
         
         console.log(data);
+
       },
       error: (error)=>{
         const errores = error.error.errors;
@@ -113,7 +117,12 @@ crearDonacionPrograma(){
     {
       next: (data) =>{
        
-        Swal.fire('Nuestro equipo revisará tu solicitud detenidamente y te contactará lo antes posible para brindarte más detalles sobre el proceso de donación', 'Att: CDC San Francisco de Asís');
+        Swal.fire({
+          title: 'Gracias por hacer parte del cambio positivo en nuestra comunidad',
+          text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de entrega.\n\nAtt: Equipo CDC San Francisco de Asís',
+         } );
+
+
         console.log(data);
       },
       error: (error)=>{
