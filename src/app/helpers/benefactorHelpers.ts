@@ -1,4 +1,9 @@
-export const urlBenefactor = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/benefactor/crear';
+//export const urlBenefactor = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/benefactor/crear';
+export const urlBenefactor = 'http://localhost:3000/api/benefactor/crear';
+
+
+
+
 
 export class BenefactorResponse{
   

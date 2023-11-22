@@ -1,0 +1,23 @@
+<section class="background col-10" *ngIf="donacion">
+    <div class="text-container">
+       
+        <div class="texto">
+            <p style="color: black;">{{donacion.nombreBenefactor}} Nuestro equipo #CDC ha evaluado sactisfactoriamente tu solicitud de donación, de acuerdo a ello describimos las siguientes condiciones</p><br>
+            <p style="color: black;">
+             
+                ¡Aquí colocar los detalles de la donación(campo texto)!
+            </p><br>
+              <p> De acuerdo a tu respuesta nos estaremos comunicando contigo para detalles de la entrega o inicio de actividades</p>
+          
+        </div>
+        <div class="button-container" *ngIf="mostrarOpciones">
+            <button class="button button-accept" (click)="enviarRespuesta('aceptar')">Aceptar</button>
+            <button class="button button-reject" (click)="enviarRespuesta('rechazar')">Rechazar</button>
+        </div>
+        <div class="message-container row" *ngIf="!mostrarOpciones">
+            Has seleccionado {{opcion}}
+        </div>
+    </div>
+</section>
+    
+

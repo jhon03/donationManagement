@@ -1,6 +1,6 @@
 
 <div class="contenedor-ppal">
-<h1 class="text-center"><strong class="mt-4">PROGRAMAS</strong></h1> 
+<h1 class="text-center"><strong class="mt-4">PROGRAMAS {{pagina}}</strong></h1> 
 
 <mat-grid-list cols="2" rowHeight="2:2" gutterSize="16">
   <mat-grid-tile *ngFor="let programa of programas; let i= index">
@@ -63,12 +63,17 @@
 </div>
 <div class="container">
 
-  <h1 class="text-center"><strong class="mt-4">PROYECTOS</strong></h1> 
+  <h1 class="text-center"><strong class="mt-4">PROYECTOS {{pagina}}</strong></h1> 
 
 
   <div class="grid-container">
     <app-proyectoscdc></app-proyectoscdc>
   </div>
+</div>
+
+<div class="container">
+  <button (click)="cambiarPagina('aumentar')" class="btn btn-success m-1">pagina {{pagina}}</button>
+  <button (click)="cambiarPagina('disminuir')" class="btn btn-danger">Pagina anterior</button>
 </div>
 
 

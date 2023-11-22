@@ -28,7 +28,11 @@ export class ProyectoService {
 
 
   public proyectoLista():Observable<responseProyect>{
-    return this.httpClient.get<responseProyect>(urlProyectos);
+    return this.httpClient.get<responseProyect>(`${urlProyectos}`);
+  }
+
+  public proyectoListaVista(pagina: number, limite: number):Observable<responseProyect>{
+    return this.httpClient.get<responseProyect>(`${urlProyectos}/vista/?page=${pagina}&limite=${limite}`);
   }
 
   public actualizarProyecto(id: string, proyecto: proyectoRequest):Observable<proyectoIdRes>{

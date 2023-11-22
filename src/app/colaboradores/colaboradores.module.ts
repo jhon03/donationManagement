@@ -30,7 +30,8 @@ import { ActualizarProyectoComponent } from './actualizar/proyectos/actualizar-p
 import { RouterModule } from '@angular/router';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDatepickerModule} from '@angular/material/datepicker'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ConfirmarDonacionComponent } from './confirmarDonacion/confirmar-donacion/confirmar-donacion.component'
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker'
        VerBenefactoresComponent,
        ActualizarProgramasComponent,
        ActualizarProyectoComponent,
+       ConfirmarDonacionComponent,
    
   ],
   imports: [

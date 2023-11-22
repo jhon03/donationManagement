@@ -13,7 +13,7 @@
 
 <div class="form-container">
     <div class="form-column">
-      <form  (ngSubmit)="onSubmit()">
+      <form  (ngSubmit)="onSubmit()" *ngIf="!mostrarModal" >
       
 
         <div class="form-section">
@@ -67,16 +67,34 @@
       </select>
     </div>
 
-
-
-
-    
         <div class="button-container">
           <input type="submit" value="Enviar Solicitud">
-        </div>
+          
 
+        </div>
+        <mat-spinner *ngIf="loading" [mode]="'determinate'" [value]="progress"></mat-spinner>
 
       </form>
+      <div *ngIf="mostrarModal">
+        <h2>Agradecemos tu donación</h2>
+        <p>Para continuar necesitamos validar tu correo por ello,
+            Hemos enviado un correo electrónico con un código de confirmación.
+            Por favor, ingrésalo a continuación:
+        </p>
+
+        <form (ngSubmit)="confirmarDonacion()" class="full-width-form">
+          <label>Código de Confirmación</label>
+          <input required [(ngModel)]="codigoConfirmacion" name="codigoConfirmacion" placeholder="Ingrese el código">
+        
+          <div class="container text-center">
+            <button mat-raised-button>Confirmar Donación</button>
+          </div>
+        
+        </form>
+        
+      </div>
+   
+    <br><br><br>
 
 
     </div>  

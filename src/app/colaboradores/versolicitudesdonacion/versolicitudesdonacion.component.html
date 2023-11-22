@@ -12,6 +12,10 @@
         <th>Aporte</th>
         <th>Estado</th>
         <th>Fecha Creación</th>
+        <!--acciones para la gestión de donaciones-->
+        <th>Abrir solicitud</th>
+        <th>Terminar Proceso Donación</th>
+        <th>Confirmación Recepción/vinculación</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +31,26 @@
         <td>{{ donacion.aporte }}</td>
         <td>{{ donacion.estado }}</td>
         <td>{{ donacion.fechaCreacion | date:'dd/MM/yyyy' }}</td>
+
+        <th>
+          <!--campo para escribir detalles de comunicación-->
+          <div>
+            <textarea placeholder="Escribe los detalles de la donación"></textarea>
+            <button >Guardar detalles</button> 
+            <button (click)="abrirDonacion(donacion.uid)" >Abrir solicitud</button>
+           
+          </div>
+        
+        
+        </th>
+        <th><button (click)="confirmarDonacion(donacion.uid)" ><i class="fa-solid fa-envelope"></i>Enviar correo</button></th>
+
+        <th><button (click)="rechazarDonacion(donacion.uid)">Confirmar mediante envío correo</button></th>
       </tr>
     </tbody>
   </table>
+  <div class="container">
+    <button (click)="paginasbutton()" class="btn btn-sucess">
+      pagina {{pagina}}
+    </button>
+  </div>

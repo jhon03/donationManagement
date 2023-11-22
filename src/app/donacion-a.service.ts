@@ -1,23 +1,29 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import { donacionAResponse, donacionAno, proyectoId, response, urlDonacionPrograma, urldonacionAno } from './helpers/donacionAnoHelpers';
-import { HttpClient } from '@angular/common/http';
+import { donacionAResponse, donacionAno, proyectoId, resDonacion, response, urlDonacionPrograma, urlDonacionProyecto, urlDonaciones} from './helpers/donacionAnoHelpers';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonacionAService {
 
-  private url = urldonacionAno;
 
   constructor(private clienteHttp: HttpClient) { }
 
-  crearDonacionPrograma(programa: string,donacionA:donacionAno): Observable<donacionAResponse>{
-    return this.clienteHttp.post<donacionAResponse>(`${urlDonacionPrograma}/${programa}/crear`,donacionA)
+  
+
+  public crearDonacionProyecto(proyecto: string ,donacion: donacionAno): Observable<resDonacion>{
+    return this.clienteHttp.post<resDonacion>(`${urlDonacionProyecto}/proyecto/${proyecto}/crear`, donacion);
   }
 
-  crearDonacionProyecto(proyecto: string,donacionA:donacionAno): Observable<donacionAResponse>{
-    return this.clienteHttp.post<donacionAResponse>(`${this.url}/${proyecto}/crear`,donacionA)
+  public crearDonacionPrograma(programa: string ,donacion: donacionAno): Observable<resDonacion>{
+    return this.clienteHttp.post<resDonacion>(`${urlDonacionPrograma}/programa/${programa}/crear`, donacion);
+  }
+
+  //confirma el correo para la donacion mediante un codigo
+  public confirmarCorreoDona(correo: string, codigo:string): Observable<resDonacion>{
+    return this.clienteHttp.post<resDonacion>(`${urlDonaciones}/verificar/correo/donacion`, {correo, codigo});
   }
 
   verDonacionesProgramas(): Observable<response>{
@@ -25,6 +31,53 @@ export class DonacionAService {
   }
 
   verDonacionesProyectos(): Observable<response>{
-    return this.clienteHttp.get<response>(urldonacionAno);
+    return this.clienteHttp.get<response>(urlDonacionProyecto);
   }
+
+  //lista de donaciones desde otro endpoint  -- integracion con correo
+  //endpoints de donaciones( juanta las donaciones de programas y proyectos)
+  public listAllDonaciones(limite: number, pagina: number): Observable<response>{
+    return this.clienteHttp.get<response>(`${urlDonaciones}`);
+  }
+
+
+  public buscarIdDonacionList(idDonacion: string): Observable<donacionAResponse>{
+    return this.clienteHttp.get<donacionAResponse>(`${urlDonaciones}/${idDonacion}`);
+  }
+
+  //informacion para el benefactor  en metodo post (url, options(headers))
+  public infoDonacionBenefactor(token: string): Observable<resDonacion>{
+    const headers = new HttpHeaders({
+      'Dona-token': token,
+    });
+
+    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/InfoDonacion/benefactor`, {headers});
+  }
+
+  //confirmar donacion benefactor en metodo post (url, body, options(headers))
+  public confirmarDonacionBenefactor(token: string, condicion: string): Observable<resDonacion>{
+    console.log(token);
+    const headers = new HttpHeaders({
+      'Dona-token': token,
+    });
+    return this.clienteHttp.post<resDonacion>(`${urlDonaciones}/formEntrega/${condicion}`, null ,{headers});
+  }
+
+
+  //endpoints del colaborador
+  public abrirDonacion(id: string): Observable<resDonacion>{
+    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/open/${id}`);
+  }
+
+  public confirmarDonacion(id: string): Observable<resDonacion>{
+    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/confirmar/${id}`);
+  }
+
+  public rechazarDonacion(id: string, mensaje: string): Observable<resDonacion>{
+    return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, mensaje);
+  }
+  
+
+
+
 }

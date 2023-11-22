@@ -14,6 +14,10 @@ import { AporteSolidarioComponent } from './aporte-solidario/aporte-solidario.co
 import { AportedelTiempoComponent } from './aportedel-tiempo/aportedel-tiempo.component';
 import { PracticascdcComponent } from './practicascdc/practicascdc.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     FormularioComponent,
@@ -21,8 +25,7 @@ import { PracticascdcComponent } from './practicascdc/practicascdc.component';
     TarjetasComponent,
     AporteSolidarioComponent,
     AportedelTiempoComponent,
-    PracticascdcComponent 
-    
+    PracticascdcComponent
     
     
   ],
@@ -33,7 +36,10 @@ import { PracticascdcComponent } from './practicascdc/practicascdc.component';
     FormsModule,
     MatDividerModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule
   ]
 })
 export class DonacionesModule { }

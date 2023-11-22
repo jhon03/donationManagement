@@ -1,7 +1,10 @@
 import { programaResponse } from "./programaHelpers";
 
-export const urldonacionAno = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
-export const urlDonacionPrograma = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionPrograma';
+//export const urldonacionAno = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
+//export const urlDonacionPrograma = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionPrograma';
+export const urlDonaciones = 'http://localhost:3000/api/donaciones';    //poner la del servidor de despliegue
+export const urlDonacionPrograma = 'http://localhost:3000/api/donacionPrograma';
+export const urlDonacionProyecto = 'http://localhost:3000/api/donacionAnonima';
 
 export const proyectoId = '65346f395616f0334acdc79a'; //cuando se cree el proyecto en el front esta variable sale
 
@@ -24,7 +27,7 @@ export class donacionAno{
 
 export class response{
     total: number;
-    donacion: donacionAResponse[];
+    donaciones: donacionAResponse[];
 }
 
 export class proyectoResponse{
@@ -32,16 +35,22 @@ export class proyectoResponse{
     nombre: string;
 }
 
-export class donacionAResponse{
+export class donacionAResponse {
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombreBenefactor: string;
     correo: string;
     celular: number;
-    proyecto: proyectoResponse;
-    programa: programaResponse;
+    proyecto?: proyectoResponse;
+    programa?: programaResponse;
     aporte: string;
     estado: string;
     fechaCreacion: Date;
     uid: string;
 }
+
+export class resDonacion{
+    accion: string;
+    msg: string;
+    donacion: donacionAResponse;
+  }

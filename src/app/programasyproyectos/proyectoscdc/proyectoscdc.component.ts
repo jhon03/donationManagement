@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -12,9 +12,11 @@ import { ProgramasService } from 'src/app/programas.service';
   styleUrls: ['./proyectoscdc.component.css']
 })
 export class ProyectoscdcComponent  implements OnInit, OnDestroy{
-
+  pagina: number;
+  limite: number = 2;    //variable ajustable a cantidad necesaria, ajustar la de programas y proyectos en mismo numero
  
   private proyectoSuscripcion: Subscription;
+  private paginaSuscripcion: Subscription;
   proyectos: proyectoResponse[];
 
   //programas: programaResponse[];
@@ -23,15 +25,17 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   
   ngOnDestroy(): void {
     this.proyectoSuscripcion?.unsubscribe();
+    this.paginaSuscripcion?.unsubscribe();
   }
 
   ngOnInit(): void{
 
     this.proyectosLista();
+    this.obtenerPagina();
   }
 
   proyectosLista(){
-    this.proyectoSuscripcion = this.proyectoService.proyectoLista().subscribe(
+    this.proyectoSuscripcion = this.proyectoService.proyectoListaVista(this.pagina, this.limite).subscribe(
       {
         next:(datos)=>{
           console.log(datos);
@@ -40,6 +44,19 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
         error:(error)=>{
           console.log(error);
         }      
+      }
+    )
+  }
+
+  private obtenerPagina(){
+    this.paginaSuscripcion = this.programaService.getPaginaActual().subscribe(
+      {
+        next:(data)=>{
+          this.pagina=data;
+          this.proyectosLista();;
+          
+        },
+        error:(error)=>console.log(error),
       }
     )
   }
@@ -54,8 +71,11 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
     }else if (opcionesColaboracion === 'Aporte en Tiempo'){
       this.router.navigate(['/aportedeltiempo'])
      }
+  }
 
-
-}
+  paginasButton(){
+    this.pagina = this.pagina + 1;
+    this.proyectosLista();
+  }
 
 }

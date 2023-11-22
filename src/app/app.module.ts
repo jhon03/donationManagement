@@ -35,6 +35,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FloatingButtonComponent } from './floating-button/floating-button.component'; // Importa MatNativeDateModule
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSelectModule,
     MatDatepickerModule, // Agrega MatDatepickerModule
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

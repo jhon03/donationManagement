@@ -13,7 +13,12 @@ import { ProgramasService } from 'src/app/programas.service';
 export class ProgramascdcComponent implements OnInit, OnDestroy {
 
   private programaSuscripcion: Subscription;
+  private paginaSuscripcion: Subscription;
   programas: programaResponse[];
+  pagina: number = 1;
+  limite: number = 2;
+  totalPro:number;
+  totalPaginas: number;
 
 constructor(private router: Router, private programaService: ProgramasService){}
 
@@ -21,25 +26,52 @@ constructor(private router: Router, private programaService: ProgramasService){}
 
 
 ngOnDestroy(): void {
+  this.paginaSuscripcion?.unsubscribe();
   this.programaSuscripcion?.unsubscribe();
 }
 
 ngOnInit(): void {
   this.programasLista();
+  this.obtenerPagina();
     
 }
 
 
+public cambiarPagina(opcion: string){
+  if(opcion === 'aumentar' && this.pagina === this.totalPaginas){
+    return console.log("no hay mas proyectos");
+  }
+  if(opcion === 'aumentar'){
+    this.programaService.incrementarPagina()
+  }
+  else if(opcion === 'disminuir'){
+    this.programaService.decrementarPagina();
+  }
+  this.programasLista();
+}
+
+
 programasLista(){
-  this.programaSuscripcion = this.programaService.programaLista().subscribe(
+  this.programaSuscripcion = this.programaService.programaListaVista(this.pagina, this.limite).subscribe(
     {
       next:(datos)=>{
         console.log(datos);
         this.programas = datos.programas;
+        this.totalPro = datos.total;
+        this.totalPaginas = Math.ceil(datos.total / this.limite);
       },
       error: (error)=>{
         console.log(error);
       }
+    }
+  )
+}
+
+private obtenerPagina(){
+  this.paginaSuscripcion = this.programaService.getPaginaActual().subscribe(
+    {
+      next:(data)=>this.pagina=data,
+      error:(error)=>console.log(error),
     }
   )
 }
@@ -57,6 +89,11 @@ redirigir(opcionesColaboracion: string): void{
    }
 
    
+  }
+
+  paginasbutton(){
+    this.pagina = this.pagina + 1;
+    this.programasLista();
   }
 
   removeSpaces(option: string): string {

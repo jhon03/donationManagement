@@ -11,6 +11,7 @@ import { VerProyectosComponent } from './ver-proyectos/ver-proyectos.component';
 import { VerBenefactoresComponent } from './ver-benefactores/ver-benefactores.component';
 import { ActualizarProgramasComponent } from './actualizar/programas/actualizar-programas/actualizar-programas.component';
 import { ActualizarProyectoComponent } from './actualizar/proyectos/actualizar-proyecto/actualizar-proyecto.component';
+import { ConfirmarDonacionComponent } from './confirmarDonacion/confirmar-donacion/confirmar-donacion.component';
 const routes: Routes = [
 
   {
@@ -66,6 +67,7 @@ const routes: Routes = [
   },
   {path: 'editar/programa/:id', component: ActualizarProgramasComponent, pathMatch :'full'},
   {path: 'editar/proyecto/:id', component: ActualizarProyectoComponent, pathMatch :'full'},
+  {path: 'donaciones/formulario/terminar/:token/:id', component: ConfirmarDonacionComponent, pathMatch :'full'},
 ];
 
 @NgModule({
