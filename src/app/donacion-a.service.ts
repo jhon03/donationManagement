@@ -65,16 +65,19 @@ export class DonacionAService {
 
 
   //endpoints del colaborador
-  public abrirDonacion(id: string): Observable<resDonacion>{
-    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/open/${id}`);
-  }
 
-  public confirmarDonacion(id: string): Observable<resDonacion>{
-    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/confirmar/${id}`);
+
+  public confirmarDonacion(id: string, detalles: string): Observable<resDonacion>{
+    console.log(detalles);
+    return this.clienteHttp.post<resDonacion>(`${urlDonaciones}/confirmar/${id}`, {detalles});
   }
 
   public rechazarDonacion(id: string, mensaje: string): Observable<resDonacion>{
     return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, mensaje);
+  }
+
+  public correoRecibido(id: string): Observable<resDonacion>{
+    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/correo/recibido/${id}`);
   }
   
 

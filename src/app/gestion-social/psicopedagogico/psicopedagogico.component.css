@@ -23,23 +23,23 @@
     font-family: 'Montserrat';
     
 }
-
-.columna-imagen {
-    padding: 20px;
-  }
   
   .columna-imagen img {
     width: 468px;
     height: 376px;
+    align-items: center;
+    margin: 80px;
+
   }
+
   .Jardin-Infantil-info label{
     color: #193A6F; /* Cambia el color de texto según tus preferencias */
     font-weight: bold;
     text-align: relative;
-    font-size: 18px;
+    font-size: 20px;
     margin: 5px;
     text-align: center;
-        font-family: 'Montserrat';
+    font-family: 'Montserrat';
 
   }
   .Psicología-info label{
@@ -53,14 +53,21 @@
 
   }
   .contenido{
-    width: 468px;
-    height: 406px;
-    text-align: justify;
-    margin: 20px;
-    color:#193A6F;
-    font-family: 'Montserrat';
+    width: 100%;
+    height: 100%;
+   
   }
 
+  .contenido p{
+   height: 100%;
+   width: 100%;
+   text-align: justify;
+   padding: 20px;
+   margin: 5px;
+   color:#193A6F;
+   font-family: 'Montserrat';
+
+  }
   /*contenedor para los elementos de jardin infantil y consultorio psicologico*/
   .grid-container {
     display: grid;

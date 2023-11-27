@@ -13,18 +13,17 @@
     </div>
 
     <div class="camposform">
-        <label for="descripcion">Descripción del Programa:</label>
+        <label for="descripcion" placeholder="máximo 504 caracteres" >Descripción del Programa:</label>
 
         <textarea id="descripcion" name="descripcion" [(ngModel)]="programa.descripcion" required></textarea>
 </div>
 
 
-
-
-
 <div class="container my-3">
     <div class="mb-3">
-        <label for="image" class="form-label">Agrega una o varias Imágenes al producto</label>
+        <label for="image" class="form-label" >Agrega una o varias Imágenes al programa 
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </label>
         <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
     </div>
 

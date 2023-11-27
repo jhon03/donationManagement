@@ -50,7 +50,7 @@ export class programaResponse{
     usuCreador: string;
     usuModificador: string;
     opcionesColaboracion: string[];
-    estado: boolean;
+    estado: string;
     colaborador: ColaboradorResponse;
     fechaCreacion: Date;
     fechaModificacion: Date;

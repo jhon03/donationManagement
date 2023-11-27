@@ -57,4 +57,12 @@ export class ProgramasService {
   public deletePrograma(idPrograma: string): Observable<responseP>{
     return this.httpClient.delete<responseP>(`${urlProgramas}/eliminar/${idPrograma}`);
   }
+
+  public ocultarPrograma(uid: string): Observable<responseP>{
+    return this.httpClient.delete<responseP>(`${urlProgramas}/ocultar/${uid}`);
+  }
+
+  public habilitarPrograma(uid: string): Observable<responseP>{
+    return this.httpClient.get<responseP>(`${urlProgramas}/habilitar/${uid}`);
+  }
 }

@@ -45,6 +45,7 @@ export class donacionAResponse {
     programa?: programaResponse;
     aporte: string;
     estado: string;
+    detalles: string;
     fechaCreacion: Date;
     uid: string;
 }

@@ -19,6 +19,8 @@
   .columna-imagen img {
     width: 468px;
     height: 376px;
+    align-items: center;
+    margin: 80px;
   }
 
   span {
@@ -40,6 +42,8 @@
     font-weight: bold;
     color: #193A6F;
     font-size: 24px;
+    margin: 20px;
+    padding: 10px;
   }
   .columna-contenido p{
 

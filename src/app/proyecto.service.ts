@@ -47,6 +47,14 @@ export class ProyectoService {
     return this.httpClient.delete<proyectoIdRes>(`${urlProyectos}/${id}`);
   }
 
+  public ocultarProyecto(uid: string): Observable<proyectoIdRes>{
+    return this.httpClient.delete<proyectoIdRes>(`${urlProyectos}/ocultar/${uid}`);
+  }
+
+  public habilitarProyecto(uid: string): Observable<proyectoIdRes>{
+    return this.httpClient.get<proyectoIdRes>(`${urlProyectos}/habilitar/${uid}`);
+  }
+
 
 
   

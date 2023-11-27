@@ -1,4 +1,128 @@
 
+.contenedor-ppal {
+
+  height: 100%;
+  width: 100%;
+  
+ }
+.text-center {
+  padding: 50px;
+}
+ /* Estilo para el texto */
+.text-center strong {
+  color: #193A6F; /* Color del texto */
+  text-shadow: 2px 2px #FB9850; /* Sombra del texto con color */
+}
+    .example-card {
+      max-width:400px;
+      max-height: 800px; /* Ajusta la altura máxima según tus necesidades */
+    }
+
+    .mat-grid-list {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en dispositivos de escritorio */
+    }
+
+    /*estilos para el avatar*/
+    .example-header {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+    
+    }
+
+    .example-header img{
+
+      width: 100%;
+      height: 100%;
+    }
+    .example-card{
+      height: 100%;
+      width: 100%;
+    }
+
+    .example-card mat-card-title {
+    
+      font-style: italic;
+      font-style: bold;
+      font-family: 'Montserrat';
+    }
+
+    .example-card mat-card-subtitle{
+     
+      font-family: 'Montserrat';
+    }
+    .custom-options-container {
+     
+      height: 100%;
+      width: 100%;
+    }
+
+    .custom-option {
+      margin-bottom: 10px; /* Ajusta el espaciado vertical entre las opciones */
+    }
+
+    .content{
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: #193A6F;
+      margin: 0px;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+
+    }
+    .d-block w-100 img{
+      max-width: 100%; /* Ajustar al ancho máximo de la tarjeta */
+      height: auto; /* Altura automática para mantener la proporción */
+    }
+   /* Estilo base para el botón y el ícono */
+.custom-button {
+  color: #193A6F; /* Color de texto predeterminado */
+  background-color: transparent; /* Fondo transparente para el botón */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s; /* Transición de color de fondo */
+
+  /* Estilo de enlace sin subrayado */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Efecto hover: Cambiar el color de fondo al pasar el mouse */
+.custom-button:hover {
+  background-color: #FB9850; /* Color de fondo al pasar el mouse */
+  color: #193A6F; /* Restaurar el color del texto */
+}
+/* Estilo del contenedor de opciones */
+.custom-options-container {
+  display: flex; /* Establece un diseño de flexbox */
+  gap: 10px; /* Espacio entre las opciones */
+  flex-wrap: wrap; /* Permite que las opciones se envuelvan a la siguiente línea si no caben en una sola línea */
+  max-width: 100%;
+  color: #193A6F;
+
+}
+/* Estilo de cada opción */
+.custom-option {
+  flex: 1; /* Cada opción se expande para ocupar el espacio disponible */
+}
+/* Estilo para el mat-divider */
+mat-divider {
+  background: linear-gradient(to right, transparent, #193A6F, transparent); /* Fondo con gradiente transparente */
+  height: 2px; /* Altura del divider */
+  margin: 20px 0; /* Espaciado superior e inferior */
+}
+.container{
+padding: 20px;
+margin-top: 40px;
+
+
+}
+
+
+
+
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {

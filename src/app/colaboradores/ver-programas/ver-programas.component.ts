@@ -15,11 +15,15 @@ export class VerProgramasComponent  implements OnInit, OnDestroy{
   private programasSuscripcion: Subscription;
   private imagenSuscripcion: Subscription;
   private deleteSuscripcion:Subscription;
+  private habilitarSuscripcion: Subscription;
+  private ocultarSuscripcion: Subscription;
 
   ngOnDestroy(): void {
     this.programasSuscripcion?.unsubscribe();
     this.imagenSuscripcion?.unsubscribe();
     this.deleteSuscripcion?.unsubscribe();
+    this.habilitarSuscripcion?.unsubscribe();
+    this.ocultarSuscripcion?.unsubscribe();
   }
   ngOnInit(): void {
     this.obtenerProgramas();
@@ -39,6 +43,25 @@ export class VerProgramasComponent  implements OnInit, OnDestroy{
         error:(error)=>console.log(error),
       }
     )
+  }
+
+  public habilitar(uid: string){
+    this.habilitarSuscripcion = this.programaService.habilitarPrograma(uid).subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.obtenerProgramas();
+      },
+      error:(error)=>console.log(error),
+    })
+  }
+  public ocultar(uid:string){
+    this.ocultarSuscripcion = this.programaService.ocultarPrograma(uid).subscribe({
+      next:(data)=>{
+        console.log(data)
+        this.obtenerProgramas();
+      },
+      error:(error)=>console.log(error),
+    })
   }
 
 

@@ -18,11 +18,15 @@ export class VerProyectosComponent implements OnInit, OnDestroy{
   private deleteSuscripcion: Subscription;
   private proyectosSuscripcion: Subscription;
   private imagenSuscripcion: Subscription;
+  private habilitarSuscripcion: Subscription;
+  private ocultarSuscripcion: Subscription;
 
   ngOnDestroy(): void {
     this.deleteSuscripcion?.unsubscribe();
     this.proyectosSuscripcion?.unsubscribe();
     this.imagenSuscripcion?.unsubscribe();
+    this.habilitarSuscripcion?.unsubscribe();
+    this.ocultarSuscripcion?.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -42,6 +46,26 @@ export class VerProyectosComponent implements OnInit, OnDestroy{
       }
       
     )
+  }
+  
+  public habilitar(uid: string){
+    this.habilitarSuscripcion = this.proyectoService.habilitarProyecto(uid).subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.obtenerProyectos();
+      },
+      error:(error)=>console.log(error),
+    })
+  }
+
+  public ocultar(uid: string){
+    this.ocultarSuscripcion = this.proyectoService.ocultarProyecto(uid).subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.obtenerProyectos();
+      },
+      error:(error)=>console.log(error),
+    })
   }
 
   public eliminarProyecto(idProyecto: string){

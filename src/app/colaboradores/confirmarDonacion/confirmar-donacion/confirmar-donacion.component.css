@@ -1,47 +1,32 @@
 section {
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .background {
-    background-image: url('https://res.cloudinary.com/dxlmosojh/image/upload/f_auto,q_auto/v1/donacion/fondos/kykfeikfyv94knrzxmup');
-    background-size: cover; /* Ajustar tamaño de la imagen para cubrir el contenedor */
-    background-position: center; /* Centrar la imagen */
+    margin: 10px;
     height: 626px; /* Ajustar la altura al 100% del viewport */
     width: 626px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
 }
 
-.text-container {
-    text-align: center;
+.texto p{
+
+color: #193A6F;
+text-align: justify;
+margin: 60px;
+
 }
 
-.text-container h1 {
-    font-weight: bold;
-    color: rgb(0, 0, 0); /* Cambia el color del texto según tu preferencia */
-}
-
-.text-container span {
-    color: rgb(35, 65, 146);
-    font-weight: bold;
-}
-
-.text-container p {
-    color: rgb(0, 0, 0) ;
-    font-size: 3vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-}
 
 .button-container {
-    position: absolute;         
+    position: absolute; 
     display: flex;
     justify-content: center;
     top:0;
-    margin: 100px 100px;           
-    margin-top: 80vh; /* Ajusta el margen superior según tus preferencias */
+    margin: 60px;           
+    margin-top: 60vh; /* Ajusta el margen superior según tus preferencias */
     
 }
 
@@ -59,9 +44,16 @@ section {
 .button-accept {
     background-color: #4CAF50; /* Verde para aceptar */
 }
+.button-accept:hover{
+    background-color: #193A6F;
+}
 
 .button-reject {
     background-color: #f44336; /* Rojo para rechazar */
+}
+.button-reject:hover{
+    
+    background-color: #193A6F;
 }
 
 .message-container {

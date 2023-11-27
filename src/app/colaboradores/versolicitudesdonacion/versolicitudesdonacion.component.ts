@@ -15,6 +15,7 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
   private abrirSuscripcion: Subscription;
   private confirmarSuscripcion: Subscription;
   private rechazarSuscripcion: Subscription;
+  private confirmarRecibidoSuscripcion: Subscription;
 
   donaciones: donacionAResponse[];
   pagina: number = 1;   //dartos necesarios para la paginacion
@@ -30,6 +31,7 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
     this.abrirSuscripcion?.unsubscribe();
     this.confirmarSuscripcion?.unsubscribe();
     this.rechazarSuscripcion?.unsubscribe();
+    this.confirmarRecibidoSuscripcion?.unsubscribe();
 
   }
 
@@ -51,19 +53,9 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
     )
 
   }
-
-  public abrirDonacion(id: string){
-    this.abrirSuscripcion = this.donacionService.abrirDonacion(id).subscribe({
-      next:(data)=>{
-        console.log(data);
-        this.donacionLista();
-      },
-      error:(error)=>console.log(error),
-    })
-  }
-
-  public confirmarDonacion(id: string){
-    this.confirmarSuscripcion = this.donacionService.confirmarDonacion(id).subscribe({
+  public confirmarDonacion(id: string, detalles: string){
+    console.log(detalles);
+    this.confirmarSuscripcion = this.donacionService.confirmarDonacion(id, detalles).subscribe({
       next:(data)=>{
         console.log(data);
         this.donacionLista();
@@ -80,6 +72,13 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
         this.donacionLista();
         Swal.fire('donacion rechaza correctamnete', 'sucess');
       },
+      error:(error)=>console.log(error),
+    })
+  }
+
+  public confirmarRecibido(id: string){
+    this.confirmarRecibidoSuscripcion = this.donacionService.correoRecibido(id).subscribe({
+      next:(data)=>console.log(data),
       error:(error)=>console.log(error),
     })
   }

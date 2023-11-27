@@ -71,10 +71,21 @@
   </div>
 </div>
 
+<!--
 <div class="container">
-  <button (click)="cambiarPagina('aumentar')" class="btn btn-success m-1">pagina {{pagina}}</button>
-  <button (click)="cambiarPagina('disminuir')" class="btn btn-danger">Pagina anterior</button>
+  <mat-paginator [length]="totalPro" [pageSize]="limite" [pageSizeOptions]="[5, 10, 25, 100]" (page)="cambiarPagina('aumentar', $event)"></mat-paginator>
+
+
 </div>
+-->
 
 
+<div class="container">
+ 
+  <button mat-stroked-button (click)="cambiarPagina('aumentar')">pagina {{pagina}}<i class="fa-solid fa-angles-right"></i></button>
+
+  <button mat-stroked-button color="warn"  (click)="cambiarPagina('disminuir')"><i class="fa-solid fa-angles-left"></i></button>
+
+
+</div>
    

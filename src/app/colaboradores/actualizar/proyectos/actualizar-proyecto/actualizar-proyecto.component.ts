@@ -115,7 +115,7 @@ export class ActualizarProyectoComponent implements OnInit, OnDestroy{
           next: (img) => {
             imgUp++;
             if (imgUp === totalImgs) {
-              Swal.fire("Producto Creado Correctamente", "success");
+              Swal.fire("Proyecto actualizado", "correctamente");
               this.router.navigateByUrl('/VerProyectos');
             }
             

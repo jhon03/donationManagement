@@ -108,7 +108,7 @@ export class ActualizarProgramasComponent {
           next: (img) => {
             imgUp++;
             if (imgUp === totalImgs) {
-              Swal.fire("Producto Creado Correctamente", "success");
+              Swal.fire("Programa actualizado", "correctamente");
               this.router.navigateByUrl('/VerProgramas');
             }
             

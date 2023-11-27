@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 <div class="form-container">
     <div class="form-column">
         
@@ -34,7 +25,9 @@
     
     <div class="container my-3">
         <div class="mb-3">
-            <label for="image" class="form-label">Agrega una o varias Imágenes al producto</label>
+            <label for="image" class="form-label">Agrega una o varias Imágenes  al programa
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </label>
             <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
         </div>
     
@@ -54,21 +47,7 @@
 
     </div>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-    
-            <div class="camposform">
+    <div class="camposform">
                 
                 <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccione opciones para Colaboración</button>
                 <span *ngIf="showDropdown" class="dropdown-list">

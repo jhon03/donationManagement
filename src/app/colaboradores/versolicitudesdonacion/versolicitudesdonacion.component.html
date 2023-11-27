@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let donacion of donaciones">
+      <tr *ngFor="let donacion of donaciones; let i=index">
         
         <td>{{ donacion.tipoIdentificacion }}</td>
         <td>{{ donacion.numeroIdentificacion }}</td>
@@ -35,17 +35,16 @@
         <th>
           <!--campo para escribir detalles de comunicación-->
           <div>
-            <textarea placeholder="Escribe los detalles de la donación"></textarea>
-            <button >Guardar detalles</button> 
-            <button (click)="abrirDonacion(donacion.uid)" >Abrir solicitud</button>
+            <input type="text" value="" placeholder="detalles de la donacion" [(ngModel)]="donacion.detalles">
+            <button (click)="confirmarDonacion(donacion.uid, donacion.detalles)" >Abrir solicitud</button>
            
           </div>
         
         
         </th>
-        <th><button (click)="confirmarDonacion(donacion.uid)" ><i class="fa-solid fa-envelope"></i>Enviar correo</button></th>
+        <th><button (click)="rechazarDonacion(donacion.uid)" ><i class="fa-solid fa-envelope"></i>Rechazar Donacion</button></th>
 
-        <th><button (click)="rechazarDonacion(donacion.uid)">Confirmar mediante envío correo</button></th>
+        <th><button (click)="confirmarRecibido(donacion.uid)">Confirmar mediante envío correo</button></th>
       </tr>
     </tbody>
   </table>

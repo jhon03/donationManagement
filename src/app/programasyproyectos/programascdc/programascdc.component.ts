@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { programaRequest, programaResponse } from 'src/app/helpers/programaHelpers';
 import { ProgramasService } from 'src/app/programas.service';
-
-
+import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-programascdc',
   templateUrl: './programascdc.component.html',
@@ -19,6 +18,8 @@ export class ProgramascdcComponent implements OnInit, OnDestroy {
   limite: number = 2;
   totalPro:number;
   totalPaginas: number;
+
+
 
 constructor(private router: Router, private programaService: ProgramasService){}
 

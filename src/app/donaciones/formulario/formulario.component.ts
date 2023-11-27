@@ -114,7 +114,9 @@ crearDonacionProyecto(){
         } else if( data.accion === 'bienvenida'){
           Swal.fire({
             title: 'Gracias por hacer parte del cambio positivo en nuestra comunidad',
-            text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de entrega.\n\nAtt: Equipo CDC San Francisco de Asís',
+            text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de donaciones; revisa nuestro mensaje de bienvenida en tu bandeja de correo eletrónico\n\n. Att:Equipo CDC San Francisco de Asís ',
+  
+
           });
           this.router.navigateByUrl('/programascdc');
         }
@@ -139,6 +141,7 @@ crearDonacionProyecto(){
           text: errorMessage,
           footer: ''
         });
+        this.router.navigateByUrl('/programascdc');
       }
     }
   )
@@ -157,7 +160,7 @@ crearDonacionPrograma(){
         } else if( data.accion === 'bienvenida'){
           Swal.fire({
             title: 'Gracias por hacer parte del cambio positivo en nuestra comunidad',
-            text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de entrega.\n\nAtt: Equipo CDC San Francisco de Asís',
+            text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de donaciones; revisa nuestro mensaje de bienvenida en tu bandeja de correo eletrónico\n\n. Att:Equipo CDC San Francisco de Asís ',
           });
           this.router.navigateByUrl('/programascdc');
         }
@@ -182,6 +185,7 @@ crearDonacionPrograma(){
           text: errorMessage,
           footer: ''
         });
+        this.router.navigateByUrl('/programascdc');
       }
     }
   )
@@ -196,7 +200,7 @@ public confirmarDonacion(){
         console.log(msg);
         Swal.fire({
           title: 'Gracias por hacer parte del cambio positivo en nuestra comunidad',
-          text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de entrega.\n\nAtt: Equipo CDC San Francisco de Asís',
+          text:'Revisaremos tu solicitud detenidamente para contactarte lo antes posible y brindarte más detalles sobre el proceso de donaciones; revisa nuestro mensaje de bienvenida en tu bandeja de correo eletrónico\n\n. Att:Equipo CDC San Francisco de Asís ',
         });
         this.router.navigateByUrl('/programascdc');
       },
