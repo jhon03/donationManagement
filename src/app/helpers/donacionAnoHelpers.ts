@@ -1,10 +1,22 @@
 import { programaResponse } from "./programaHelpers";
 
 //export const urldonacionAno = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
-//export const urlDonacionPrograma = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionPrograma';
-export const urlDonaciones = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donaciones';    //poner la del servidor de despliegue
-export const urlDonacionPrograma = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/donacionPrograma';
-export const urlDonacionProyecto = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
+
+
+
+
+export const urlDonaciones = ' https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donaciones';    //poner la del servidor de despliegue
+//export const urlDonaciones = ' http://localhost:3000/api/donaciones';    //poner la del servidor de despliegue
+
+
+
+export const urlDonacionPrograma = ' https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionPrograma';
+//export const urlDonacionPrograma = 'http://localhost:3000/api/donacionPrograma';
+
+
+export const urlDonacionProyecto = ' https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/donacionAnonima';
+//export const urlDonacionProyecto = 'http://localhost:3000/api/donacionAnonima';
+
 
 export const proyectoId = '65346f395616f0334acdc79a'; //cuando se cree el proyecto en el front esta variable sale
 

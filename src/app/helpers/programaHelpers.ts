@@ -1,9 +1,9 @@
 import { ProgramasService } from "../programas.service";
 import { ColaboradorResponse } from "./colaboradoresHelpers";
 
-//export const urlProgramas = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/programa';
+//export const urlProgramas = 'http://localhost:3000/api/programa';
 
-export const urlProgramas = 'https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/programa';
+export const urlProgramas = ' https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/programa';
 
 
 export class programaRequest {

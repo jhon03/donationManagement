@@ -12,13 +12,13 @@
   
           </mat-card-header>
           <!--<img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">-->
-          <div id="carouselExample{{ p }}" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleProyectos{{ p }}" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item" *ngFor="let imagen of proyecto.imagenes; let z = index" [ngClass]="{'active': z === 0}">
                 <img [src]="imagen.url" class="d-block w-100" alt="Imagen del producto" >
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleProyectos'+p" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleProyectos'+ p" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
@@ -45,14 +45,21 @@
              </div>
           </mat-card-actions>
           -->
-          <div class="custom-options-container">
+          <div *ngIf="!proyectoCaducado(proyecto)"  class="custom-options-container">
 
-          <div *ngFor="let opcion of proyecto.opcionesDonacion"  class="custom-option">
-            <button mat-stroked-button [routerLink]="['/', proyecto.nombre, 'proyecto',proyecto.uid, 'formulario', opcion]" class="custom-button">
-              <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
+            <div *ngFor="let opcion of proyecto.opcionesDonacion"  class="custom-option">
+              <button mat-stroked-button [routerLink]="['/', proyecto.nombre, 'proyecto',proyecto.uid, 'formulario', opcion]" class="custom-button">
+                <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
+              </button>
+            </div>
+          
+
+          </div>
+          <div *ngIf="proyectoCaducado(proyecto)" class="custom-options-option">
+            <button class="btn btn-danger">
+              El proyecto ha finalizado
             </button>
           </div>
-</div>
 
         </mat-card>
 

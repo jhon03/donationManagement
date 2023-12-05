@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import * as moment from 'moment';
 
 import { proyectoResponse, proyectoRequest } from 'src/app/helpers/proyectoHelpers';
 import { ProyectoService } from 'src/app/proyecto.service';
@@ -20,6 +21,7 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   proyectos: proyectoResponse[];
 
   //programas: programaResponse[];
+  
 
   constructor(private router: Router, private proyectoService: ProyectoService, private programaService: ProgramasService) { }
   
@@ -76,6 +78,16 @@ export class ProyectoscdcComponent  implements OnInit, OnDestroy{
   paginasButton(){
     this.pagina = this.pagina + 1;
     this.proyectosLista();
+  }
+
+  proyectoCaducado(proyecto: proyectoResponse){
+    console.log(`fecha fin proyecto: ${proyecto.fechaFinalizacion}`);
+    let fechaAct = moment();
+    let fechaFin = moment(proyecto.fechaFinalizacion, 'YYYY-MM-DDTHH:mm:ss.SSSZ' );
+    console.log(`fecha actual: ${fechaAct}\nfecha fin proyecto: ${fechaFin}`);
+    let estaCerrado = fechaFin.isBefore(fechaAct);
+    console.log(estaCerrado);
+    return estaCerrado;
   }
 
 }

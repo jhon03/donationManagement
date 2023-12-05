@@ -11,13 +11,15 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class ProgramascdcComponent implements OnInit, OnDestroy {
 
-  private programaSuscripcion: Subscription;
-  private paginaSuscripcion: Subscription;
-  programas: programaResponse[];
-  pagina: number = 1;
-  limite: number = 2;
-  totalPro:number;
-  totalPaginas: number;
+private programaSuscripcion: Subscription;
+private paginaSuscripcion: Subscription;
+programas: programaResponse[];
+pagina: number = 1;
+limite: number = 2;
+totalPro:number;
+totalPaginas: number;
+
+
 
 
 

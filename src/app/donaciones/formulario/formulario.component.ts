@@ -123,25 +123,17 @@ crearDonacionProyecto(){
         return;
       },
       error: (error)=>{
-        const errores = error.error.errors;
-        let errorMessage = 'Something went wrong!';
+        console.log(error.error.error);
+        const errores = error.error.error;
 
-
-        if (errores ) {
-          console.log(errores);
-          errorMessage = 'Errors:';
-          errores.forEach((err: any) => {
-            errorMessage += `\n- ${err.msg}`;
-          });
-        }
 
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: errorMessage,
+          text: errores,
           footer: ''
         });
-        this.router.navigateByUrl('/programascdc');
+        //this.router.navigateByUrl('/programascdc');
       }
     }
   )
