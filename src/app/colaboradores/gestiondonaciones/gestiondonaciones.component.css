@@ -1,0 +1,68 @@
+
+.boton-guia {
+
+  background-color:#193A6F;
+   color: #fff; 
+   padding: 10px 20px; 
+   text-decoration: none; 
+   border-radius: 5px;
+}
+
+.boton-guia:hover {
+  background-color:#7a7874;
+}
+  button-grid {
+    display: flex;
+    justify-content: justify;
+    align-items: justify;
+    flex-wrap: wrap;
+    margin:  20px auto;
+    min-height:  calc(110vh - 110px);
+  }
+
+  .button-column {
+    flex: 1;
+    text-align: justify;
+    margin: 0 10px;
+  }
+  
+  button {
+    background-color: #FB9850;
+    color: #193A6F;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+  }
+  
+  button:hover {
+    background-color: #FFA726;
+  }
+ .card{
+  width: 100%;
+  height: 200px;
+ }
+ .actions{
+  display: flex;
+  justify-content: justify;
+  align-items: justify;
+  flex-wrap: wrap;
+  margin:  20px auto;
+ }
+
+ .subrayado{
+
+  font-weight: bold;
+  text-decoration-thickness: 3px;
+  color:#193A6F;
+}
+.Bienvenido{
+  flex: 1;
+}
+.Bienvenido p{
+  color:#193A6F;
+  padding: 10px;
+}

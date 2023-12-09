@@ -1,0 +1,98 @@
+footer {
+  
+  background-color: #FB9850;
+  color: #193A6F;
+  padding: 20px 0;
+  display: flex;
+
+  text-align: center;
+
+}
+
+.custom-col{
+  width: 100%;
+  max-width: 100%;
+  padding: 5px;
+}
+
+.custom-col a{
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.custom-col a:hover{
+
+  background-color: #193A6F;
+  color: #FB9850;
+  border-radius: 5px;
+}
+
+.usbcali-info{
+
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+
+}
+
+.usbcali-info a{
+
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+
+}
+
+.usbcali-info a:hover{
+  background-color: #193A6F;
+  color: #FB9850;
+  border-radius: 5px;
+
+}
+/* Estilos para la lista de redes sociales */
+.social-media-list {
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+}
+
+/*Estilos para cada elemento de la lista de las redes sociales*/
+.social-media-list li {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+/* elemento a de las redes sociales */
+.social-media-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+  width: 36px;
+  height: 36px;
+  fill: currentColor;
+}
+
+
+/* Estilos para los enlaces de redes sociales al pasar el mouse */
+.social-media-list a:hover {
+  color:#193A6F; /* Cambia el color al pasar el mouse */
+}
+
+/*dispositivos móviles*/
+@media screen and (max-width: 767px){
+
+footer {
+  
+  background-color: hsl(25, 96%, 65%);
+  color: #193A6F;
+  padding: 10px 0;
+}
+
+}
+

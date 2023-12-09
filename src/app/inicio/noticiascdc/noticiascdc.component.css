@@ -1,0 +1,45 @@
+.example-card {
+    max-width: 400px;
+    max-height: 600px; /* Ajusta la altura máxima según tus necesidades */
+    text-align: justify;
+    color:#193A6F;
+    
+  }
+
+/*dispositivos móviles*/
+@media screen and (max-width: 767px){
+
+  .mat-grid-list{
+    columns:  1;
+  
+  }
+  .example-card {
+    width: 100%;
+    max-height: none;
+    margin-bottom: 300px;
+  }
+
+  .mat-card-title{
+    font-size: 18px;
+    
+  }
+  .mat-card-content{
+    font-size: 16px;;
+  }
+  .mat-card-header {
+    text-align: center;
+    
+  }
+
+  .mat-card-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+  
+ 
+
+
+  
+  

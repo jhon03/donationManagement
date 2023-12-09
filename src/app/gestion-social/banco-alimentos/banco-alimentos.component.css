@@ -1,0 +1,95 @@
+.cabecera{
+    background-color: #193A6F;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Define dos columnas, la primera ocupa 1 fracción y la segunda 2 fracciones */
+    gap: 20px; /* Agrega espacio entre las columnas */
+  }
+
+  .columna-imagen {
+    padding: 20px;
+  }
+  
+  .columna-imagen img {
+    width: 468px;
+    height: 376px;
+    align-items: center;
+    margin: 80px;
+  }
+
+  span {
+    color: #193A6F; /* Cambia el color de texto según tus preferencias */
+    font-weight: bold;
+    text-align: center;
+    font-size: 34px;
+  }
+  
+  .columna-contenido {
+    padding: 30px;
+    text-align: justify;
+    line-height: 1.7;
+    color: #193A6F;
+    margin: 30px;
+  }
+  
+  .columna-contenido label {
+    font-weight: bold;
+    color: #193A6F;
+    font-size: 24px;
+    margin: 20px;
+    padding: 10px;
+  }
+  .columna-contenido p{
+
+    font-size: 18px;
+    color: #193A6F;
+    padding: 10px;
+    
+    font-family: 'Montserrat';
+  }
+  .subrayado{
+
+    text-decoration: underline;
+    font-size: 18px;
+    
+    font-family: 'Montserrat';
+}
+
+.boton-con-estilo {
+    background-color:#193A6F; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    padding: 10px 20px; /* Ajusta el espaciado interno según tus preferencias */
+    border: none;
+    border-radius: 5px; /* Ajusta la curvatura de los bordes según tus preferencias */
+    cursor: pointer;
+  }
+  
+  .boton-con-estilo:hover {
+    background-color:#FB9850; /* Cambia el color de fondo en el estado de "hover" (al pasar el mouse) */
+  }
+
+  @media screen and (max-width: 767px){
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+      gap: 10px; /* Espacio entre columnas */
+   
+      font-family: 'Montserrat';
+   
+    }
+  
+    .columna-imagen {
+      grid-row: 1; /* Coloca las imágenes en la primera fila */
+    }
+
+    .columna-contenido {
+      grid-row: 2; /* Coloca el contenido en la segunda fila */
+    }
+  }

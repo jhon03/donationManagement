@@ -1,0 +1,85 @@
+
+<div class="form-container">
+    <div class="form-column">
+        
+        <form (ngSubmit)="onSubmit()">
+            <div class="camposform">
+            <label for="nombre">Nombre del Programa:</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="programa.nombre" required>
+        </div>
+    
+        <div class="camposform">
+            <label for="eslogan">Escribe un eslogan</label>
+            <input type="text" id="eslogan" name="eslogan" [(ngModel)]="programa.eslogan" required>
+        </div>
+    
+        <div class="camposform">
+            <label for="descripcion">Descripción del Programa:</label>
+    
+            <textarea id="descripcion" name="descripcion" [(ngModel)]="programa.descripcion" required></textarea>
+    </div>
+    
+    
+    
+    
+    
+    <div class="container my-3">
+        <div class="mb-3">
+            <label for="image" class="form-label">Agrega una o varias Imágenes  al programa
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </label>
+            <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
+            <ng-container *ngFor="let image of selectedImages; let i = index" >
+                <div class="col" >
+                    <div class="card h-100">
+                        <img [src]="image.url" class="card-img-top rounded-1 img-fluid" alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
+                        <div class="card-footer text-center">
+                            <button class="btn btn-danger text-center" (click)="removeImage(i, image)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+           </ng-container>                           
+        </div>
+        
+
+    </div>
+
+    <div class="camposform">
+                
+                <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccione opciones para Colaboración</button>
+                <span *ngIf="showDropdown" class="dropdown-list">
+                    <span *ngFor="let opcion of listaOpciones">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="opcion.isSelected" [name]="'opcion_' + opcion.text"> {{opcion.text}}
+                        </label>
+                    </span>
+                </span>
+            </div>
+
+
+            <div class="camposform">
+                <label for="usuCreador">Usuario Creador</label>
+                <input type="text" id="usuCreadorname" name="usuCreador" [(ngModel)]="programa.usuCreador" required>
+            </div>
+    
+            <div class="camposform">
+            <label for="usuModificadoruario Modificador"></label>
+            <input type="text" id="usuModificador" name="usuModificador" [(ngModel)]="programa.usuModificador" required>
+        </div>
+            
+    
+            <div class="button-container">
+                <input type="submit" value="Actualizar Programa">
+            </div>
+    
+        </form>
+    
+    </div>
+    
+    </div>
+    <ng-template #elseBlock>
+        Actualizar
+    </ng-template>

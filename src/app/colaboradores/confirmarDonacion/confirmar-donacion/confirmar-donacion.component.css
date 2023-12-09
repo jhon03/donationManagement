@@ -1,0 +1,68 @@
+section {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.background {
+    margin: 10px;
+    height: 626px; /* Ajustar la altura al 100% del viewport */
+    width: 626px;
+  
+}
+
+.texto p{
+
+color: #193A6F;
+text-align: justify;
+margin: 60px;
+
+}
+
+
+.button-container {
+    position: absolute; 
+    display: flex;
+    justify-content: center;
+    top:0;
+    margin: 60px;           
+    margin-top: 60vh; /* Ajusta el margen superior según tus preferencias */
+    
+}
+
+.button {
+    display: inline-block;
+    padding: 2vh 4vw;
+    margin: 0 2vw;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer; /* Añade un indicador de cursor al pasar el ratón */
+}
+
+.button-accept {
+    background-color: #4CAF50; /* Verde para aceptar */
+}
+.button-accept:hover{
+    background-color: #193A6F;
+}
+
+.button-reject {
+    background-color: #f44336; /* Rojo para rechazar */
+}
+.button-reject:hover{
+    
+    background-color: #193A6F;
+}
+
+.message-container {
+    background-color: #4CAF50;
+    position: absolute;
+    color: white;
+    padding: 20px;
+    margin-top: 80px;
+    margin-left: 190px;
+    border-radius: 15px;
+}
+

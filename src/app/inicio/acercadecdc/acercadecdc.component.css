@@ -1,0 +1,36 @@
+.text-center {
+    text-align: center;
+    color: #193A6F
+  }
+
+  .IntroCDC, .Mision {
+    text-align: justify; /* Justificar el texto */
+    padding: 20px; /* Agregar espaciado dentro de la tarjeta */
+    line-height: 2.0; /* Espaciado entre líneas */
+    font-size: medium;
+    color: #193A6F
+}  
+     
+.videoIntroCDC {
+    margin: 0 auto; /* Centrar horizontalmente */
+    width: 80%; /* Ajusta el ancho de la tarjeta según tus necesidades */
+   
+    margin-right: 20px;
+  }
+  
+
+  @media screen and (max-width: 767px) {
+    .IntroCDC, .Mision {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+  
+    .videoIntroCDC iframe {
+      width: 100%;
+    
+     margin: O auto;
+    }
+    
+  }

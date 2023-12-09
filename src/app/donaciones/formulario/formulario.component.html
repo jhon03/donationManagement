@@ -1,0 +1,142 @@
+<div class="container">
+
+  <p>Te damos la bienvenida a: </p>
+  <h2>¡{{nombrePro}}!</h2>
+  <div class="parrafo2">
+    <p>Has seleccionado una iniciativa digna de tu apoyo y generosidad. A través de tu elección, estás contribuyendo
+      activamente al progreso y desarrollo de nuestra comunidad. </p>
+    <span>¡Gracias por hacer de esta experiencia de donación, algo significativo y valioso!</span>
+  </div>
+</div>
+
+<app-aporte-solidario *ngIf="opcion === 'Aporte Solidario'"></app-aporte-solidario>
+<app-aportedel-tiempo *ngIf="opcion === 'Aporte en Tiempo'"></app-aportedel-tiempo>
+<app-apadrinamiento *ngIf="opcion === 'Apadrinar'"></app-apadrinamiento>
+
+
+<div class="form-container">
+  <div class="form-column">
+    <form [formGroup]="formUser" (ngSubmit)="onSubmit()" *ngIf="!mostrarModal">
+
+
+      <div class="form-section">
+
+        <label [ngClass]=" { 'label-invalid': tIdent.invalid && tIdent.touched, 'text-dark': tIdent.valid || !tIdent.touched}" for="tipo_identificacion">Tipo de Identificación:</label>
+
+        <select formControlName="tipoIdentificacion" id="tipo_identificacion" name="tipo_identificacion" required>
+          <option *ngFor="let i of donacionA.listTipoIdentificacion" [value]="i.value">{{i.key}}</option>
+        </select>
+        <div class="fw-bold" style="color: red;" [hidden]="tIdent.valid || !tIdent.touched" >
+          <span *ngIf="tIdent.errors?.['required']" >*El tipo de identificacion es requerido</span>
+        </div>
+      </div>
+
+      <div class="form-section">
+
+        <label [ngClass]=" { 'label-invalid': nIdent.invalid && nIdent.touched, 'text-dark': nIdent.valid || !nIdent.touched}" for="numero_identificacion">Número de Identificación:</label>
+        <input type="number" id="numero_identificacion" formControlName="numeroIdentificacion"
+          id="numero_identificacion" name="numeroIdentificacion" required matInput>
+        <div class="fw-bold" style="color: red;" [hidden]="nIdent.valid || nIdent.pristine" >
+          <span *ngIf="nIdent.errors?.['required']" >*El numero de identificacion es requerido</span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label [ngClass]=" { 'label-invalid': nombre.invalid && nombre.touched, 'text-dark': nombre.valid || !nombre.touched}" for="nombre">¿Cuál es tu nombre?</label>
+        <input type="text" id="nombre" formControlName="nombre" required
+          name="nombreBenefactor">
+        <div class="fw-bold" style="color: red;" [hidden]="nombre.valid || nombre.pristine">
+          <span *ngIf="nombre.errors?.['required']" >*El nombre es obligatorio</span>
+          <span *ngIf="nombre.errors?.['pattern']" >*El nombre debe de ser valido</span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label [ngClass]=" { 'label-invalid': correo.invalid && correo.touched, 'text-dark': correo.valid || !correo.touched}" for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" formControlName="correo" name="correo"
+          required>
+        <div class="fw-bold" style="color: red;" [hidden]="correo.valid || correo.pristine">
+          <span *ngIf="correo.errors?.['required']" >*El correo es obligatorio</span>
+          <span *ngIf="correo.errors?.['email']" >*El correo debe de ser valido</span>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label [ngClass]=" { 'label-invalid': celular.invalid && celular.touched, 'text-dark': celular.valid || !celular.touched}" for="celular">Celular:</label>
+        <div class="input-with-prefix">
+          <span class="prefix">3</span>
+          <input type="number" id="celular" name="celular" formControlName="celular">
+        </div>
+        <div class="fw-bold" style="color: red;" [hidden]="celular.valid || celular.pristine">
+          <span *ngIf="celular.errors?.['required']" >*El celular es requerido</span>
+          <span *ngIf="celular.errors?.['pattern']" >*El celular debe tener 10 digitos</span>
+        </div>
+      </div>
+
+      <div class="form-section" *ngIf="opcion === 'aporte solidario'">
+        <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+        <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
+          <option *ngFor="let i of listaOpciones.listAportesSolidario" [value]="i.value">{{i.key}}</option>
+        </select>
+      </div>
+
+      <div class="form-section" *ngIf="opcion === 'Apadrinar'">
+        <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+        <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
+          <option *ngFor="let i of listaOpciones.listAportesApadrinamiento" [value]="i.value">{{i.key}}</option>
+        </select>
+      </div>
+
+      <div class="form-section" *ngIf="opcion === 'Aporte en Tiempo'">
+        <label [ngClass]=" { 'label-invalid': aporte.invalid && aporte.touched, 'text-dark': aporte.valid || !aporte.touched}"  for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+        <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
+          <option *ngFor="let i of listaOpciones.listTiempo" [value]="i.value">{{i.key}}</option>
+        </select>
+        <div class="fw-bold" style="color: red;" [hidden]="aporte.valid || !aporte.touched" >
+          <span *ngIf="aporte.errors?.['required']" >*El aporte es requerido</span>
+        </div>
+      </div>
+
+     
+
+      <div class="button-container" >
+        <button class="btn btn-dark full-width-form" [disabled]="formUser.invalid" >
+          enviar solicitud
+        </button>
+      </div>
+
+      <app-spinner></app-spinner>
+    </form>
+    
+    <div *ngIf="mostrarModal" class="container mt-5" style="background-image: url('https://res.cloudinary.com/dxlmosojh/image/upload/f_auto,q_auto/v1/donacion/fondos/kykfeikfyv94knrzxmup'); background-size: cover; background-position: center; height: 626px; width: 626px; display: block; justify-content: center; align-items: center;">
+      <div class="container row ">
+        <h2 class="mt-5">Agradecemos tu donación</h2>
+        <p>Para continuar necesitamos validar tu correo por ello,
+          Hemos enviado un correo electrónico con un código de confirmación.
+          Por favor, ingrésalo a continuación:
+        </p>
+
+        <form (ngSubmit)="confirmarDonacion()" class="full-width-form fw-bold" style="background-color: transparent;" >
+          <label style=" font-size: 20px;">Código de Confirmación</label>
+          <input required [(ngModel)]="codigoConfirmacion" name="codigoConfirmacion" placeholder="Ingrese el código">
+
+          <div class="container text-center">
+            <button mat-raised-button>Confirmar Donación</button>
+          </div>
+
+        </form>
+      </div>
+      
+
+    </div>
+
+    <br><br><br>
+
+
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  Actualizar
+
+</ng-template>

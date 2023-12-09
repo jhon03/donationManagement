@@ -1,0 +1,46 @@
+
+<table>
+    <thead>
+      <tr>
+      
+        <th>Nombre del Programa</th>
+        <th>Eslogan</th>
+        <th>Descripción</th>
+        <th>usuario Creador</th>
+        <th>usuario Modificador</th>
+        <td>Estado</td>
+        <th>opciones de colaboracion</th>
+      
+        <th>Eliminar</th>
+        <th>Actualizar</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let programa of programas">
+        
+        <td>{{ programa.nombre }}</td>
+        <td>{{ programa.eslogan }}</td>
+        <td>{{ programa.descripcion }}</td>
+        <td>{{ programa.usuCreador }}</td>
+        <td>{{ programa.usuModificador }}</td>
+         <td>{{programa.estado}}</td>
+        <td>{{ programa.opcionesColaboracion }}</td>
+        <td> 
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarPrograma(programa.uid, programa.imagenes)">
+                <mat-icon>delete</mat-icon>
+              </button></td>
+
+         <td>
+            <button mat-flat-button class="btn btn-danger" [routerLink]="['/editar','programa', programa.uid]"  >editar</button></td>     
+        <td>
+          <button *ngIf=" programa.estado === 'visible' "  class="btn btn-info m-1 full-width" (click)="ocultar(programa.uid)" >ocultar</button>
+          <button *ngIf=" programa.estado === 'oculto' " class="btn btn-secondary full-width" (click)="habilitar(programa.uid)" >habilitar</button>
+        </td>
+      </tr>
+     
+    </tbody>
+ 
+  </table>
+
+ 

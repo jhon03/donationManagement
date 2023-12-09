@@ -1,0 +1,71 @@
+
+
+<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16" class="mx-5 my-5">
+
+  <mat-grid-tile *ngFor="let proyecto of proyectos; let p= index">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header" >
+            <img mat-card-avatar src="assets/logo-horizontal.png" alt="Photo of a Shiba Inu">
+          </div>
+            <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+  
+          </mat-card-header>
+          <!--<img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">-->
+          <div id="carouselExampleProyectos{{ p }}" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let imagen of proyecto.imagenes; let z = index" [ngClass]="{'active': z === 0}">
+                <img [src]="imagen.url" class="d-block w-100" alt="Imagen del producto" >
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleProyectos'+ p" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleProyectos' + p" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          
+          <mat-card-content class="content">
+            {{proyecto.descripcion}}
+          </mat-card-content>
+
+          <!--
+          <mat-card-actions>
+            <div *ngFor="let o of proyecto.opcionesDonacion" class="button-container" (click)="redirigir(o)">
+           <div class="favorite-container">
+            <mat-icon class="favorite">favorite</mat-icon> 
+            
+            
+            <label (click)="redirigir(o)" class="label-link">{{o}}</label>
+              </div>
+             </div>
+          </mat-card-actions>
+          -->
+          <div *ngIf="!proyectoCaducado(proyecto)"  class="custom-options-container">
+
+            <div *ngFor="let opcion of proyecto.opcionesDonacion"  class="custom-option">
+              <button mat-stroked-button [routerLink]="['/', proyecto.nombre, 'proyecto',proyecto.uid, 'formulario', opcion]" class="custom-button">
+                <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
+              </button>
+            </div>
+          
+
+          </div>
+          <div *ngIf="proyectoCaducado(proyecto)" class="custom-options-option">
+            <button class="btn btn-danger">
+              El proyecto ha finalizado
+            </button>
+          </div>
+
+        </mat-card>
+
+
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+

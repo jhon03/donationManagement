@@ -1,0 +1,82 @@
+.imagen {
+
+    position: relative;
+    width: 100%; /* Establecer el ancho al 100% */
+    height: auto; /* Altura automática para mantener la proporción */
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.texto-superpuesto{
+
+    position:absolute; 
+    margin: 40px;
+    top: 60%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 10px; 
+    text-align: left;  
+    color:antiquewhite;
+    font-size: 20px;
+    border: 10px;
+    
+}
+.texto-superpuesto label{
+
+color: antiquewhite;
+text-decoration: solid;
+font-size: 50px;
+font-weight: bold;
+border: 20px;
+padding: 20px;
+white-space: nowrap;
+
+}
+.subrayado{
+
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+/*estilos para texto descriptivo*/
+
+.descripcion {
+
+    padding: 30px;
+    margin: 20px;
+    height: 100%;
+    height: 100%;
+    text-align: justify;
+    font-family: 'Montserrat';
+
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #193A6F;
+    text-align: center;
+
+}
+
+.titulo label{
+    text-align: center;
+    font-family: 'Montserrat';
+
+}
+
+.descripcion p {
+    color: #193A6F;
+    font-size: 18px;
+    line-height: 1.4; /* Espaciado entre líneas */
+    margin-top: 10px; /* Espacio entre el título y el párrafo */
+    font-family: 'Montserrat';
+
+}
+
+@media screen and (max-width: 767px){
+    .texto-superpuesto{
+
+        margin: 3px;
+        font-size: 14px;
+        font-family: 'Montserrat';
+    }
+}

@@ -1,0 +1,109 @@
+
+  .container.ppal {
+     /* Fondo naranja */
+    color: #193A6F; /* Texto azul */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .login-box {
+    background-color: #FFFFFF; /* Fondo blanco */
+    padding: 130px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    text-align: center;
+  }
+
+  h2 {
+    color: #193A6F; /* Título en azul */
+  }
+
+  .user-box {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-box input {
+    width: 150%;
+    padding: 10px;
+    background-color: #FB9850; /* Fondo naranja para el input */
+    border: none;
+    color: #193A6F; /* Texto azul en el input */
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  
+.password-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-right: 40px; /* Ajusta el espacio para el botón de visibilidad de contraseña */
+}
+
+
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+  .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #193A6F; /* Texto azul para las etiquetas */
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  .user-box input:focus + label,
+  .user-box input:valid + label {
+    top: -20px;
+    font-size: 14px;
+    color: #FB9850; /* Cambia el color de la etiqueta cuando el input tiene el foco o contiene datos */
+  }
+
+  button.btn-primary {
+    background-color: #193A6F; /* Fondo azul para el botón */
+    color: #FB9850; /* Texto naranja para el botón */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s;
+  }
+
+  button.btn-primary:hover {
+    background-color: #FB9850; /* Cambia el fondo a naranja cuando se pasa el ratón sobre el botón */
+    color: #193A6F; /* Cambia el texto a azul cuando se pasa el ratón sobre el botón */
+  }
+

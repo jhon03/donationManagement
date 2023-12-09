@@ -1,0 +1,21 @@
+<section class="background col-10" *ngIf="donacion">
+  
+        <div class="texto">
+            <p>{{donacion.nombreBenefactor}} De acuerdo a la conversación sostenida con uno de nuestros colaboradores vía telefonica, te compartimos los detalles para la donación:</p>
+            <p>
+             
+                {{donacion.detalles}}
+            </p>
+          
+        </div>
+        <div class="button-container" *ngIf="mostrarOpciones">
+            <button class="button button-accept" (click)="enviarRespuesta('aceptar')">Aceptar</button>
+            <button class="button button-reject" (click)="enviarRespuesta('rechazar')">Rechazar</button>
+        </div>
+        <div class="message-container row" *ngIf="!mostrarOpciones">
+            Has seleccionado {{opcion}}
+        </div>
+   
+</section>
+    
+

@@ -1,0 +1,46 @@
+<div class="container mx-5 my-5">
+    <table class="m-5 table table-striped">
+        <thead>
+          <tr>
+          
+            <th>Nombre del Proyecto</th>
+            <th>descripcion</th>
+            <th>costo</th>
+            <th>fechaInicio</th>
+            <th>fechaFinalizacion</th>
+            <th>colCreador</th>
+            <th>Estado</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
+            <td>Estado</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let proyecto of proyectos">
+            
+            <td>{{ proyecto.nombre }}</td>
+            <td>{{ proyecto.descripcion }}</td>
+            <td>{{ proyecto.costo }}</td>
+            <td>{{ proyecto.fechaInicio }}</td>
+            <td>{{ proyecto.fechaFinalizacion }}</td>
+            <td>{{ proyecto.colCreador }}</td>
+             <td>{{proyecto.estado}}</td>
+            <td> 
+                <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarProyecto(proyecto.uid)">
+                    <mat-icon>delete</mat-icon>
+                  </button></td>
+    
+             <td>
+                <button mat-flat-button class="btn btn-danger" [routerLink]="['/editar','proyecto', proyecto.uid]"  >editar</button></td>     
+              <td>
+                <button *ngIf=" proyecto.estado === 'visible' " class="btn btn-info m-1 full-width" (click)="ocultar(proyecto.uid)" >ocultar</button>
+                <button *ngIf=" proyecto.estado === 'oculto' " class="btn btn-secondary full-width" (click)="habilitar(proyecto.uid)" >habilitar</button>
+              </td>
+              </tr>
+
+         
+        </tbody>
+     
+      </table>
+    
+</div>

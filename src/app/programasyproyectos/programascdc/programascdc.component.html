@@ -1,0 +1,91 @@
+
+<div class="contenedor-ppal">
+<h1 class="text-center"><strong class="mt-4">PROGRAMAS {{pagina}}</strong></h1> 
+
+<mat-grid-list cols="2" rowHeight="2:2" gutterSize="16">
+  <mat-grid-tile *ngFor="let programa of programas; let i= index">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header">
+          <img mat-card-avatar src="assets/logo-horizontal.png" alt="Photo of a Shiba Inu">
+        </div>
+        <mat-card-title>{{programa.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{programa.eslogan}}</mat-card-subtitle>
+      </mat-card-header>
+
+     <!-- <img mat-card-image src="assets/biblioteca.png" alt="Photo of a Shiba Inu">-->
+     <div id="carouselExample{{ i }}" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let imagen of programa.imagenes; let j = index" [ngClass]="{'active': j === 0}">
+          <img [src]="imagen.url" class="d-block w-100" alt="Imagen del producto">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExample'+i" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExample' + i" data-bs-slide="next">
+        <span class="carousel-control-next-icon" ariahidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    
+    
+      <mat-card-content class="content">
+        {{programa.descripcion}}
+      </mat-card-content>
+
+      <!--
+      <mat-card-actions>
+        <div *ngFor="let o of programa.opcionesColaboracion" class="button-container" (click)="redirigir(o)">
+          <div class="favorite-container">
+            <mat-icon class="favorite">favorite</mat-icon>
+            <label (click)="redirigir(o)" class="label-link">{{o}}</label>
+          </div>
+        </div>
+      </mat-card-actions>
+      -->
+
+ <!--seleccionar opción y redirigir al formulario-->
+    <div class="custom-options-container">
+      <div  *ngFor="let opcion of programa.opcionesColaboracion" class="custom-option">
+        <button mat-stroked-button [routerLink]="['/', programa.nombre,'programa', programa.uid, 'formulario', opcion]" class="custom-button">
+          <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
+        </button>
+      </div>
+      </div>
+       
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</div>
+<div class="container">
+
+  <h1 class="text-center"><strong class="mt-4">PROYECTOS {{pagina}}</strong></h1> 
+
+
+  <div class="grid-container">
+    <app-proyectoscdc></app-proyectoscdc>
+  </div>
+</div>
+
+<!--
+<div class="container">
+  <mat-paginator [length]="totalPro" [pageSize]="limite" [pageSizeOptions]="[5, 10, 25, 100]" (page)="cambiarPagina('aumentar', $event)"></mat-paginator>
+
+
+</div>
+-->
+
+
+<div class="container">
+ 
+  <button mat-stroked-button (click)="cambiarPagina('aumentar')">pagina {{pagina}}<i class="fa-solid fa-angles-right"></i></button>
+
+  <button mat-stroked-button color="warn"  (click)="cambiarPagina('disminuir')"><i class="fa-solid fa-angles-left"></i></button>
+
+
+</div>
+   

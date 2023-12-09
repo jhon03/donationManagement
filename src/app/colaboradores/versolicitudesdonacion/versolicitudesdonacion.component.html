@@ -1,0 +1,55 @@
+
+<table>
+    <thead>
+      <tr>
+      
+        <th>tipo identificacion Benefactor</th>
+        <th>Número identificacion Benefactor</th>
+        <th>Nombre del Benefactor</th>
+        <th>Correo Benefactor</th>
+        <th>celularBenefactor</th>
+        <th>Nombre</th>
+        <th>Aporte</th>
+        <th>Estado</th>
+        <th>Fecha Creación</th>
+        <!--acciones para la gestión de donaciones-->
+        <th>Abrir solicitud</th>
+        <th>Terminar Proceso Donación</th>
+        <th>Confirmación Recepción/vinculación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donacion of donaciones; let i=index">
+        
+        <td>{{ donacion.tipoIdentificacion }}</td>
+        <td>{{ donacion.numeroIdentificacion }}</td>
+        <td>{{ donacion.nombreBenefactor }}</td>
+        <td>{{ donacion.correo }}</td>
+        <td>{{ donacion.celular }}</td>
+        <td *ngIf="donacion.proyecto">{{donacion.proyecto.nombre}}</td>
+        <td *ngIf="donacion.programa">{{donacion.programa.nombre}}</td>
+        <td>{{ donacion.aporte }}</td>
+        <td>{{ donacion.estado }}</td>
+        <td>{{ donacion.fechaCreacion | date:'dd/MM/yyyy' }}</td>
+
+        <th>
+          <!--campo para escribir detalles de comunicación-->
+          <div>
+            <input type="text" value="" placeholder="detalles de la donacion" [(ngModel)]="donacion.detalles">
+            <button (click)="confirmarDonacion(donacion.uid, donacion.detalles)" >Abrir solicitud</button>
+           
+          </div>
+        
+        
+        </th>
+        <th><button (click)="rechazarDonacion(donacion.uid)" ><i class="fa-solid fa-envelope"></i>Rechazar Donacion</button></th>
+
+        <th><button (click)="confirmarRecibido(donacion.uid)">Confirmar mediante envío correo</button></th>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container">
+    <button (click)="paginasbutton()" class="btn btn-sucess">
+      pagina {{pagina}}
+    </button>
+  </div>

@@ -1,0 +1,118 @@
+<div class="form-container">
+<div class="form-column">
+    <form  (ngSubmit)="onSubmit()">
+        <div class="camposform">
+        <label for="nombre">Nombre del Proyecto:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="proyecto.nombre" required><br>
+    </div>
+    <div class="camposform">
+        <label for="descripcion">Descripción del Proyecto:</label>
+        <textarea id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required></textarea><br>
+    </div>
+
+
+
+    <div class="container my-3">
+        <div class="mb-3">
+            <label for="image" class="form-label">Agrega una o varias Imágenes al proyecto
+             <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </label>
+            <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
+            <ng-container *ngFor="let image of selectedImages; let i = index" >
+                <div class="col" >
+                    <div class="card h-100">
+                        <img [src]="image.url" class="card-img-top rounded-1 img-fluid" alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
+                        <div class="card-footer text-center">
+                            <button class="btn btn-danger text-center" (click)="removeImage(i)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+           </ng-container>                           
+        </div>
+        
+        <button *ngIf="selectedImages.length > 0" class="btn btn-danger" (click)="removeAllImages()">Eliminar todas las imágenes</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+        
+    <div class="camposform">
+        <label for="costo">Costo del Proyecto:</label>
+        <input type="number" id="costo" name="costo" [(ngModel)]="proyecto.costo" required><br>
+
+    </div>
+
+    <div class="camposform">
+        <label for="fecha_inicio">Fecha de Inicio:</label>
+        <input type="date" id="fecha_inicio" name="fechaInicio" [(ngModel)]="proyecto.fechaInicio" required><br>
+</div>
+<div class="camposform">
+        <label for="fecha_finalizacion">Fecha de Finalización:</label>
+        <input type="date" id="fecha_finalizacion" name="fechaFinalizacion" [(ngModel)]="proyecto.fechaFinalizacion" required><br>
+</div>
+   
+    <div class="camposform">
+        <label for="tipo_proyecto">Tipo de Proyecto:</label>
+        <select id="tipo_proyecto" type="listaOpciones" name="tiposProyecto" [(ngModel)]="proyecto.tipoProyecto" required>
+        <option *ngFor="let i of proyecto.opcionesProyectos" [value]="i.value">{{i.key}}</option>
+
+        </select><br>
+</div>
+
+        <div class="camposform">
+            <label for="opcionesColaboracion">Opciones de Colaboración</label>
+            <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccionar Opciones</button>
+            <span *ngIf="showDropdown" class="dropdown-list">
+                <span *ngFor="let opcion of listaOpciones">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="opcion.isSelected" [name]="'opcion_' + opcion.text" required> {{opcion.text}}
+                    </label>
+                </span>
+            </span>
+        </div>
+   <!-- <div class="camposform">
+    <mat-radio-group >
+       
+    <mat-radio-button>programa.nombre</mat-radio-button>
+
+        <mat-radio-button>programa.nombre</mat-radio-button>
+
+        <mat-radio-button>programa.nombre</mat-radio-button>
+
+        <mat-radio-button>programa.nombre</mat-radio-button>
+      </mat-radio-group>
+</div>-->
+
+
+
+<div class="camposform">
+    <label for="tipo_proyecto">Programas:</label>
+    <select id="tipo_proyecto" name="idPrograma" [(ngModel)]="idPrograma" required>
+        <option value="" disabled selected>Selecciona un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.uid">{{programa.nombre}}</option>
+    </select>
+</div>
+
+
+
+
+<br><br>
+
+        <div class="button-container">
+            <input type="submit" value="Crear Proyecto">
+        </div>
+
+    </form>
+</div>
+</div>
+<br><br><br>

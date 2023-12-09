@@ -1,0 +1,111 @@
+
+.container.ppal {
+ 
+ color: #193A6F; /* Texto azul */
+ padding: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+}
+
+.login-box {
+ background-color: #FFFFFF; /* Fondo blanco */
+ padding: 80px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+ text-align: center;
+ margin: 10px 0;
+ max-width: 800px;
+ max-height: 150vh;
+
+ margin-left: 20px;
+ margin-right: 20px;
+}
+
+h2 {
+ color: #193A6F; /* Título en azul */
+}
+
+.user-box {
+ position: relative;
+ margin: 20px 0;
+ width: 100%;
+ text-align: center;
+
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+.user-box input,
+select {
+
+ width: 150%;
+ padding: 10px;
+ background-color: #FB9850; /* Fondo naranja para el input */
+ border: none;
+ color: #193A6F; /* Texto azul en el input */
+ border-radius: 10px;
+ font-size: 16px;
+}
+
+.user-box label {
+ position: absolute;
+ top: 0;
+ left: 0;
+ padding: 10px;
+ font-size: 16px;
+ color: #193A6F; /* Texto azul para las etiquetas */
+ pointer-events: none;
+ transition: 0.5s;
+}
+
+.user-box input:focus + label,
+.user-box input:valid + label {
+ top: -20px;
+ font-size: 14px;
+ color: #FB9850; /* Cambia el color de la etiqueta cuando el input tiene el foco o contiene datos */
+}
+
+button.btn-primary {
+ background-color: #193A6F; /* Fondo azul para el botón */
+ color: #FB9850; /* Texto naranja para el botón */
+ border: none;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 16px;
+ transition: background-color 0.5s;
+ margin-right: 20px;
+}
+
+button.btn-primary:hover {
+ background-color: #FB9850; /* Cambia el fondo a naranja cuando se pasa el ratón sobre el botón */
+ color: #193A6F; /* Cambia el texto a azul cuando se pasa el ratón sobre el botón */
+}
+.limpiar{
+  background-color: #193A6F;
+  color: #FB9850;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.5s;
+}
+.btn-limpiar:hover {
+    background-color: #FB9850;
+    color: #193A6F;
+}
+
+@media (max-width: 768px) {
+  .login-box {
+      max-width: 100%; /* Ocupar todo el ancho disponible */
+      max-height: none; /* Eliminar la restricción de alto */
+      margin: 20px; /* Márgenes más pequeños en pantallas pequeñas */
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+}

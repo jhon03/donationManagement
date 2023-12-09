@@ -1,0 +1,149 @@
+
+.navbar{
+
+  background-color: #FB9850;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+  color: #fff;
+  height: 100px;
+  
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+
+  width: 130px;
+  height: 100px; /* Ajustamos la altura de la imagen */
+}
+
+.logo h4 {
+  color: #193A6F;
+  font-style: italic;
+  font-style: bold;
+  font-family: 'Montserrat';
+  padding: 10px;
+
+}
+
+.nav-links {
+
+  display: flex;
+}
+
+.nav-links label{
+ 
+  margin: 8px; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links label:hover{
+
+  color: #193A6F;
+}
+
+.auth {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.auth mat-icon{
+  
+  color: #193A6F;
+  margin-right: 10px; 
+  border-radius: 8px;
+  
+  
+}
+.auth mat-card {
+
+  display: flex;
+  align-items: center;
+  margin: 0 10px; /* Ajustamos el margen para separar los elementos */
+  
+}
+
+.autenticacion {
+  font-family: 'Montserrat', sans-serif;
+  color:#193A6F;
+  
+}
+/*pantallas grandes*/
+@media screen and (min-width: 1024px){
+
+
+  .navbar{
+    height: 100px;
+    align-items: center;
+    
+  }
+  .logo img {
+
+    width: 130px;
+    height: 100px; /* Ajustamos la altura de la imagen */
+  }
+  .nav-links label{
+ 
+    margin: 10px; 
+  }
+}
+/* dispositivos móviles*/
+  @media screen and (max-width: 767px){
+
+    .navbar{
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+    }
+    .logo {
+      order: 1;
+      margin: 6px;
+      align-self: flex-start;
+    }
+   .logo h4 {
+    margin: 20px;
+   }
+    .auth mat-icon {
+      
+   margin-top: 25px;
+      
+    }
+    .autenticacion {
+      
+     margin-left: 0px; 
+    }
+    .nav-links {
+      order: 2;
+    }
+    .nav-links label{
+ 
+      margin: 30px; 
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+    .auth {
+      display: flex;
+      margin: 5px;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+ 
+   
+  }
+/*tabletas*/
+  @media screen and (min-width: 768px) and (max-width: 1024px){
+    .navbar{
+      height: 300px;
+    }
+  }
+
+
+

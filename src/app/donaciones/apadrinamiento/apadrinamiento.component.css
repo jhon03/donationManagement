@@ -1,0 +1,16 @@
+.imagen {
+
+  position: relative;
+  width: 100%; /* Establecer el ancho al 100% */
+  height: auto; /* Altura automática para mantener la proporción */
+  overflow: hidden; /* Evita que el contenido se desborde */
+  opacity: 0.4;
+}
+  .contenido {
+    display: flex; /* Utiliza un contenedor flex para organizar los elementos */
+    justify-content: space-between; /* Distribuye el espacio horizontalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 20px; /* Agrega márgenes alrededor del contenido */
+  }
+
+
