@@ -48,7 +48,7 @@
           <div *ngIf="!proyectoCaducado(proyecto)"  class="custom-options-container">
 
             <div *ngFor="let opcion of proyecto.opcionesDonacion"  class="custom-option">
-              <button mat-stroked-button [routerLink]="['/', proyecto.nombre, 'proyecto',proyecto.uid, 'formulario', opcion]" class="custom-button">
+              <button mat-stroked-button [routerLink]="['/', proyecto.nombre, 'proyecto',proyecto.uid, 'formulario', opcion.toUpperCase()]" class="custom-button">
                 <i class="fa-solid fa-handshake-simple"></i>{{opcion}}
               </button>
             </div>

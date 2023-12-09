@@ -73,7 +73,7 @@ formUser = this.fb.group({
   'correo': ['', [Validators.required, Validators.email]],
   'tipoIdentificacion': ['', Validators.required],
   'numeroIdentificacion': ['', Validators.required],
-  'celular': ['', [Validators.required, Validators.pattern('^\\d{8}$') ]],
+  'celular': ['', [Validators.required, Validators.pattern('^\\d{9}$') ]],
   'aporte': ['', Validators.required]
 })
 
@@ -93,7 +93,6 @@ onSubmit(){
   this.donacionA.numeroIdentificacion = formValues.numeroIdentificacion;
   this.donacionA.celular = '3' + formValues.celular;
   this.donacionA.aporte = formValues.aporte;
-
 
   if(this.relacion === 'proyecto'){
     this.crearDonacionProyecto();

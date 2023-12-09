@@ -4,7 +4,7 @@ import { FloatingButtonComponent } from './floating-button/floating-button.compo
 import { ProgramascdcComponent } from './programasyproyectos/programascdc/programascdc.component';
 
 const routes: Routes = [
-
+  {path: '', redirectTo: 'inicio', pathMatch:'full'},
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then(m =>m.InicioModule)

@@ -65,7 +65,7 @@
         <label [ngClass]=" { 'label-invalid': celular.invalid && celular.touched, 'text-dark': celular.valid || !celular.touched}" for="celular">Celular:</label>
         <div class="input-with-prefix">
           <span class="prefix">3</span>
-          <input type="number" id="celular" name="celular" formControlName="celular">
+          <input type="text" id="celular" name="celular" formControlName="celular">
         </div>
         <div class="fw-bold" style="color: red;" [hidden]="celular.valid || celular.pristine">
           <span *ngIf="celular.errors?.['required']" >*El celular es requerido</span>
@@ -73,21 +73,27 @@
         </div>
       </div>
 
-      <div class="form-section" *ngIf="opcion === 'aporte solidario'">
-        <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+      <div class="form-section" *ngIf="opcion === 'APORTE SOLIDARIO'">
+        <label [ngClass]=" { 'label-invalid': aporte.invalid && aporte.touched, 'text-dark': aporte.valid || !aporte.touched}" for="tipo_ayuda">¿Cómo deseas ayudar?</label>
         <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
           <option *ngFor="let i of listaOpciones.listAportesSolidario" [value]="i.value">{{i.key}}</option>
         </select>
+        <div class="fw-bold" style="color: red;" [hidden]="aporte.valid || !aporte.touched" >
+          <span *ngIf="aporte.errors?.['required']" >*El aporte es requerido</span>
+        </div>
       </div>
 
-      <div class="form-section" *ngIf="opcion === 'Apadrinar'">
-        <label for="tipo_ayuda">¿Cómo deseas ayudar?</label>
+      <div class="form-section" *ngIf="opcion === 'APADRINAR'">
+        <label [ngClass]=" { 'label-invalid': aporte.invalid && aporte.touched, 'text-dark': aporte.valid || !aporte.touched}" for="tipo_ayuda">¿Cómo deseas ayudar?</label>
         <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
           <option *ngFor="let i of listaOpciones.listAportesApadrinamiento" [value]="i.value">{{i.key}}</option>
         </select>
+        <div class="fw-bold" style="color: red;" [hidden]="aporte.valid || !aporte.touched" >
+          <span *ngIf="aporte.errors?.['required']" >*El aporte es requerido</span>
+        </div>
       </div>
 
-      <div class="form-section" *ngIf="opcion === 'Aporte en Tiempo'">
+      <div class="form-section" *ngIf="opcion === 'APORTE EN TIEMPO'">
         <label [ngClass]=" { 'label-invalid': aporte.invalid && aporte.touched, 'text-dark': aporte.valid || !aporte.touched}"  for="tipo_ayuda">¿Cómo deseas ayudar?</label>
         <select id="tipo_ayuda" name="aporte" formControlName="aporte" required>
           <option *ngFor="let i of listaOpciones.listTiempo" [value]="i.value">{{i.key}}</option>
