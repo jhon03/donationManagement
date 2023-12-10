@@ -42,7 +42,10 @@
         
         
         </th>
-        <th><button (click)="rechazarDonacion(donacion.uid)" ><i class="fa-solid fa-envelope"></i>Rechazar Donacion</button></th>
+        <th>
+          <input type="text" value="" placeholder="motivo rechazo donacion" [(ngModel)]="donacion.motivoRechazo">
+          <button (click)="rechazarDonacion(donacion.uid, donacion.motivoRechazo)" ><i class="fa-solid fa-envelope"></i>Rechazar Donacion</button>
+        </th>
 
         <th><button (click)="confirmarRecibido(donacion.uid)">Confirmar mediante envío correo</button></th>
       </tr>

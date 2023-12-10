@@ -5,6 +5,7 @@ section {
 }
 
 .background {
+    background: url('https://res.cloudinary.com/dxlmosojh/image/upload/f_auto,q_auto/v1/donacion/fondos/kykfeikfyv94knrzxmup');
     margin: 10px;
     height: 626px; /* Ajustar la altura al 100% del viewport */
     width: 626px;

@@ -61,25 +61,29 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
         this.donacionLista();
         Swal.fire('Correo enviado al benefactor', 'sucess');
       },
-      error:(error)=>console.log(error),
+      error:(error)=>Swal.fire(error.error.error),
     })
   }
 
-  public rechazarDonacion(id: string){
-    this.rechazarSuscripcion = this.donacionService.rechazarDonacion(id, this.mensaje).subscribe({
+  public rechazarDonacion(id: string, motivo: string){
+    this.rechazarSuscripcion = this.donacionService.rechazarDonacion(id, motivo).subscribe({
       next:(data)=>{
         console.log(data);
         this.donacionLista();
         Swal.fire('donacion rechaza correctamnete', 'sucess');
       },
-      error:(error)=>console.log(error),
+      error:(error)=>Swal.fire(error.error.error),
     })
   }
 
   public confirmarRecibido(id: string){
     this.confirmarRecibidoSuscripcion = this.donacionService.correoRecibido(id).subscribe({
-      next:(data)=>console.log(data),
-      error:(error)=>console.log(error),
+      next:(data)=>{
+        console.log(data);
+        this.donacionLista();
+        Swal.fire('Correo de confirmacion enviado', 'sucess');
+      },
+      error:(error)=>Swal.fire(error.error.error),
     })
   }
 

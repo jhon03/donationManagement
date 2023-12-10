@@ -73,7 +73,7 @@ export class DonacionAService {
   }
 
   public rechazarDonacion(id: string, mensaje: string): Observable<resDonacion>{
-    return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, mensaje);
+    return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, {mensaje});
   }
 
   public correoRecibido(id: string): Observable<resDonacion>{

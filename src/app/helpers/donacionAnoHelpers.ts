@@ -60,6 +60,8 @@ export class donacionAResponse {
     detalles: string;
     fechaCreacion: Date;
     uid: string;
+
+    motivoRechazo?: string;
 }
 
 export class resDonacion{
