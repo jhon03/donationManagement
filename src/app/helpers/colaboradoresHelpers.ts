@@ -2,13 +2,14 @@ export const urlColaborador = 'http://localhost:3000/api/colaborador';
 //export const urlColaborador = ' https://secret-sierra-49778-7127c3bb9c8b.herokuapp.com/api/colaborador';
 
 export class resColaborador {
+    tokenNuevo?: string;
     accion: string;
     msg: string;
     colaborador: ColaboradorResponse;
 }
 
 export class ColaboradorResponse{
-  
+    tokenNuevo?: string;
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombre:string;

@@ -7,7 +7,7 @@ export const urlProgramas = 'http://localhost:3000/api/programa';
 
 
 export class programaRequest {
-
+    tokenNuevo?: string;
 
     nombre:any;
     eslogan:string;
@@ -28,6 +28,7 @@ export class programaRequest {
 }
 
 export class responseProgram{
+    tokenNuevo?: string;
     total: number;
     programas: programaResponse[];
 }
@@ -35,6 +36,7 @@ export class responseProgram{
 
 
 export class responseP{
+    tokenNuevo?: string;
     msg: string;
     programa: programaResponse;
 }
@@ -42,6 +44,7 @@ export class responseP{
 
 
 export class programaResponse{
+    tokenNuevo?: string;
     
     nombre: string;
     eslogan: string;
@@ -61,6 +64,7 @@ export class programaResponse{
 
 
 export class descImg {
+    tokenNuevo?: string;
     _id: string;
     url: string;
 }

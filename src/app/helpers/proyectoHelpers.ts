@@ -39,6 +39,7 @@ export class proyectoRequest {
 }
 
 export class responseProyect{
+    tokenNuevo?: string;
     total: number;
     proyecto: proyectoResponse[]
 }
@@ -48,6 +49,7 @@ export class proyectoIdRes{
 }
 
 export class proyectoResponse{
+    tokenNuevo?: string;
 
     nombre: any;
     descripcion: string;
@@ -68,10 +70,12 @@ export class proyectoResponse{
 }
 
 export class imagenDesc {
+    tokenNuevo?: string;
     url: string;
 }
 
 export class programasdesc {
+    tokenNuevo?: string;
     nombre:string;
 }
 

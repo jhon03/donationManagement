@@ -24,9 +24,7 @@ export class LoginService {
         this.tokenService.getHeaders(response);
         this.usuarioLogeado.next(true);
       }
-    }),
-    catchError(this.handleError)
-    );
+    }));
   }
 
 
@@ -35,7 +33,7 @@ export class LoginService {
       console.log('se ha producido un erroren el backend ', error.error);
     }
 
-    console.log('backen retoro el codigo de estado ', error.status, error.error);
+    console.log('backen retorno el codigo de estado ', error.status, error.error);
     return throwError(() => error);
   }
 

@@ -38,16 +38,19 @@ export class donacionAno{
 }
 
 export class response{
+    tokenNuevo?: string;
     total: number;
     donaciones: donacionAResponse[];
 }
 
 export class proyectoResponse{
+    tokenNuevo?: string;
     id: string;
     nombre: string;
 }
 
 export class donacionAResponse {
+    tokenNuevo?: string;
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombreBenefactor: string;
@@ -65,6 +68,7 @@ export class donacionAResponse {
 }
 
 export class resDonacion{
+    tokenNuevo?: string;
     accion: string;
     msg: string;
     donacion: donacionAResponse;

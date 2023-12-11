@@ -4,7 +4,7 @@ export const urlAuth = 'http://localhost:3000/api/auth';
 
 
 export class Credenciales{
-    
+    tokenNuevo?: string;
     correo: string;
     contrasena: string;
     nombre: string;

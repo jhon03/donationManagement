@@ -45,7 +45,7 @@ export class VersolicitudesdonacionComponent implements OnInit, OnDestroy {
     this.donacionesSuscripcion = this.donacionService.listAllDonaciones(this.limite, this.pagina).subscribe(
       {
         next: (datos)=>{
-          console.log(datos.donaciones);
+          console.log(datos);
           this.donaciones = datos.donaciones;
         },
         error: (error)=>console.log(error),     

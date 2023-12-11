@@ -7,6 +7,7 @@ export const urlImg = 'http://localhost:3000/api/uploads/cloud';
 
 
 export class resModeloImg {
+    tokenNuevo?: string;
     msg: string;
     modelo: programaResponse | proyectoResponse;
 }

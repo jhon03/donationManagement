@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -11,11 +12,18 @@ export class TokenService {
     return localStorage.getItem('token');
   }
 
-  public getHeaders(response:any){
+  public getHeaders(response:any): void {
     const tokenH = response.body.token
 
     if(tokenH){
       localStorage.setItem('token', tokenH);
+    }
+  }
+
+  public obtenerTokenRenovado(body: any): void {
+    const tokenRenovado = body.tokenNuevo;
+    if(tokenRenovado){
+      localStorage.setItem('token', tokenRenovado);
     }
   }
 

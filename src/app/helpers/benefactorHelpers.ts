@@ -6,7 +6,8 @@ export const urlBenefactor = 'http://localhost:3000/api/benefactor/crear';
 
 
 export class BenefactorResponse{
-  
+    
+    tokenNuevo?: string;
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombre:string;

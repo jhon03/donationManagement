@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, tap} from 'rxjs';
 import { donacionAResponse, donacionAno, resDonacion, response, urlDonacionPrograma, urlDonacionProyecto, urlDonaciones} from '../../helpers/donacionAnoHelpers';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TokenService } from 'src/app/security/token/token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DonacionAService {
 
 
-  constructor(private clienteHttp: HttpClient) { }
+  constructor(private clienteHttp: HttpClient, private tokenService: TokenService) { }
 
   
 
@@ -37,7 +38,14 @@ export class DonacionAService {
   //lista de donaciones desde otro endpoint  -- integracion con correo
   //endpoints de donaciones( juanta las donaciones de programas y proyectos)
   public listAllDonaciones(limite: number, pagina: number): Observable<response>{
-    return this.clienteHttp.get<response>(`${urlDonaciones}`);
+    return this.clienteHttp.get<response>(`${urlDonaciones}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+
+    }));
   }
 
 
