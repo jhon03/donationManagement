@@ -36,7 +36,7 @@ export class DonacionAService {
   }
 
   //lista de donaciones desde otro endpoint  -- integracion con correo
-  //endpoints de donaciones( juanta las donaciones de programas y proyectos)
+  //endpoints de donaciones( junta las donaciones de programas y proyectos)
   public listAllDonaciones(limite: number, pagina: number): Observable<response>{
     return this.clienteHttp.get<response>(`${urlDonaciones}`, {
       observe: 'body',
@@ -44,13 +44,18 @@ export class DonacionAService {
        if(body && body.tokenNuevo){
           this.tokenService.obtenerTokenRenovado(body);
         }        
-
     }));
   }
 
 
   public buscarIdDonacionList(idDonacion: string): Observable<donacionAResponse>{
-    return this.clienteHttp.get<donacionAResponse>(`${urlDonaciones}/${idDonacion}`);
+    return this.clienteHttp.get<donacionAResponse>(`${urlDonaciones}/${idDonacion}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   //informacion para el benefactor  en metodo post (url, options(headers))
@@ -77,15 +82,33 @@ export class DonacionAService {
 
   public confirmarDonacion(id: string, detalles: string): Observable<resDonacion>{
     console.log(detalles);
-    return this.clienteHttp.post<resDonacion>(`${urlDonaciones}/confirmar/${id}`, {detalles});
+    return this.clienteHttp.post<resDonacion>(`${urlDonaciones}/confirmar/${id}`, {detalles}, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   public rechazarDonacion(id: string, mensaje: string): Observable<resDonacion>{
-    return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, {mensaje});
+    return this.clienteHttp.put<resDonacion>(`${urlDonaciones}/rechazar/${id}`, {mensaje} , {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   public correoRecibido(id: string): Observable<resDonacion>{
-    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/correo/recibido/${id}`);
+    return this.clienteHttp.get<resDonacion>(`${urlDonaciones}/correo/recibido/${id}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
   
 

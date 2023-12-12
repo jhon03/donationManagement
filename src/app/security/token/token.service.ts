@@ -1,10 +1,15 @@
 import { HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
+import * as jwt_decode from 'jwt-decode';
+import { Subscription, timer } from 'rxjs';
+import { switchMap } from 'rxjs';
+import { LoginService } from 'src/app/services/loginService/login.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TokenService {
+export class TokenService{
 
   constructor() { }
 
@@ -35,5 +40,25 @@ export class TokenService {
       return null;      
     }
   }
+
+  istokenExpired(token: string): boolean{
+    try {
+      const decodeToken = jwt_decode.jwtDecode(token);
+      console.log(`token decodificado: ${JSON.stringify(decodeToken) }`);
+      const expirationDate = decodeToken.exp;
+      console.log(`expiracion del token: ${expirationDate}`);
+      const currentTime = Date.now() / 1000;    // Obtener la hora actual
+      console.log(`hora actual: ${currentTime}\ntoken invalido: ${currentTime > expirationDate}`);      
+      return currentTime > expirationDate;
+    } catch (error) {
+      console.log('token inavalido: ' + error);
+      return true;
+    }
+  }
+
+
+
+
+
 }
 

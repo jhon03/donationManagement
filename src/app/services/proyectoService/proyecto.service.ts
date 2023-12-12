@@ -1,22 +1,24 @@
 
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { Proyecto } from 'src/Modelos/proyecto';
 import { proyectoIdRes, proyectoRequest, proyectoResponse, responseProyect, urlProyectos } from '../../helpers/proyectoHelpers';
 import { HttpClient } from '@angular/common/http';
+import { TokenService } from 'src/app/security/token/token.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
 
-  constructor(private httpClient: HttpClient){
+  constructor(private httpClient: HttpClient, private tokenService: TokenService){
 
   }
 
   //donacion = new Donacion();
   private proyectos: Proyecto[] = [
  ];
+
   getProyectos(): Observable<Proyecto[]>{
     return of(this.proyectos);
   };
@@ -28,7 +30,13 @@ export class ProyectoService {
 
 
   public proyectoLista():Observable<responseProyect>{
-    return this.httpClient.get<responseProyect>(`${urlProyectos}`);
+    return this.httpClient.get<responseProyect>(`${urlProyectos}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   public proyectoListaVista(pagina: number, limite: number):Observable<responseProyect>{
@@ -69,6 +77,6 @@ export class ProyectoService {
     }*/
 
 
-  }
+}
 
 

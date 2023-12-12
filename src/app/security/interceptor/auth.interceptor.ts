@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -8,11 +8,17 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from '../token/token.service';
+import { LoginService } from 'src/app/services/loginService/login.service';
+import Swal from 'sweetalert2';
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor, OnDestroy {
 
-  constructor(private tokenService: TokenService) {}
+  constructor(private tokenService: TokenService, private loginService: LoginService) {}
+  
+  ngOnDestroy(): void {
+    
+  }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     
@@ -20,6 +26,10 @@ export class AuthInterceptor implements HttpInterceptor {
     const token = this.tokenService.getToken();
 
     if(token){
+      if(this.tokenService.istokenExpired(token)){
+        Swal.fire('cuenta inactiva, se cierra su sesion por seguridad');
+        this.loginService.loggout();
+      }
       const cloned = request.clone({
         setHeaders: {
           'x-token': token

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { programaRequest, programaResponse,responseP, responseProgram, urlProgramas } from '../../helpers/programaHelpers';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { ColaboradorResponse } from '../../helpers/colaboradoresHelpers';
+import { TokenService } from 'src/app/security/token/token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ProgramasService {
 
   private pagina: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
 
   getPaginaActual(): Observable<number>{
     return this.pagina.asObservable();
@@ -37,7 +38,13 @@ export class ProgramasService {
   }
 
   public programaLista():Observable<responseProgram>{
-    return this.httpClient.get<responseProgram>(`${urlProgramas}`);
+    return this.httpClient.get<responseProgram>(`${urlProgramas}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   //ruta programas para usuarios
