@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ColaboradorRequest, ColaboradorResponse, resColaborador, urlColaborador } from '../../helpers/colaboradoresHelpers';
+import { Observable, tap } from 'rxjs';
+import { ColaboradorRequest, ColaboradorResponse, resColaborador, respuestaColaboradores, urlColaborador } from '../../helpers/colaboradoresHelpers';
+import { TokenService } from 'src/app/security/token/token.service';
 
 
 @Injectable({
@@ -11,10 +12,26 @@ export class ColaboradoresService {
 
   private urlCol = urlColaborador;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
 
-  public obtenerColaboradores(): Observable<ColaboradorResponse[]>{
-    return this.httpClient.get<ColaboradorResponse[]>(this.urlCol);
+  public obtenerColaboradores(): Observable<respuestaColaboradores>{
+    return this.httpClient.get<respuestaColaboradores>(this.urlCol, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
+  }
+
+  public obtenerColaborador(uid: string): Observable<resColaborador>{
+    return this.httpClient.get<resColaborador>(`${urlColaborador}/findById/${uid}`, {
+      observe: 'body',
+    }).pipe(tap((body:any) =>{
+       if(body && body.tokenNuevo){
+          this.tokenService.obtenerTokenRenovado(body);
+        }        
+    }));
   }
 
   public crearColaborador(colaborador: ColaboradorRequest): Observable<resColaborador>{

@@ -3,9 +3,11 @@ import {
   MatBottomSheet,
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ColaboradorResponse } from 'src/app/helpers/colaboradoresHelpers';
 import { AutenticacionService } from 'src/app/services/autenticacionService/autenticacion.service';
+import { ColaboradoresService } from 'src/app/services/colaboradorService/colaboradores.service';
 import { LoginService } from 'src/app/services/loginService/login.service';
 @Component({
   selector: 'app-gestiondonaciones',
@@ -22,16 +24,32 @@ export class GestiondonacionesComponent implements OnInit, OnDestroy{
   showVerColaboradores: boolean = false;
   showVerBenefactores: boolean = false;
 
-  ngOnInit(): void {
+  idCol: string;
+  colaborador: ColaboradorResponse;
 
+  private colaboradorSuscripcion: Subscription;
+
+  ngOnInit(): void {
+    this.idCol = this.route.snapshot.params['uid'];
+    this.obtenercolaborador();
   }
 
   ngOnDestroy(): void {
-
+    this.colaboradorSuscripcion?.unsubscribe();
   }
 
   
-  constructor(private authService: AutenticacionService, private router:Router, private loginService: LoginService){}
+  constructor(private route: ActivatedRoute, private router:Router, private colaboradorService: ColaboradoresService){}
+
+  obtenercolaborador(){
+    this.colaboradorSuscripcion = this.colaboradorService.obtenerColaborador(this.idCol).subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.colaborador = data.colaborador;
+      },
+      error:(error)=>console.log(error),
+    })
+  }
 
 
   

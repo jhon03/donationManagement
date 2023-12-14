@@ -41,6 +41,7 @@ export class ProgramasService {
     return this.httpClient.get<responseProgram>(`${urlProgramas}`, {
       observe: 'body',
     }).pipe(tap((body:any) =>{
+      console.log(body);
        if(body && body.tokenNuevo){
           this.tokenService.obtenerTokenRenovado(body);
         }        

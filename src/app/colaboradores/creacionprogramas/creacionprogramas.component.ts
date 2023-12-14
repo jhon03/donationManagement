@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ColaboradorRequest, ColaboradorResponse } from 'src/app/helpers/colaboradoresHelpers';
 import { programaRequest, programaResponse } from 'src/app/helpers/programaHelpers';
+import { ColaboradoresService } from 'src/app/services/colaboradorService/colaboradores.service';
 import { ImageService } from 'src/app/services/imagenService/image.service';
 import { ProgramasService } from 'src/app/services/programaService/programas.service';
 import Swal from 'sweetalert2'
@@ -13,8 +15,11 @@ import Swal from 'sweetalert2'
 export class CreacionprogramasComponent implements OnInit, OnDestroy {
   
   programa: programaRequest = new programaRequest();
+  colaboradores: ColaboradorResponse[];
+
   private programaSuscripcion: Subscription;
   private imageSuscription: Subscription;
+  private colaboradoresSuscripcion: Subscription;
 
   selectedImages: any[] = [];
   archivo: any[] = [];
@@ -35,13 +40,27 @@ export class CreacionprogramasComponent implements OnInit, OnDestroy {
 
   
   ngOnInit(): void {
+    this.obtenerColaboradores();
   }
+
   ngOnDestroy(): void {
+    this.imageSuscription?.unsubscribe();;
+    this.programaSuscripcion?.unsubscribe();
+    this.colaboradoresSuscripcion?.unsubscribe();
+  }
+
+  constructor(private programaService: ProgramasService, private imagenService: ImageService, private colaboradorService: ColaboradoresService ){
 
   }
 
-  constructor(private programaService: ProgramasService, private imagenService: ImageService ){
-
+  obtenerColaboradores(){
+    this.colaboradoresSuscripcion = this.colaboradorService.obtenerColaboradores().subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.colaboradores = data.colaboradores;
+      },
+      error:(error)=>console.log(error),
+    })
   }
 
   onSubmit(){

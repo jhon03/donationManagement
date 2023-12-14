@@ -28,7 +28,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'gestiondonaciones',
+    path: 'gestiondonaciones/:uid',
     component: GestiondonacionesComponent,
     canActivate: [AuthGuard]
   },
@@ -48,25 +48,30 @@ const routes: Routes = [
 
   {
     path: 'versolicitudesdedonacion',
-    component: VersolicitudesdonacionComponent
+    component: VersolicitudesdonacionComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'VerProgramas',
-    component: VerProgramasComponent
+    component: VerProgramasComponent,
+    canActivate: [AuthGuard]
   },
 
   {
     path: 'VerProyectos',
-    component: VerProyectosComponent
+    component: VerProyectosComponent,
+    canActivate: [AuthGuard]
   },
 
   {
   path: 'verBenefactores',
-  component: VerBenefactoresComponent
+  component: VerBenefactoresComponent,
+  canActivate: [AuthGuard]
   },
-  {path: 'editar/programa/:id', component: ActualizarProgramasComponent, pathMatch :'full'},
-  {path: 'editar/proyecto/:id', component: ActualizarProyectoComponent, pathMatch :'full'},
+  {path: 'editar/programa/:id', component: ActualizarProgramasComponent, pathMatch :'full', canActivate: [AuthGuard]},
+  {path: 'editar/proyecto/:id', component: ActualizarProyectoComponent, pathMatch :'full', canActivate: [AuthGuard]},
+
   {path: 'donaciones/formulario/terminar/:token/:id', component: ConfirmarDonacionComponent, pathMatch :'full'},
 ];
 

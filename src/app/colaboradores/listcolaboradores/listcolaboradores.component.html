@@ -1,15 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <app-gestiondonaciones>
-        
-    </app-gestiondonaciones>
-    
-</body>
-</html>
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+                <button onclick="history.back()" style="background-color: transparent; margin-top: 20px;">
+                    <img class="img-fluid" src="../../../assets/atras.png" alt="" style="height: 40px; border: none;">
+                </button>
+              <div class="table-responsive bg-white my-5">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">tipo Identificacion</th>
+                      <th scope="col">numero Identificacion</th>
+                      <th scope="col">nombre</th>
+                      <th scope="col">nombre de usuario</th>
+                      <th scope="col">correo</th>
+                      <th scope="col">cargo</th>
+                      <th scope="col">celular</th>
+                      <th scope="col">fecha de creacion</th>
+                      <th scope="col">rol</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let colaborador of colaboradoresList">
+                      <th scope="row" style="color: #666666;">{{colaborador.tipoIdentificacion}}</th>
+                      <td>{{colaborador.numeroIdentificacion}}</td>
+                      <td>{{colaborador.nombre}}</td>
+                      <td>{{colaborador.username}}</td>
+                      <td>{{colaborador.correo}}</td>
+                      <td>{{colaborador.cargo}}</td>
+                      <td>{{colaborador.celular}}</td>
+                      <td>{{colaborador.fechaCreacion | date:'dd/MM/yyyy'}}</td>
+                      <td>{{colaborador.rol.rol}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

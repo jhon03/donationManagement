@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { Credenciales, urlAuth } from '../../helpers/loginHelpers';
+import { Credenciales, resLogin, urlAuth } from '../../helpers/loginHelpers';
 import {Observable, tap, catchError, throwError, BehaviorSubject, timer, switchMap, Subscription} from 'rxjs';
 import { TokenService } from '../../security/token/token.service';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ export class LoginService implements OnDestroy {
   }
 
   public login(credenciales:Credenciales): Observable<any>{
-    return this.httpClient.post<Credenciales>(`${this.urlAuth}/login`, credenciales, {
+    return this.httpClient.post<any>(`${this.urlAuth}/login`, credenciales, {
       observe: 'response',
     }).pipe(tap((response:any) =>{
       if(response.status == 200){

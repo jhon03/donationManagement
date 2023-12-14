@@ -1,6 +1,8 @@
 <div class="form-container">
-<div class="form-column">
-    
+<div class="form-column" *ngIf="colaboradores">
+    <button onclick="history.back()" style="background-color: transparent;">
+        <img class="img-fluid" src="../../../assets/atras.png" alt="" style="height: 40px;">
+      </button>
     <form (ngSubmit)="onSubmit()">
         <div class="camposform">
         <label for="nombre">Nombre del Programa:</label>
@@ -69,13 +71,17 @@
         </div>
         <div class="camposform">
             <label for="usuCreador">Usuario Creador</label>
-            <input type="text" id="usuCreadorname" name="usuCreador" [(ngModel)]="programa.usuCreador" required>
+            <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador" [(ngModel)]="programa.usuCreador">
+                <option *ngFor="let colaborador of colaboradores" [value]="colaborador.nombre">{{colaborador.nombre}}</option>
+            </select>
         </div>
 
         <div class="camposform">
-        <label for="usuModificadoruario Modificador"></label>
-        <input type="text" id="usuModificador" name="usuModificador" [(ngModel)]="programa.usuModificador" required>
-    </div>
+            <label for="usuModificadoruario Modificador">Usuario Modificador</label>
+            <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador" [(ngModel)]="programa.usuModificador">
+                <option *ngFor="let colaborador of colaboradores" [value]="colaborador.nombre">{{colaborador.nombre}}</option>
+            </select>
+        </div>
         
 
         <div class="button-container">

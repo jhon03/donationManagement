@@ -16,6 +16,7 @@ export class ImageService {
     return this.httpClient.post<resModeloImg>(`${urlImg}/crear/${relacion}/${uid}`, imagen, {
       observe: 'body',
     }).pipe(tap((body:any) =>{
+      console.log(body);
        if(body && body.tokenNuevo){
           this.tokenService.obtenerTokenRenovado(body);
         }        
@@ -26,6 +27,7 @@ export class ImageService {
     return this.httpClient.delete<resModeloImg>(`${urlImg}/eliminar/${relacion}/${uidImg}`, {
       observe: 'body',
     }).pipe(tap((body:any) =>{
+      console.log(body);
        if(body && body.tokenNuevo){
           this.tokenService.obtenerTokenRenovado(body);
         }        
@@ -36,6 +38,7 @@ export class ImageService {
     return this.httpClient.delete<resModeloImg>(`${urlImg}/eliminarAll/${relacion}/${idRealacion}`, {
       observe: 'body',
     }).pipe(tap((body:any) =>{
+      console.log(body);
        if(body && body.tokenNuevo){
           this.tokenService.obtenerTokenRenovado(body);
         }        

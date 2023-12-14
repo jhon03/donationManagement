@@ -10,7 +10,7 @@ const routes: Routes = [
 
 {
   path: 'formulariodonaciones',
-  component: FormularioComponent
+  component: FormularioComponent,
 },
 
 {

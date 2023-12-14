@@ -44,10 +44,9 @@ export class LoginComponent implements OnInit, OnDestroy{
     this.suscripcion = this.loginService.login(this.credenciales).subscribe(
       {
         next:(data)=>{
-          console.log(data);
-     
-Swal.fire(`Sesión iniciada`, "Bienvenido")
-         this.router.navigate(['/gestiondonaciones'])
+          console.log(data.body.usuario);    
+          Swal.fire(`Sesión iniciada`, "Bienvenido")
+          this.router.navigateByUrl(`gestiondonaciones/${data.body.usuario.uid}`)
         },
         error:(error)=>{
           console.log(error);

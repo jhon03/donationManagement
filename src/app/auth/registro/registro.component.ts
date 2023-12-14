@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { ColaboradoresService } from 'src/app/services/colaboradorService/colaboradores.service';
 import { ColaboradorRequest } from 'src/app/helpers/colaboradoresHelpers';
 import Swal from 'sweetalert2';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -28,9 +29,21 @@ export class RegistroComponent implements OnInit, OnDestroy {
     this.confirmarSuscripcion?.unsubscribe();
   }
   
-  constructor(private colaboradorService: ColaboradoresService){
+  constructor(private colaboradorService: ColaboradoresService, private fb: FormBuilder){
 
   }
+
+  formUser = this.fb.group({
+    'tIdent': ['', [Validators.required]],
+    'nIdent': ['', [Validators.required, Validators.pattern('^[0-9]*$') ]],
+    'nombre': ['', [Validators.required, Validators.pattern('^[a-zA-Z\\s]+$')]],
+    'username': ['',[Validators.required, Validators.minLength(6)] ],
+    'contrasena': ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$')] ],
+    'correo': ['', [Validators.required, Validators.email]],
+    'celular': ['', [Validators.required, Validators.pattern('^\\d{9}$') ]],
+    'cargo': ['', [Validators.required, Validators.pattern('^[a-zA-Z\\s]+$') ]],
+    'rol': ['', [Validators.required]],
+  })
 
   onSubmit(){
     this.crearColaborador();

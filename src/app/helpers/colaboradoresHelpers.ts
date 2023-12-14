@@ -8,16 +8,30 @@ export class resColaborador {
     colaborador: ColaboradorResponse;
 }
 
-export class ColaboradorResponse{
+export class respuestaColaboradores {
     tokenNuevo?: string;
+    total: number;
+    colaboradores: ColaboradorResponse[];
+}
+
+export class ColaboradorResponse{
+    uid: string;
     tipoIdentificacion: string;
     numeroIdentificacion: number;
     nombre:string;
+    username: string;
     correo:string;
-    contrasena:string;
-    celular:number
+    cargo: string;
+    celular:number;
+    fechaCreacion: Date | string;
+    fechaModificacion: Date| string;
+    rol: any = {
+        id: '',
+        rol: '',
+    }
    
 }
+
 
 export class ColaboradorRequest{
     listTipoIdentificacion: any = [
