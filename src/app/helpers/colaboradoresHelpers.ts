@@ -39,12 +39,12 @@ export class ColaboradorRequest{
         {value:"pasaporte",key:"pasaporte"}
     ];
     tipoIdentificacion: string;
-    numeroIdentificacion: number;
+    numeroIdentificacion: string;
     nombre:string;
     username:string;
     contrasena:string;
     correo:string;
-    celular:number;
+    celular:string;
     cargo:string;
     rol:string;
     listRols:any=[

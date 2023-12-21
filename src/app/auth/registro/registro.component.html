@@ -1,107 +1,136 @@
-
 <div class="container ppal">
 
+  <div class="login-box">
+    
+    <form *ngIf="!modal" [formGroup]="formUser" (ngSubmit)="onSubmit()">
+      <h2>Registrate</h2>
 
-    <div class="login-box" >
-    <h2>Registrate</h2>
-      
-    <form (ngSubmit)="onSubmit()">
 
-   
 
       <div class="user-box">
-        <label for="tipo_identificacion">Tipo Identificación</label>
-  <select [(ngModel)]="colaborador.tipoIdentificacion" name="tipoIdentificacion" required>
+        <label [ngClass]=" { 'label-invalid': tIdent.invalid && tIdent.touched, 'text-dark': tIdent.valid || !tIdent.touched}" for="tipo_identificacion">Tipo identificacion</label>
+        <select formControlName="tIdent" name="tipoIdentificacion" required >
           <option *ngFor="let i of colaborador.listTipoIdentificacion" [value]="i.value">{{i.key}}</option>
-      </select>
-</div>
+        </select>
+        <div class="fw-bold" style="color: red;" [hidden]="tIdent.valid || !tIdent.touched" >
+          <span *ngIf="tIdent.errors?.['required']" >*El tipo de identificacion es requerido</span>
+        </div>
+      </div>
       <div class="user-box">
-        <input type="number" [(ngModel)]="colaborador.numeroIdentificacion" required="" name="nombre">
-          <label for="numero_identificacion" class="col-form-label col-sm-3"> Identificacion </label>
+        <label [ngClass]=" { 'label-invalid': nIdent.invalid && nIdent.touched, 'text-dark': nIdent.valid || !nIdent.touched}" for="numero_identificacion" class="col-form-label">Numero Identificacion</label>
+        <input type="number" formControlName="nIdent" required  name="nombre">
+        <div class="fw-bold" style="color: red;" [hidden]="nIdent.valid || nIdent.pristine" >
+          <span *ngIf="nIdent.errors?.['required']" >*El numero de identificacion es requerido</span>
+        </div>
       </div>
 
       <div class="user-box">
-        <input type="text" [(ngModel)]="colaborador.nombre"  required="" name="nombre">
-          <label for="NOMBRE" class="col-form-label col-sm-3"> Nombre </label>
+        <label [ngClass]=" { 'label-invalid': nombre.invalid && nombre.touched, 'text-dark': nombre.valid || !nombre.touched}" for="NOMBRE" class="col-form-label col-sm-3">Nombre</label>
+        <input type="text" formControlName="nombre" required="" name="nombre">
+        <div class="fw-bold" style="color: red; font-size: 13px; text-align: start;" [hidden]="nombre.valid || nombre.pristine" >
+          <span *ngIf="nombre.errors?.['required']" >*El nombre es requerido</span>
+          <span *ngIf="nombre.errors?.['pattern']" >*El nombre debe ser valido</span>
+        </div>
       </div>
 
       <div class="user-box">
-        <input type="text" [(ngModel)]="colaborador.username"  required="" name="username">
-          <label for="USUARIO" class="col-form-label col-sm-3"> Usuario </label>
+        <label [ngClass]=" { 'label-invalid': username.invalid && username.touched, 'text-dark': username.valid || !username.touched}" for="USUARIO" class="col-form-label col-sm-3"> Usuario </label>
+        <input type="text" formControlName="username" required="" name="username">
+        <div class="fw-bold" style="color: red; font-size: 13px;" [hidden]="username.valid || username.pristine" >
+          <span *ngIf="username.errors?.['required']" >*El nombre de usuario es requerido</span>
+          <span *ngIf="username.errors?.['minlength']" >*El nombre de usuario debe <br> contener minimo 6 caracteres</span>
+        </div>
       </div>
-         
-    
-    <div class="user-box">
-      <input type="text"  required="" [(ngModel)]="colaborador.contrasena"  name="contrasena">
-      <label for="contraseña"> Cree una contraseña</label>
-      <!--<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+
+
+      <div class="user-box">
+        <label [ngClass]=" { 'label-invalid': contrasena.invalid && contrasena.touched, 'text-dark': contrasena.valid || !contrasena.touched}" for="contraseña"> Cree una contraseña</label>
+        <input type="password" required="" formControlName="contrasena" name="contrasena">
+        <div class="fw-bold" style="color: red; font-size: 13px;" [hidden]="contrasena.valid || contrasena.pristine" >
+          <span *ngIf="contrasena.errors?.['required']" >*La contraseña es requerido</span>
+          <span *ngIf="contrasena.errors?.['minlength']" >
+            *El nombre de usuario debe <br> contener minimo 8 caracteres
+          </span>
+          <span *ngIf="contrasena.errors?.['pattern']">
+            <br>La contraseña debe contener al menos <br>*una letra mayúscula, <br>*una letra minúscula, <br>*un carácter especial y un número.
+          </span>
+        </div>
+        <!--<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       -->
-    </div>
-    <div class="user-box">
-    
-      <input type="text" [(ngModel)]="colaborador.correo" required=""  name="correo">
-      <label for="CORREO" class="col-form-label col-sm-3"> Correo </label>
-    </div>
-
-    <div class="user-box">
-    
-      <input type="number" [(ngModel)]="colaborador.celular" required=""  name="celular">
-      <label for="CELULAR" class="col-form-label col-sm-3"> Celular </label>
-    </div>
-    
-    <div class="user-box">
-    
-      <input type="text"  required="" [(ngModel)]="colaborador.cargo" name="cargo">
-      <label for="cargo" class="col-form-label col-sm-3"> Cargo</label>
-    </div>
-    <div class="user-box">
-
-    <label for="roles">Rol</label>
-      <select [(ngModel)]="colaborador.rol" name="rol" id="roles" name="roles" required>
-          <option *ngFor="let i of colaborador.listRols" [value]="i.value">{{i.key}}</option>
-      </select>
       </div>
-<br><br>
-    
-        <!--<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
-     
-    <!--<a href="#" (click)='registrar()'*ngIf="!colaborador.idCol else elseBlock">-->
-    
+      <div class="user-box">
+
+        <label [ngClass]=" { 'label-invalid': correoCol.invalid && correoCol.touched, 'text-dark': correoCol.valid || !correoCol.touched}" for="CORREO" class="col-form-label col-sm-3"> Correo </label>
+        <input type="text" formControlName="correo" required="" name="correo">
+        <div class="fw-bold" style="color: red; font-size: 13px;" [hidden]="correoCol.valid || correoCol.pristine" >
+          <span *ngIf="correoCol.errors?.['required']" >*El correo es requerido</span>
+          <span *ngIf="correoCol.errors?.['email']" >*El correo no es valido</span>
+        </div>
+      </div>
+
+      <div class="user-box">
+        <label [ngClass]=" { 'label-invalid': celular.invalid && celular.touched, 'text-dark': celular.valid || !celular.touched}" for="CELULAR" class="col-form-label col-sm-3"> Celular </label>
+        <div class="input-with-prefix">
+          <span class="prefix">3</span>
+          <input type="text" formControlName="celular" required="" name="celular">
+        </div>
+        <div class="fw-bold" style="color: red;" [hidden]="celular.valid || celular.pristine">
+          <span *ngIf="celular.errors?.['required']" >*El celular es requerido</span>
+          <span *ngIf="celular.errors?.['pattern']" >*El celular debe tener 10 digitos</span>
+        </div>
+      </div>
+
+      <div class="user-box">
+
+        <label for="cargo" class="col-form-label col-sm-3"> Cargo</label>
+        <input type="text" required formControlName="cargo" name="cargo">
+      </div>
+      <div class="user-box">
+
+        <label for="roles">Rol</label>
+        <select formControlName="rol" name="rol" id="roles" name="roles" required>
+          <option *ngFor="let i of colaborador.listRols" [value]="i.value">{{i.key}}</option>
+        </select>
+      </div>
+      <br><br>
+
+      <!--<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+
+      <!--<a href="#" (click)='registrar()'*ngIf="!colaborador.idCol else elseBlock">-->
+
       <div class="container">
 
-        <button class="btn btn-primary"> Registrar</button> 
+        <button [disabled]="formUser.invalid" class="btn btn-primary"> Registrar</button>
         <button class="limpiar" type="reset">Limpiar</button>
       </div>
 
-      <div *ngIf="modal">
-        <h2>Bienvenido a nuestra fundacion</h2>
-        <p>Para continuar necesitamos validar tu correo por ello,
-            Hemos enviado un correo electrónico con un código de confirmación.
-            Por favor, ingrésalo a continuación:
-        </p>
-
-        <form (ngSubmit)="confirmarCorreoCol()" class="full-width-form">
-          <label>Código de Confirmación</label>
-          <input required [(ngModel)]="codigo" name="codigoConfirmacion" placeholder="Ingrese el código">
-        
-          <div class="container text-center">
-            <button mat-raised-button>Confirmar Correo</button>
-          </div>
-        
-        </form>
-        
-      </div>
       
-  
-    <ng-template #elseBlock>
-   
-      Actualizar
-    
-    
-    </ng-template>
-    
-    
+
+
     </form>
+    <div *ngIf="modal" class="mt-5" style="background-image: url('https://res.cloudinary.com/dxlmosojh/image/upload/f_auto,q_auto/v1/donacion/fondos/kykfeikfyv94knrzxmup'); background-size: cover; background-position: center; height: 626px; width: 626px; display: block; justify-content: center; align-items: center;">
+      <h2 class="mt-5">Bienvenido a nuestra fundacion</h2>
+      <p>Para continuar necesitamos validar tu correo por ello,
+        Hemos enviado un correo electrónico con un código de confirmación.
+        Por favor, ingrésalo a continuación:
+      </p>
+
+      <form (ngSubmit)="confirmarCorreoCol()" class="full-width-form">
+        <label>Código de Confirmación</label>
+        <input required [(ngModel)]="codigo" name="codigoConfirmacion" placeholder="Ingrese el código">
+
+        <div class="container text-center">
+          <button mat-raised-button>Confirmar Correo</button>
+        </div>
+
+      </form>
+
     </div>
-    
-    </div>
+
+
+    <ng-template #elseBlock>
+      Actualizar
+    </ng-template>
+  </div>
+
+</div>

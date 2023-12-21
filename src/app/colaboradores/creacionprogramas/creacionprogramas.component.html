@@ -1,96 +1,96 @@
 <div class="form-container">
-<div class="form-column" *ngIf="colaboradores">
-    <button onclick="history.back()" style="background-color: transparent;">
-        <img class="img-fluid" src="../../../assets/atras.png" alt="" style="height: 40px;">
-      </button>
-    <form (ngSubmit)="onSubmit()">
-        <div class="camposform">
-        <label for="nombre">Nombre del Programa:</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="programa.nombre" required>
-    </div>
-
-    <div class="camposform">
-        <label for="eslogan">Escribe un eslogan</label>
-        <input type="text" id="eslogan" name="eslogan" [(ngModel)]="programa.eslogan" required>
-    </div>
-
-    <div class="camposform">
-        <label for="descripcion" placeholder="máximo 504 caracteres" >Descripción del Programa:</label>
-
-        <textarea id="descripcion" name="descripcion" [(ngModel)]="programa.descripcion" required></textarea>
-</div>
-
-
-<div class="container my-3">
-    <div class="mb-3">
-        <label for="image" class="form-label" >Agrega una o varias Imágenes al programa 
-            <i class="fa-solid fa-arrow-up-from-bracket"></i>
-        </label>
-        <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
-        <ng-container *ngFor="let image of selectedImages; let i = index" >
-            <div class="col" >
-                <div class="card h-100">
-                    <img [src]="image.url" class="card-img-top rounded-1 img-fluid" alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
-                    <div class="card-footer text-center">
-                        <button class="btn btn-danger text-center" (click)="removeImage(i)">Eliminar</button>
-                    </div>
-                </div>
+    <div class="form-column" *ngIf="colaboradores">
+        <button onclick="history.back()" style="background-color: transparent;">
+            <img class="img-fluid" src="../../../assets/atras.png" alt="" style="height: 40px;">
+        </button>
+        <form (ngSubmit)="onSubmit()">
+            <div class="camposform">
+                <label for="nombre">Nombre del Programa:</label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="programa.nombre" required>
             </div>
-       </ng-container>                           
-    </div>
-    
-    <button *ngIf="selectedImages.length > 0" class="btn btn-danger" (click)="removeAllImages()">Eliminar todas las imágenes</button>
-</div>
+
+            <div class="camposform">
+                <label for="eslogan">Escribe un eslogan</label>
+                <input type="text" id="eslogan" name="eslogan" [(ngModel)]="programa.eslogan" required>
+            </div>
+
+            <div class="camposform">
+                <label for="descripcion" placeholder="máximo 504 caracteres">Descripción del Programa:</label>
+
+                <textarea id="descripcion" name="descripcion" [(ngModel)]="programa.descripcion" required></textarea>
+            </div>
 
 
-
-
-
-
-
-
-
-
-
-
-    
-
-        <div class="camposform">
-            
-            <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccione opciones para Colaboración</button>
-            <span *ngIf="showDropdown" class="dropdown-list">
-                <span *ngFor="let opcion of listaOpciones">
-                    <label>
-                        <input type="checkbox" [(ngModel)]="opcion.isSelected" [name]="'opcion_' + opcion.text"> {{opcion.text}}
+            <div class="container my-3">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Agrega una o varias Imágenes al programa
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
                     </label>
+                    <input type="file" id="image" class="form-control" (change)="upload($event)" multiple>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mx-3 my-3">
+                    <ng-container *ngFor="let image of selectedImages; let i = index">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img [src]="image.url" class="card-img-top rounded-1 img-fluid"
+                                    alt="Vista previa de la imagen" style="width: 192x; height: 110px;">
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-danger text-center"
+                                        (click)="removeImage(i)">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+
+                <button *ngIf="selectedImages.length > 0" class="btn btn-danger" (click)="removeAllImages()">Eliminar
+                    todas las imágenes</button>
+            </div>
+
+            <div class="camposform">
+
+                <button type="button" id="button" class="dropdown-button" (click)="toggleDropdown()">Seleccione opciones
+                    para Colaboración</button>
+                <span *ngIf="showDropdown" class="dropdown-list">
+                    <span *ngFor="let opcion of listaOpciones">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="opcion.isSelected" [name]="'opcion_' + opcion.text">
+                            {{opcion.text}}
+                        </label>
+                    </span>
                 </span>
-            </span>
-        </div>
-        <div class="camposform">
-            <label for="usuCreador">Usuario Creador</label>
-            <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador" [(ngModel)]="programa.usuCreador">
-                <option *ngFor="let colaborador of colaboradores" [value]="colaborador.nombre">{{colaborador.nombre}}</option>
-            </select>
-        </div>
+            </div>
+            <div class="camposform">
+                <label for="usuCreador">Usuario Creador</label>
+                <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador"
+                    [(ngModel)]="programa.usuCreador">
+                    <ng-container *ngFor="let colaborador of colaboradores">
+                        <option *ngIf="colaborador.rol.rol === 'CREADOR' " [value]="colaborador.nombre">
+                            {{colaborador.nombre + ' ( ' + colaborador.correo + ' ) '}}</option>
+                    </ng-container>
+                </select>
+            </div>
 
-        <div class="camposform">
-            <label for="usuModificadoruario Modificador">Usuario Modificador</label>
-            <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador" [(ngModel)]="programa.usuModificador">
-                <option *ngFor="let colaborador of colaboradores" [value]="colaborador.nombre">{{colaborador.nombre}}</option>
-            </select>
-        </div>
-        
+            <div class="camposform">
+                <label for="usuModificadoruario Modificador">Usuario Modificador</label>
+                <select style="width: 100%; font-size: 20px; padding: 7px;" name="colaborador" id="colCreador"
+                    [(ngModel)]="programa.usuModificador">
+                    <ng-container *ngFor="let colaborador of colaboradores">
+                        <option *ngIf="colaborador.rol.rol === 'MODIFICADOR' " [value]="colaborador.nombre">
+                            {{colaborador.nombre + ' ( ' + colaborador.correo + ' ) '}}</option>
+                    </ng-container>
+                </select>
+            </div>
 
-        <div class="button-container">
-            <input type="submit" value="Crear Programa">
-        </div>
 
-    </form>
+            <div class="button-container">
+                <input type="submit" value="Crear Programa">
+            </div>
 
-</div>
+        </form>
+
+    </div>
 
 </div>
 <ng-template #elseBlock>

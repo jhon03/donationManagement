@@ -29,9 +29,8 @@ h2 {
 
 .user-box {
  position: relative;
- margin: 20px 0;
+
  width: 100%;
- text-align: center;
 
  display: flex;
  flex-direction: column;
@@ -51,16 +50,8 @@ select {
  font-size: 16px;
 }
 
-.user-box label {
- position: absolute;
- top: 0;
- left: 0;
- padding: 10px;
- font-size: 16px;
- color: #193A6F; /* Texto azul para las etiquetas */
- pointer-events: none;
- transition: 0.5s;
-}
+
+
 
 .user-box input:focus + label,
 .user-box input:valid + label {
@@ -109,3 +100,47 @@ button.btn-primary:hover {
       margin-right: 10px;
   }
 }
+
+
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.input-invalid {
+  border: 2px solid rgb(210, 17, 17);
+}
+
+.label-invalid{
+  color: rgba(255, 0, 0, 0.823);
+  font-weight: bold;
+}
+
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  position: relative;
+  padding: 6px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  background-color: #FB9850;;
+  border-radius: 8px; /* Ajusta el redondeo del borde izquierdo */
+  font-size: 20px;
+  border: 2px solid #ccc;
+}
+
+input::placeholder {
+  color: rgb(22, 21, 21);
+  font-size: 1 2px;
+  text-align: center;
+}
+
+
+

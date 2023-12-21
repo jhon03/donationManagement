@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ColaboradorRequest, ColaboradorResponse } from 'src/app/helpers/colaboradoresHelpers';
 import { programaRequest } from 'src/app/helpers/programaHelpers';
+import { ColaboradoresService } from 'src/app/services/colaboradorService/colaboradores.service';
 import { ImageService } from 'src/app/services/imagenService/image.service';
 import { ProgramasService } from 'src/app/services/programaService/programas.service';
 import Swal from 'sweetalert2';
@@ -14,6 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class ActualizarProgramasComponent {
 
+  colaboradores: ColaboradorResponse[];
   programa: programaRequest = new programaRequest();
   selectedImages: any[] = [];
   archivo: any[] = [];
@@ -31,12 +34,14 @@ export class ActualizarProgramasComponent {
   private programaIdSuscripcion: Subscription;
   private imagenSuscripcion: Subscription;
   private deleteImgSuscripcion: Subscription; 
+  private colaboradoresSuscripcion: Subscription;
 
   constructor(
     private pogramaService: ProgramasService,
     private router: Router,
     private ruta: ActivatedRoute,
     private imagenService: ImageService,
+    private colaboradorService: ColaboradoresService,
   ) {
 
   }
@@ -46,10 +51,22 @@ export class ActualizarProgramasComponent {
     this.programaIdSuscripcion?.unsubscribe();
     this.imagenSuscripcion?.unsubscribe();
     this.deleteImgSuscripcion?.unsubscribe();
+    this.colaboradoresSuscripcion?.unsubscribe();
   }
   ngOnInit(): void {
+    this.obtenerColaboradores();
     this.idPrograma = this.ruta.snapshot.params['id'];
     this.obtenerPrograma();
+  }
+
+  obtenerColaboradores(){
+    this.colaboradoresSuscripcion = this.colaboradorService.obtenerColaboradores().subscribe({
+      next:(data)=>{
+        console.log(data);
+        this.colaboradores = data.colaboradores;
+      },
+      error:(error)=>console.log(error),
+    })
   }
 
   obtenerPrograma() {
